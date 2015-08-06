@@ -1,0 +1,321 @@
+2015-01-12 20:44:53	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/python.so": libpython2.7.so.1.0: cannot open shared object file: No such file or directory
+2015-01-12 20:44:53	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-12 20:44:53	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-12 20:44:53	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-12 20:44:53	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-12 20:44:53	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-12 20:44:53		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, relay, ruby, script, trigger, xfer
+2015-01-12 20:45:25		fifo: pipe closed
+2015-01-29 21:15:51	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-29 21:15:51	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-29 21:15:51	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-29 21:15:51	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-29 21:15:51		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-29 21:18:53	=!=	irc: unable to create temporary server "chat.freenode.net" because the creation of temporary servers with command /connect is currently disabled
+2015-01-29 21:18:53	=!=	irc: if you want to create a standard server, use the command "/server add" (see /help server); if you really want to create a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2015-01-29 21:19:18	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2015-01-29 21:19:29		[irc]  /server  list|listfull [<server>]
+2015-01-29 21:19:29		                add <server> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2015-01-29 21:19:29		                copy|rename <server> <new_name>
+2015-01-29 21:19:29		                reorder <server> [<server>...]
+2015-01-29 21:19:29		                del|keep <server>
+2015-01-29 21:19:29		                deloutq|jump|raw
+2015-01-29 21:19:29		list, add or remove IRC servers
+2015-01-29 21:19:29		    list: list servers (without argument, this list is displayed)
+2015-01-29 21:19:29		listfull: list servers with detailed info for each server
+2015-01-29 21:19:29		     add: create a new server
+2015-01-29 21:19:29		  server: server name, for internal and display use
+2015-01-29 21:19:29		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2015-01-29 21:19:29		    temp: create temporary server (not saved)
+2015-01-29 21:19:29		  option: set option for server (for boolean option, value can be omitted)
+2015-01-29 21:19:29		nooption: set boolean option to 'off' (for example: -nossl)
+2015-01-29 21:19:29		    copy: duplicate a server
+2015-01-29 21:19:29		  rename: rename a server
+2015-01-29 21:19:29		 reorder: reorder list of servers
+2015-01-29 21:19:29		    keep: keep server in config file (for temporary servers only)
+2015-01-29 21:19:29		     del: delete a server
+2015-01-29 21:19:29		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2015-01-29 21:19:29		    jump: jump to server buffer
+2015-01-29 21:19:29		     raw: open buffer with raw IRC data
+2015-01-29 21:19:29		Examples:
+2015-01-29 21:19:29		  /server listfull
+2015-01-29 21:19:29		  /server add oftc irc.oftc.net/6697 -ssl -autoconnect
+2015-01-29 21:19:29		  /server add oftc6 irc6.oftc.net/6697 -ipv6 -ssl
+2015-01-29 21:19:29		  /server add freenode2 chat.eu.freenode.net/6667,chat.us.freenode.net/6667
+2015-01-29 21:19:29		  /server add freenode3 chat.freenode.net -password=mypass
+2015-01-29 21:19:29		  /server copy oftc oftcbis
+2015-01-29 21:19:29		  /server rename oftc newoftc
+2015-01-29 21:19:29		  /server reorder oftc freenode
+2015-01-29 21:19:29		  /server del freenode
+2015-01-29 21:19:29		  /server deloutq
+2015-01-29 21:19:36		All servers:
+2015-01-29 21:19:36		   freenode
+2015-01-29 21:19:57		[irc]  /connect  <server> [<server>...] [-<option>[=<value>]] [-no<option>] [-nojoin] [-switch]
+2015-01-29 21:19:57		                 -all|-auto|-open [-nojoin] [-switch]
+2015-01-29 21:19:57		connect to IRC server(s)
+2015-01-29 21:19:57		    server: server name, which can be:
+2015-01-29 21:19:57		            - internal server name (created by /server add, recommended usage)
+2015-01-29 21:19:57		            - hostname/port or IP/port, port is 6667 by default
+2015-01-29 21:19:57		            - URL with format: irc[6][s]://[nickname[:password]@]irc.example.org[:port][/#channel1][,#channel2[...]]
+2015-01-29 21:19:57		            Note: for an address/IP/URL, a temporary server is created (NOT SAVED), see /help irc.look.temporary_servers
+2015-01-29 21:19:57		    option: set option for server (for boolean option, value can be omitted)
+2015-01-29 21:19:57		  nooption: set boolean option to 'off' (for example: -nossl)
+2015-01-29 21:19:57		      -all: connect to all servers defined in configuration
+2015-01-29 21:19:57		     -auto: connect to servers with autoconnect enabled
+2015-01-29 21:19:57		     -open: connect to all opened servers that are not currently connected
+2015-01-29 21:19:57		   -nojoin: do not join any channel (even if autojoin is enabled on server)
+2015-01-29 21:19:57		   -switch: switch to next server address
+2015-01-29 21:19:57		To disconnect from a server or stop any connection attempt, use command /disconnect.
+2015-01-29 21:19:57		Examples:
+2015-01-29 21:19:57		  /connect freenode
+2015-01-29 21:19:57		  /connect irc.oftc.net/6667
+2015-01-29 21:19:57		  /connect irc6.oftc.net/6667 -ipv6
+2015-01-29 21:19:57		  /connect irc6.oftc.net/6697 -ipv6 -ssl
+2015-01-29 21:19:57		  /connect my.server.org/6697 -ssl -password=test
+2015-01-29 21:19:57		  /connect irc://nick@irc.oftc.net/#channel
+2015-01-29 21:19:57		  /connect -switch
+2015-01-29 21:24:42		[irc]  /join  [-noswitch] [-server <server>] [<channel1>[,<channel2>...]] [<key1>[,<key2>...]]
+2015-01-29 21:24:42		join a channel
+2015-01-29 21:24:42		-noswitch: do not switch to new buffer
+2015-01-29 21:24:42		   server: send to this server (internal name)
+2015-01-29 21:24:42		  channel: channel name to join
+2015-01-29 21:24:42		      key: key to join the channel (channels with a key must be the first in list)
+2015-01-29 21:24:42		Examples:
+2015-01-29 21:24:42		  /join #weechat
+2015-01-29 21:24:42		  /join #protectedchan,#weechat key
+2015-01-29 21:24:42		  /join -server freenode #weechat
+2015-01-29 21:24:42		  /join -noswitch #weechat
+2015-01-29 22:20:29		Option changed: irc.look.smart_filter = on
+2015-01-29 22:21:06		Option "irc.look.smart_filter":
+2015-01-29 22:21:06		  description: filter join/part/quit/nick messages for a nick if not speaking for some minutes on channel (you must create a filter on tag "irc_smart_filter")
+2015-01-29 22:21:06		  type: boolean
+2015-01-29 22:21:06		  values: on, off
+2015-01-29 22:21:06		  default value: on
+2015-01-29 22:21:06		  current value: on
+2015-01-29 23:04:09		Filter "irc_smart" added:
+2015-01-29 23:04:09		  [irc_smart] buffer: * / tags: irc_smart_filter / regex: * 
+2015-01-29 23:20:26		fifo: pipe closed
+2015-01-29 23:20:42	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-29 23:20:42	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-29 23:20:42	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-29 23:20:42	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-29 23:20:42		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-29 23:20:55	=!=	You can not write text in this buffer
+2015-01-29 23:21:00		fifo: pipe closed
+2015-01-31 21:17:41	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 21:17:41	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:17:41	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 21:17:41	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:17:41		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 21:17:51	=!=	irc: command "list" must be executed on irc buffer (server or channel)
+2015-01-31 21:18:01		[core]
+2015-01-31 21:18:01		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2015-01-31 21:18:01		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2015-01-31 21:18:01		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2015-01-31 21:18:01		[charset]
+2015-01-31 21:18:01		  charset
+2015-01-31 21:18:01		[logger]
+2015-01-31 21:18:01		  logger
+2015-01-31 21:18:01		[ruby]
+2015-01-31 21:18:01		  ruby
+2015-01-31 21:18:01		[relay]
+2015-01-31 21:18:01		  relay
+2015-01-31 21:18:01		[lua]
+2015-01-31 21:18:01		  lua
+2015-01-31 21:18:01		[guile]
+2015-01-31 21:18:01		  guile
+2015-01-31 21:18:01		[irc]
+2015-01-31 21:18:01		  admin       cycle       halfop      kickban     mode        op          quote       sanick      squit       unquiet     who       
+2015-01-31 21:18:01		  allchan     dcc         ignore      kill        motd        oper        reconnect   sapart      stats       userhost    whois     
+2015-01-31 21:18:01		  allpv       dehalfop    info        links       msg         part        rehash      saquit      summon      users       whowas    
+2015-01-31 21:18:01		  allserv     deop        invite      list        names       ping        remove      server      time        version   
+2015-01-31 21:18:01		  ban         devoice     ison        lusers      nick        pong        restart     service     topic       voice     
+2015-01-31 21:18:01		  connect     die         join        map         notice      query       sajoin      servlist    trace       wallchops 
+2015-01-31 21:18:01		  ctcp        disconnect  kick        me          notify      quiet       samode      squery      unban       wallops   
+2015-01-31 21:18:01		[exec]
+2015-01-31 21:18:01		  exec
+2015-01-31 21:18:01		[script]
+2015-01-31 21:18:01		  script
+2015-01-31 21:18:01		[perl]
+2015-01-31 21:18:01		  perl
+2015-01-31 21:18:01		[xfer]
+2015-01-31 21:18:01		  me  xfer
+2015-01-31 21:18:01		[python]
+2015-01-31 21:18:01		  python
+2015-01-31 21:18:01		[alias]
+2015-01-31 21:18:01		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    W        WII    
+2015-01-31 21:18:01		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        unalias  WC       WW     
+2015-01-31 21:18:01		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       V        WI     
+2015-01-31 21:18:01		[trigger]
+2015-01-31 21:18:01		  trigger
+2015-01-31 21:18:46		All servers:
+2015-01-31 21:18:46		   freenode
+2015-01-31 21:18:52	=!=	Error: unknown command "/commect" (type /help for help)
+2015-01-31 21:52:20		Option changed: irc.server.freenode.command = "/msg NickServ identift idkfa9"  (default: (undefined))
+2015-01-31 21:53:09		Option changed: irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default: (undefined))
+2015-01-31 21:53:37		fifo: pipe closed
+2015-01-31 21:53:40	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 21:53:40	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:53:40	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 21:53:40	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:53:40		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 21:56:33	=!=	Error: option "irc.freenode.nicks" not found
+2015-01-31 21:56:52		Option changed: irc.server.freenode.nicks = "alhunt"  (default: (undefined))
+2015-01-31 21:57:14	=!=	irc: command "list" must be executed on connected irc server
+2015-01-31 21:57:18		All servers:
+2015-01-31 21:57:18		   freenode
+2015-01-31 21:57:21	=!=	Error: unknown command "/servers" (type /help for help)
+2015-01-31 21:57:30		fifo: pipe closed
+2015-01-31 21:57:32	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 21:57:32	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:57:32	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 21:57:32	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 21:57:32		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 21:59:00		[core]
+2015-01-31 21:59:00		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2015-01-31 21:59:00		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2015-01-31 21:59:00		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2015-01-31 21:59:00		[charset]
+2015-01-31 21:59:00		  charset
+2015-01-31 21:59:00		[logger]
+2015-01-31 21:59:00		  logger
+2015-01-31 21:59:00		[ruby]
+2015-01-31 21:59:00		  ruby
+2015-01-31 21:59:00		[relay]
+2015-01-31 21:59:00		  relay
+2015-01-31 21:59:00		[lua]
+2015-01-31 21:59:00		  lua
+2015-01-31 21:59:00		[guile]
+2015-01-31 21:59:00		  guile
+2015-01-31 21:59:00		[irc]
+2015-01-31 21:59:00		  admin       cycle       halfop      kickban     mode        op          quote       sanick      squit       unquiet     who       
+2015-01-31 21:59:00		  allchan     dcc         ignore      kill        motd        oper        reconnect   sapart      stats       userhost    whois     
+2015-01-31 21:59:00		  allpv       dehalfop    info        links       msg         part        rehash      saquit      summon      users       whowas    
+2015-01-31 21:59:00		  allserv     deop        invite      list        names       ping        remove      server      time        version   
+2015-01-31 21:59:00		  ban         devoice     ison        lusers      nick        pong        restart     service     topic       voice     
+2015-01-31 21:59:00		  connect     die         join        map         notice      query       sajoin      servlist    trace       wallchops 
+2015-01-31 21:59:00		  ctcp        disconnect  kick        me          notify      quiet       samode      squery      unban       wallops   
+2015-01-31 21:59:00		[exec]
+2015-01-31 21:59:00		  exec
+2015-01-31 21:59:00		[script]
+2015-01-31 21:59:00		  script
+2015-01-31 21:59:00		[perl]
+2015-01-31 21:59:00		  perl
+2015-01-31 21:59:00		[xfer]
+2015-01-31 21:59:00		  me  xfer
+2015-01-31 21:59:00		[python]
+2015-01-31 21:59:00		  python
+2015-01-31 21:59:00		[alias]
+2015-01-31 21:59:00		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    W        WII    
+2015-01-31 21:59:00		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        unalias  WC       WW     
+2015-01-31 21:59:00		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       V        WI     
+2015-01-31 21:59:00		[trigger]
+2015-01-31 21:59:00		  trigger
+2015-01-31 21:59:55		All servers:
+2015-01-31 21:59:55		 * freenode [connected], 1 channel, 0 pv
+2015-01-31 22:02:11		[server] (irc.conf)
+2015-01-31 22:02:11		  irc.server.freenode.autoconnect
+2015-01-31 22:02:11		1 option (matching with "irc.server.freenode.autoconnect")
+2015-01-31 22:02:16		Option changed: irc.server.freenode.autoconnect = on  (default: (undefined))
+2015-01-31 22:04:36	=!=	irc: command "part" must be executed on irc buffer (server or channel)
+2015-01-31 22:05:44		fifo: pipe closed
+2015-01-31 22:05:46	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 22:05:46	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:05:46	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 22:05:46	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:05:46		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 22:07:23		Option changed: irc.server.freenode.sasl_username = "alhunt"  (default: (undefined))
+2015-01-31 22:07:44		Option changed: irc.server.freenode.sasl_password = "idkfa9"  (default: (undefined))
+2015-01-31 22:07:49		fifo: pipe closed
+2015-01-31 22:07:50	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 22:07:50	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:07:50	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 22:07:50	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:07:50		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 22:08:53	=!=	Error: unknown command "/irc.server.freenode.command" (type /help for help)
+2015-01-31 22:08:59	=!=	Error: unknown command "/get" (type /help for help)
+2015-01-31 22:09:03		[server] (irc.conf)
+2015-01-31 22:09:03		  irc.server.freenode.command = "/msg NickServ identift idkfa9"  (default: (undefined))
+2015-01-31 22:09:03		1 option (matching with "irc.server.freenode.command")
+2015-01-31 22:10:26		[server] (irc.conf)
+2015-01-31 22:10:26		  irc.server.freenode.command = "/msg NickServ identift idkfa9"  (default: (undefined))
+2015-01-31 22:10:26		1 option (matching with "irc.server.freenode.command")
+2015-01-31 22:10:36		Option changed: irc.server.freenode.command = ""  (default: (undefined))
+2015-01-31 22:10:47		fifo: pipe closed
+2015-01-31 22:10:49	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/tcl.so": libtcl8.6.so: cannot open shared object file: No such file or directory
+2015-01-31 22:10:49	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:10:49	=!=	Error: unable to load plugin "/usr/lib/weechat/plugins/aspell.so": libaspell.so.15: cannot open shared object file: No such file or directory
+2015-01-31 22:10:49	=!=	If you're trying to load a script and not a C plugin, try command to load scripts (/perl, /python, ...)
+2015-01-31 22:10:49		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-01-31 22:43:32		fifo: pipe closed
+2015-07-01 18:41:05		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-07-01 18:46:38		All servers:
+2015-07-01 18:46:38		 * freenode [connected], 2 channels, 0 pv
+2015-07-01 18:49:01		irc: server oftc created
+2015-07-01 18:50:28		Option changed: irc.server.oftc.username = "alhunt"  (default: (undefined))
+2015-07-01 18:50:41	=!=	Option "irc.server.freenode" not found (tip: you can use wildcard "*" in option to see a sublist)
+2015-07-01 18:50:46		[server] (irc.conf)
+2015-07-01 18:50:46		  irc.server.freenode.addresses = "chat.freenode.net/6667"  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.anti_flood_prio_high
+2015-07-01 18:50:46		  irc.server.freenode.anti_flood_prio_low
+2015-07-01 18:50:46		  irc.server.freenode.autoconnect = on  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.autoreconnect
+2015-07-01 18:50:46		  irc.server.freenode.autoreconnect_delay
+2015-07-01 18:50:46		  irc.server.freenode.autorejoin
+2015-07-01 18:50:46		  irc.server.freenode.autorejoin_delay
+2015-07-01 18:50:46		  irc.server.freenode.away_check
+2015-07-01 18:50:46		  irc.server.freenode.away_check_max_nicks
+2015-07-01 18:50:46		  irc.server.freenode.capabilities
+2015-07-01 18:50:46		  irc.server.freenode.command = ""  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.command_delay
+2015-07-01 18:50:46		  irc.server.freenode.connection_timeout
+2015-07-01 18:50:46		  irc.server.freenode.default_msg_kick
+2015-07-01 18:50:46		  irc.server.freenode.default_msg_part
+2015-07-01 18:50:46		  irc.server.freenode.default_msg_quit
+2015-07-01 18:50:46		  irc.server.freenode.ipv6
+2015-07-01 18:50:46		  irc.server.freenode.local_hostname
+2015-07-01 18:50:46		  irc.server.freenode.nicks = "alhunt"  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.notify
+2015-07-01 18:50:46		  irc.server.freenode.password
+2015-07-01 18:50:46		  irc.server.freenode.proxy
+2015-07-01 18:50:46		  irc.server.freenode.realname
+2015-07-01 18:50:46		  irc.server.freenode.sasl_fail
+2015-07-01 18:50:46		  irc.server.freenode.sasl_key
+2015-07-01 18:50:46		  irc.server.freenode.sasl_mechanism
+2015-07-01 18:50:46		  irc.server.freenode.sasl_password = "idkfa9"  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.sasl_timeout
+2015-07-01 18:50:46		  irc.server.freenode.sasl_username = "alhunt"  (default: (undefined))
+2015-07-01 18:50:46		  irc.server.freenode.ssl
+2015-07-01 18:50:46		  irc.server.freenode.ssl_cert
+2015-07-01 18:50:46		  irc.server.freenode.ssl_dhkey_size
+2015-07-01 18:50:46		  irc.server.freenode.ssl_fingerprint
+2015-07-01 18:50:46		  irc.server.freenode.ssl_priorities
+2015-07-01 18:50:46		  irc.server.freenode.ssl_verify
+2015-07-01 18:50:46		  irc.server.freenode.username
+2015-07-01 18:50:46		38 options (matching with "irc.server.freenode.*")
+2015-07-01 18:51:08		Option changed: irc.server.oftc.nicks = "alhunt"  (default: (undefined))
+2015-07-01 18:51:40		Option changed: irc.server.oftc.autojoin = "#kernelnewbies"  (default: (undefined))
+2015-07-02 08:46:27		fifo: pipe closed
+2015-07-02 20:15:02		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-07-07 19:58:01		fifo: removing old fifo pipe "/home/al/.weechat/weechat_fifo_4432"
+2015-07-07 19:58:01		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-07-07 21:24:15		[bar] (weechat.conf)
+2015-07-07 21:24:15		  weechat.bar.status.color_bg = blue
+2015-07-07 21:24:15		1 option (matching with "weechat.bar.status.color_bg")
+2015-07-07 21:24:27		[bar] (weechat.conf)
+2015-07-07 21:24:27		  weechat.bar.status.color_fg = default
+2015-07-07 21:24:27		1 option (matching with "weechat.bar.status.color_fg")
+2015-07-07 21:24:34		Option changed: weechat.bar.status.color_fg = black  (default: default)
+2015-07-07 21:24:47		Option changed: weechat.bar.status.color_fg = default
+2015-07-07 21:25:03		Option changed: weechat.bar.status.color_bg = cyan  (default: blue)
+2015-07-07 21:25:12		Option changed: weechat.bar.status.color_bg = brown  (default: blue)
+2015-07-07 21:25:22		Option changed: weechat.bar.status.color_bg = darkgray  (default: blue)
+2015-07-07 21:25:32		[bar] (weechat.conf)
+2015-07-07 21:25:32		  weechat.bar.title.color_bg = blue
+2015-07-07 21:25:32		1 option (matching with "weechat.bar.title.color_bg")
+2015-07-07 21:25:45		Option changed: weechat.bar.title.color_bg = darkgray  (default: blue)
+2015-07-07 23:46:45		fifo: pipe closed
+2015-07-07 23:46:46		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-07-07 23:46:51	=!=	Too few arguments for command "/query" (help on command: /help query)
+2015-07-07 23:46:55		fifo: pipe closed

@@ -1,0 +1,729 @@
+2015-07-01 18:52:02	-->	alhunt (~alhunt@124-148-210-96.dyn.iinet.net.au) has joined #kernelnewbies
+2015-07-01 18:52:02	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-07-01 18:52:02	--	Topic set by derRichard (~derRichar@pippin.sigma-star.at) on Fri, 16 Jan 2015 20:54:30
+2015-07-01 18:52:02	--	Channel #kernelnewbies: 292 nicks (0 ops, 0 voices, 292 normals)
+2015-07-01 18:52:03	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-07-01 18:52:05	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-07-01 18:56:02	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-01 18:57:49	-->	jwhitmore (~jwhitmore@109.76.238.113) has joined #kernelnewbies
+2015-07-01 19:03:48	<--	rendar_ (~rendar@host122-25-dynamic.247-95-r.retail.telecomitalia.it) has quit (Ping timeout: 480 seconds)
+2015-07-01 19:04:47	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-01 19:06:31	<--	psydroid (~androirc@194-239-236-19-hotspot.dk.customer.tdc.net) has quit (Ping timeout: 480 seconds)
+2015-07-01 19:08:11	<--	xiinotulp (~plutoniix@119.63.87.222) has quit (Quit: จรลี จรลา)
+2015-07-01 19:08:58	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-01 19:12:17	-->	rendar_ (~rendar@host115-139-dynamic.252-95-r.retail.telecomitalia.it) has joined #kernelnewbies
+2015-07-01 19:15:39	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-07-01 19:18:39	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Read error: Connection reset by peer)
+2015-07-01 19:18:57	-->	Cromulent (~Cromulent@cpc1-reig5-2-0-cust251.6-3.cable.virginm.net) has joined #kernelnewbies
+2015-07-01 19:19:00	-->	Judge_Dredd (~jd@thpool4-244.jinr.ru) has joined #kernelnewbies
+2015-07-01 19:21:56	-->	psydroid (~androirc@80.243.121.197) has joined #kernelnewbies
+2015-07-01 19:27:23	--	quintela is now known as |||
+2015-07-01 19:27:49	--	||| is now known as quintela
+2015-07-01 19:28:42	-->	sebras (~sebras@casper3.ghostscript.com) has joined #kernelnewbies
+2015-07-01 19:30:06	<--	psydroid (~androirc@80.243.121.197) has quit (Ping timeout: 480 seconds)
+2015-07-01 19:32:57	<--	mkletzan (~mkletzan@nat-pool-brq-t.redhat.com) has quit (Quit: ERC (IRC client for Emacs 24.5.1))
+2015-07-01 19:34:17	<--	chandan__ (~chandan@122.248.161.59) has quit (Ping timeout: 480 seconds)
+2015-07-01 19:37:13	-->	yogeshrt (~yogesh@106.221.141.202) has joined #kernelnewbies
+2015-07-01 19:38:48	-->	mawiegand (~marcel@p5088CA89.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-01 19:40:11	<--	isaky (~isaky@145.173.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-07-01 19:40:38	-->	vmlinuz (~vmlinuz@32.104.18.200) has joined #kernelnewbies
+2015-07-01 19:55:29	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-01 19:59:20	<--	fstd (~fstd@xdsl-87-78-15-228.netcologne.de) has quit (Remote host closed the connection)
+2015-07-01 19:59:31	-->	fstd (~fstd@xdsl-84-44-222-68.netcologne.de) has joined #kernelnewbies
+2015-07-01 20:00:40	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-01 20:02:17	<--	yogeshrt (~yogesh@106.221.141.202) has quit (Ping timeout: 480 seconds)
+2015-07-01 20:03:35	<--	cosmoecho (~cosmoecho@inet-hqmc01-o.oracle.com) has quit (Remote host closed the connection)
+2015-07-01 20:06:01	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-01 20:09:42	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-01 20:09:47	-->	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has joined #kernelnewbies
+2015-07-01 20:10:37	<--	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Quit: Verlassend)
+2015-07-01 20:10:44	-->	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-07-01 20:11:31	-->	yogeshrt (~yogesh@14.140.2.178) has joined #kernelnewbies
+2015-07-01 20:18:01	<--	jwhitmore (~jwhitmore@109.76.238.113) has quit (Ping timeout: 480 seconds)
+2015-07-01 20:18:20	<--	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has quit (Remote host closed the connection)
+2015-07-01 20:19:50	-->	N8Fear_ (~n8fear@zb3e1.pia.fu-berlin.de) has joined #kernelnewbies
+2015-07-01 20:20:12	-->	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has joined #kernelnewbies
+2015-07-01 20:24:05	<--	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has quit (Remote host closed the connection)
+2015-07-01 20:25:56	-->	jwhitmore (~jwhitmore@109.76.238.113) has joined #kernelnewbies
+2015-07-01 20:28:29	-->	error27 (~dcarpente@154.0.139.178) has joined #kernelnewbies
+2015-07-01 20:35:48	-->	chandan_ (~arch@122.167.31.250) has joined #kernelnewbies
+2015-07-01 20:45:15	<--	ego (~ego@122.167.119.227) has quit (Ping timeout: 480 seconds)
+2015-07-01 20:57:20	-->	annodomini (~lambda@000161aa.user.oftc.net) has joined #kernelnewbies
+2015-07-01 20:59:57	-->	LFSveteran (~LFSvetera@86.92.180.18) has joined #kernelnewbies
+2015-07-01 21:00:18	LFSveteran	I wrote a simple char driver: http://pastebin.com/H5bGQUZd
+2015-07-01 21:00:40	LFSveteran	How can I automagic create a devicenode for it in /dev (devtmpfs)
+2015-07-01 21:03:48	<--	ice9 (~ice9@cybertechlab.com) has quit (Ping timeout: 480 seconds)
+2015-07-01 21:05:10	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-01 21:07:28	<--	chchjesus (~chchjesus@0001f474.user.oftc.net) has quit (Quit: outies)
+2015-07-01 21:08:53	-->	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has joined #kernelnewbies
+2015-07-01 21:09:50	-->	kdr2_ (~kdr2@124.166.244.39) has joined #kernelnewbies
+2015-07-01 21:14:23	<--	kdr2__ (~kdr2@124.166.244.39) has quit (Ping timeout: 481 seconds)
+2015-07-01 21:20:01	-->	baldrick (~duncan@185.19.101.145) has joined #kernelnewbies
+2015-07-01 21:20:01	<--	baldrick (~duncan@185.19.101.145) has quit (Killed (charon.oftc.net (Nick collision (new))))
+2015-07-01 21:20:51	-->	baldrick (~duncan@185.19.101.145) has joined #kernelnewbies
+2015-07-01 21:20:51	<--	baldrick (~duncan@185.19.101.145) has quit (Killed (magnet.oftc.net (Nick collision (new))))
+2015-07-01 21:22:49	-->	baldrick1 (~duncan@185.19.101.145) has joined #kernelnewbies
+2015-07-01 21:32:01	<--	Judge_Dredd (~jd@thpool4-244.jinr.ru) has quit (Ping timeout: 480 seconds)
+2015-07-01 21:35:00	-->	cosmoecho (~cosmoecho@inet-hqmc04-o.oracle.com) has joined #kernelnewbies
+2015-07-01 21:38:55	<--	valdis (~valdis@c-73-171-123-11.hsd1.va.comcast.net) has quit (Quit: Leaving.)
+2015-07-01 21:39:15	<--	zwm__ (~zwm@210.13.97.35) has quit (Quit: Leaving)
+2015-07-01 21:42:02	silviof	LFSveteran: I see no device_create(_*) function ... have you read LDD3?
+2015-07-01 21:46:20	LetoThe2nd	from what I gathered, a manual device node creation is rarely needed nowadays, its the subsystem that should handle this as needed
+2015-07-01 21:46:38	LetoThe2nd	(and yes i've read lld3, but i think its outdated in respect to that)
+2015-07-01 21:46:47	derRichard	as your driver does not work on a real device you'll have to kick it by hand
+2015-07-01 21:47:24	LetoThe2nd	just use the misc subsystem?
+2015-07-01 21:47:52	silviof	LetoThe2nd: Sure for the general overview is LDD3 essential (And yes I have read it too, and it is outdated^^)
+2015-07-01 21:48:57	LetoThe2nd	silviof: agreed, one should know that in the end this function does the magic. but looking at current driver code, it seems to be misleading - and the examples using it are quite bloated with creating their own class etc too and all that.
+2015-07-01 21:49:09	LetoThe2nd	(my $.02)
+2015-07-01 21:50:09	-->	ice9 (~ice9@cybertechlab.com) has joined #kernelnewbies
+2015-07-01 21:51:11	-->	dschatzberg (~dansch01@217.140.110.135) has joined #kernelnewbies
+2015-07-01 21:52:30	-->	ego (~ego@122.167.119.227) has joined #kernelnewbies
+2015-07-01 21:52:53	<--	AnilV (~AnilV@121.244.87.116) has quit (Ping timeout: 480 seconds)
+2015-07-01 21:54:26	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Ping timeout: 480 seconds)
+2015-07-01 21:54:31	dschatzberg	I'm trying to use UIO for a PCI device, I add a new_id to the uio_pci_generic driver, but there doesn't appear to be a driver attached to the device
+2015-07-01 21:57:18	<--	annodomini (~lambda@000161aa.user.oftc.net) has quit (Quit: annodomini)
+2015-07-01 21:59:49	<--	towo^work (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-07-01 22:09:11	-->	annodomini (~lambda@000161aa.user.oftc.net) has joined #kernelnewbies
+2015-07-01 22:09:38	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-01 22:09:48	<--	N8Fear_ (~n8fear@zb3e1.pia.fu-berlin.de) has quit (Ping timeout: 480 seconds)
+2015-07-01 22:10:33	-->	isaky (~isaky@145.173.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-07-01 22:13:16	fxmulder	eudyptula seems to be taking 2 weeks+ for each task these days
+2015-07-01 22:13:27	fxmulder	was hoping to get the next task before the 3 day weekend
+2015-07-01 22:21:44	error27	copy_from_user() seems to allow people to copy more than INT_MAX bytes?
+2015-07-01 22:22:07	error27	some security vulns could be avoided by capping it
+2015-07-01 22:22:22	LFSveteran	switched back to device_create and device_destroy, thought that was outdated
+2015-07-01 22:28:24	-->	N8Fear (~n8fear@zb3e1.pia.fu-berlin.de) has joined #kernelnewbies
+2015-07-01 22:40:39	<--	MrMonkey (~mkravetz@static-50-53-81-168.bvtn.or.frontiernet.net) has quit (Quit: has left to look for bananas and peanuts)
+2015-07-01 22:41:43	-->	MrMonkey (~mkravetz@static-50-53-81-168.bvtn.or.frontiernet.net) has joined #kernelnewbies
+2015-07-01 22:42:51	<--	LetoThe2nd (~jd@s15387740.onlinehome-server.info) has quit (Ping timeout: 480 seconds)
+2015-07-01 22:43:19	-->	nur (~hussein@175.142.35.25) has joined #kernelnewbies
+2015-07-01 22:48:50	<--	monstr (~monstr@nat-35.starnet.cz) has quit (Ping timeout: 480 seconds)
+2015-07-01 22:51:10	-->	chandan__ (~chandan@122.167.31.250) has joined #kernelnewbies
+2015-07-01 22:51:13	-->	LetoThe2nd (~jd@s15387740.onlinehome-server.info) has joined #kernelnewbies
+2015-07-01 22:51:49	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-01 22:55:31	-->	plutoniix (~plutoniix@node-n4k.pool-101-108.dynamic.totbb.net) has joined #kernelnewbies
+2015-07-01 22:55:47	--	plutoniix is now known as xiinotulp
+2015-07-01 22:57:19	-->	yogeshrt (~yogesh@106.221.139.211) has joined #kernelnewbies
+2015-07-01 22:57:37	<--	fralle (~fralle@83.241.162.219) has quit (Quit: leaving)
+2015-07-01 22:57:52	-->	fmoreau (~fmoreau@gem13-1-78-228-1-221.fbx.proxad.net) has joined #kernelnewbies
+2015-07-01 22:58:01	nikbor	error27, wouldn't that make transferring more than 2 gigs at once impossible ?
+2015-07-01 23:00:05	-->	dvhart (~dvhart@134.134.139.70) has joined #kernelnewbies
+2015-07-01 23:03:51	error27	nikbor: do we ever do that?
+2015-07-01 23:05:45	nikbor	can't think of a sensible scenario :)
+2015-07-01 23:06:29	derRichard	2g in copy_from_user()? oh boy
+2015-07-01 23:06:56	<--	yogeshrt (~yogesh@106.221.139.211) has quit (Ping timeout: 480 seconds)
+2015-07-01 23:06:59	error27	3afe9f849600 ('Copy the kernel module data from user space in chunks').  This says that loading modules is the largest copy_from_user() that anyone can think of
+2015-07-01 23:07:25	derRichard	which makes sense
+2015-07-01 23:07:33	derRichard	everything else is insane
+2015-07-01 23:07:44	luisbg	silviof: the LDD3 is still a great read, even if outdated
+2015-07-01 23:07:51	error27	so we could easily add a limit in copy_from_user() and tell everyone else to use copy_from_user_chunked() if they need a huge copy
+2015-07-01 23:07:52	luisbg	plus you get some quality experience by updating the example code :)
+2015-07-01 23:08:20	derRichard	luisbg++
+2015-07-01 23:08:30	luisbg	derRichard: hi! :)
+2015-07-01 23:08:54	luisbg	fxmulder: be patient. a task of mine took 2 weeks and then the next one was reviewed the next day.
+2015-07-01 23:08:55	<--	annodomini (~lambda@000161aa.user.oftc.net) has quit (Quit: annodomini)
+2015-07-01 23:09:17	luisbg	fxmulder: if you think about it, it is normal to wait a week for a patch to be reviewed... so it is very realistic training for kernel development :)
+2015-07-01 23:09:47	peterz	I wish I could review everything within a week
+2015-07-01 23:09:55	peterz	:-(
+2015-07-01 23:10:17	luisbg	error27: copy_from_user() returns the amount that was copied, so you just need to check the return and repeat with proper offset
+2015-07-01 23:10:24	luisbg	peterz: need help?
+2015-07-01 23:11:02	luisbg	peterz: a lot of people in kernel newbies ml and kernel mentors asking for "things to do", helping with reviews would be a good idea IMHO
+2015-07-01 23:11:40	peterz	not sure, often it requires to really know a subsystem well before you can judge a patch
+2015-07-01 23:12:11	luisbg	right, you would need to doublecheck all positives
+2015-07-01 23:12:22	luisbg	but at least you could save some time in the negatives
+2015-07-01 23:12:36	luisbg	just an idea :)
+2015-07-01 23:14:45	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-01 23:15:20	-->	seschwar (~seschwar@2a02:8109:b00:1e84::2) has joined #kernelnewbies
+2015-07-01 23:15:26	-->	yogeshrt (~yogesh@14.140.2.178) has joined #kernelnewbies
+2015-07-01 23:18:47	error27	luisbg: copy_from_user() doesn't return the amount that was copied, it returns the amount not copied...  anyway that's irrelevant.
+2015-07-01 23:20:16	error27	luisbg: my idea is "copy_from_user(dest, src, -1)".  it will overflow the "dest" buffer.  you set up src so you know how much it will corrupt before returning failure.
+2015-07-01 23:20:36	<--	ego (~ego@122.167.119.227) has quit (Ping timeout: 480 seconds)
+2015-07-01 23:20:41	luisbg	125  * Returns number of bytes that could not be copied.
+2015-07-01 23:20:43	luisbg	126  * On success, this will be zero.
+2015-07-01 23:20:45	luisbg	correct :) sorry about that
+2015-07-01 23:20:59	error27	but if we cap the len variable then we can avoid this overflow
+2015-07-01 23:21:52	error27	these sorts of underflows are pretty common.  i have a patch for one right now in some obsolete driver which is why i was thinking about it.
+2015-07-01 23:23:41	luisbg	error27: yes, copy_from_user() expects checks to happen before being called
+2015-07-01 23:23:47	luisbg	like using access_ok()
+2015-07-01 23:24:11	error27	luisbg: no.  copy_from_user() has access_ok() built in.
+2015-07-01 23:26:14	luisbg	error27: not debating you, just learning
+2015-07-01 23:26:16	luisbg	75  * Copy data from kernel space to user space.  Caller must check
+2015-07-01 23:26:18	luisbg	 76  * the specified block with access_ok() before calling this function.
+2015-07-01 23:26:22	luisbg	http://lxr.free-electrons.com/source/arch/x86/include/asm/uaccess_32.h#L15
+2015-07-01 23:26:23	-->	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has joined #kernelnewbies
+2015-07-01 23:26:37	<--	chandan__ (~chandan@122.167.31.250) has quit (Quit: WeeChat 1.2)
+2015-07-01 23:26:38	error27	luisbg: an underflow is when you do "if (size > limit) {" but you forget that size can be negative.  it is a fairly common mistake, but not as common as you might think because of type promotion and because sizeof() is unsigned long.
+2015-07-01 23:26:44	<--	nur (~hussein@175.142.35.25) has quit (Quit: Leaving)
+2015-07-01 23:26:51	<--	phant0mas (~quassel@ppp-2-84-29-94.home.otenet.gr) has quit (Remote host closed the connection)
+2015-07-01 23:27:48	error27	luisbg: __copy_from_user() doesn't have access_ok() built in.  yes.
+2015-07-01 23:27:52	luisbg	yes, I was going to mention it is unsigned
+2015-07-01 23:28:31	luisbg	error27: this is interesting :) I used copy_from_user() very recently for a little toy driver
+2015-07-01 23:32:15	-->	chandan__ (~chandan@122.167.31.250) has joined #kernelnewbies
+2015-07-01 23:32:30	-->	phant0mas (~quassel@ppp-2-84-29-94.home.otenet.gr) has joined #kernelnewbies
+2015-07-01 23:37:06	<--	LFSveteran (~LFSvetera@86.92.180.18) has quit (Read error: Connection reset by peer)
+2015-07-01 23:49:21	-->	shaggy (~shaggy@2602:306:39c5:bf40:1a3d:a2ff:fe08:cad8) has joined #kernelnewbies
+2015-07-01 23:49:59	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-07-01 23:51:36	<--	isaky (~isaky@145.173.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-07-01 23:56:24	<--	joern (~joern@0001324b.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 00:02:36	-->	Judge_Dredd (~jd@thpool4-244.jinr.ru) has joined #kernelnewbies
+2015-07-02 00:03:33	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 00:03:53	<--	Cromulent (~Cromulent@cpc1-reig5-2-0-cust251.6-3.cable.virginm.net) has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+2015-07-02 00:18:54	<--	cwx (~cwx@2620:0:100e:403:f014:e944:6589:ecf0) has quit (Quit: WeeChat 0.4.2)
+2015-07-02 00:19:16	-->	LFSveteran (~LFSvetera@86.92.180.18) has joined #kernelnewbies
+2015-07-02 00:20:10	LFSveteran	is there a way to check if a class exists before calling class_create ?
+2015-07-02 00:21:46	<--	MrMonkey (~mkravetz@static-50-53-81-168.bvtn.or.frontiernet.net) has quit (Quit: has left to look for bananas and peanuts)
+2015-07-02 00:22:19	gregkh	LFSveteran: you should "know" if you have registered it or not, as you are the one in charge of calling that function.
+2015-07-02 00:22:34	gregkh	LFSveteran: so no, there isn't a way as it's up to the caller to be sane :)
+2015-07-02 00:24:56	-->	ksenija (~ksenija@77-46-215-254.static.isp.telekom.rs) has joined #kernelnewbies
+2015-07-02 00:25:10	<--	Judge_Dredd (~jd@thpool4-244.jinr.ru) has quit (Ping timeout: 480 seconds)
+2015-07-02 00:27:46	-->	joern (~joern@0001324b.user.oftc.net) has joined #kernelnewbies
+2015-07-02 00:28:43	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 00:28:59	<--	LFSveteran (~LFSvetera@86.92.180.18) has quit (Quit: Leaving)
+2015-07-02 00:31:59	<--	jwhitmore (~jwhitmore@109.76.238.113) has quit (Ping timeout: 480 seconds)
+2015-07-02 00:32:29	-->	LFSveteran (~LFSvetera@86.92.180.18) has joined #kernelnewbies
+2015-07-02 00:37:59	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 00:43:20	-->	MrMonkey (~mkravetz@static-50-53-81-168.bvtn.or.frontiernet.net) has joined #kernelnewbies
+2015-07-02 00:47:05	luisbg	not even gobject does that check for you
+2015-07-02 00:47:47	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Quit: Leaving)
+2015-07-02 00:49:16	<--	florian_ (~florian@mtl93-16-83-157-220-105.fbx.proxad.net) has quit (Remote host closed the connection)
+2015-07-02 00:49:33	-->	ricardobarbosams (~ricardoba@179.124.11.36) has joined #kernelnewbies
+2015-07-02 00:52:18	-->	Judge_Dredd (~ragim@176.193.246.9) has joined #kernelnewbies
+2015-07-02 00:52:40	<--	doener (~doener@5.147.61.64) has quit (Quit: leaving)
+2015-07-02 01:00:16	-->	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has joined #kernelnewbies
+2015-07-02 01:01:08	-->	shylesh__ (~shylesh@1.23.221.23) has joined #kernelnewbies
+2015-07-02 01:02:35	<--	xerpi_ (~xerpi@203.Red-83-40-148.dynamicIP.rima-tde.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 01:03:14	<--	baldrick1 (~duncan@185.19.101.145) has quit (Quit: Leaving.)
+2015-07-02 01:05:41	-->	cwx (~cwx@2620:0:100e:403:18e4:db9a:5650:fb3c) has joined #kernelnewbies
+2015-07-02 01:07:37	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-07-02 01:09:05	-->	excelsior (~vijay@1.23.130.70) has joined #kernelnewbies
+2015-07-02 01:11:40	-->	praveendath92 (~praveen@dslb-084-059-139-113.084.059.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-02 01:13:20	-->	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has joined #kernelnewbies
+2015-07-02 01:14:42	-->	karol (~chatzilla@acro86.neoplus.adsl.tpnet.pl) has joined #kernelnewbies
+2015-07-02 01:14:59	poulecaca	hi there.
+2015-07-02 01:16:05	poulecaca	when comming back from suspend to disk mode, the wifi takes about 1 minutes to connecting back to an hidden ssid AP (normal ssid AP are fine)
+2015-07-02 01:16:23	-->	jwhitmore (~jwhitmore@109.76.238.113) has joined #kernelnewbies
+2015-07-02 01:16:36	poulecaca	should I focus on wifi driver, or it looks more like a wpa_supplicant issue ?
+2015-07-02 01:17:00	-->	nur (~hussein@175.142.35.25) has joined #kernelnewbies
+2015-07-02 01:17:40	poulecaca	running "wpa_cli reassociate" does not help
+2015-07-02 01:25:58	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 01:34:54	<--	bsingh (~bsingh@121.244.87.116) has quit (Quit: Lost terminal)
+2015-07-02 01:34:54	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 01:41:46	luisbg	poulecaca: one minute is excesive, normally it should be similar to the same amount of time it takes to connect if you switch the wifi off and on
+2015-07-02 01:42:01	luisbg	poulecaca: how long does it take when you do that?
+2015-07-02 01:43:35	<--	fmoreau (~fmoreau@gem13-1-78-228-1-221.fbx.proxad.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 01:45:47	-->	phinaliumz (~phinalium@olohuone.kortex.jyu.fi) has joined #kernelnewbies
+2015-07-02 01:52:09	<--	shylesh__ (~shylesh@1.23.221.23) has quit (Ping timeout: 480 seconds)
+2015-07-02 01:57:14	<--	pjp (~pjp@122.161.181.202) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:02:57	<--	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has quit (Remote host closed the connection)
+2015-07-02 02:04:50	poulecaca	luisbg: it is excesive because it takes about 10sec to reconnect an AP that broadcast its SSID
+2015-07-02 02:05:41	poulecaca	but I don't know really where to investigate, I don't know if it is module's fault or wpa_supplicant's one
+2015-07-02 02:06:36	luisbg	poulecaca: I would expect it is userspace not realizing it needs to reconnect when you wakeup
+2015-07-02 02:07:35	-->	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has joined #kernelnewbies
+2015-07-02 02:08:24	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 02:09:51	poulecaca	luisbg: I would have expected this, but doing "wpa_cli reassociate", does not help
+2015-07-02 02:10:29	-->	Timmy_L (~Timmy_L@c83-254-141-189.bredband.comhem.se) has joined #kernelnewbies
+2015-07-02 02:10:50	<--	chandan_ (~arch@122.167.31.250) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:12:49	<--	chandan__ (~chandan@122.167.31.250) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:20:12	<--	amc (~amc@78.250.146.91) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:21:18	-->	baldrick (~duncan@212-123-27-210.iFiber.telenet-ops.be) has joined #kernelnewbies
+2015-07-02 02:22:22	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 02:22:28	luisbg	poulecaca: I can't help with wpa supplicant, unfortunately :(
+2015-07-02 02:22:29	<--	baldrick (~duncan@212-123-27-210.iFiber.telenet-ops.be) has quit
+2015-07-02 02:22:38	luisbg	poulecaca: you should ask in the netdev mailing list
+2015-07-02 02:23:16	luisbg	http://vger.kernel.org/vger-lists.html#netdev
+2015-07-02 02:23:20	-->	baldrick (~duncan@212-123-27-210.iFiber.telenet-ops.be) has joined #kernelnewbies
+2015-07-02 02:28:14	<--	phinaliumz (~phinalium@olohuone.kortex.jyu.fi) has quit (Quit: What does this button do?)
+2015-07-02 02:33:39	<--	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:43:26	-->	annodomini (~lambda@000161aa.user.oftc.net) has joined #kernelnewbies
+2015-07-02 02:44:42	-->	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has joined #kernelnewbies
+2015-07-02 02:46:22	<--	N8Fear (~n8fear@zb3e1.pia.fu-berlin.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:48:24	<--	snoonan (~snoonan@2002:6898:6b85::1) has quit (Quit: ZNC - http://znc.in)
+2015-07-02 02:48:26	<--	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has quit (Ping timeout: 480 seconds)
+2015-07-02 02:49:56	-->	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has joined #kernelnewbies
+2015-07-02 02:50:19	-->	snoonan (~snoonan@2002:6898:6b85::1) has joined #kernelnewbies
+2015-07-02 02:52:56	-->	nyc (~nyc@2601:187:4200:d698:55a8:3d6a:a823:d8f8) has joined #kernelnewbies
+2015-07-02 02:57:59	-->	totalduck (~ryans@5-179-102-29.glidedsl.com) has joined #kernelnewbies
+2015-07-02 02:59:17	<--	karol (~chatzilla@acro86.neoplus.adsl.tpnet.pl) has quit (Quit: ChatZilla 0.9.91.1 [Firefox 42.0a1/20150701030207])
+2015-07-02 03:04:23	<--	Judge_Dredd (~ragim@176.193.246.9) has quit (Remote host closed the connection)
+2015-07-02 03:05:54	-->	utack_ (~utack@ip92346659.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-07-02 03:05:56	<--	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Read error: Connection reset by peer)
+2015-07-02 03:06:55	<--	nur (~hussein@175.142.35.25) has quit (Quit: Leaving)
+2015-07-02 03:09:29	<--	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has quit (Ping timeout: 480 seconds)
+2015-07-02 03:14:47	<--	utack_ (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Remote host closed the connection)
+2015-07-02 03:15:34	<--	excelsior (~vijay@1.23.130.70) has quit (Quit: Lost terminal)
+2015-07-02 03:19:14	-->	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has joined #kernelnewbies
+2015-07-02 03:20:06	-->	nicst (~user@f054022123.adsl.alicedsl.de) has joined #kernelnewbies
+2015-07-02 03:22:54	<--	mawiegand (~marcel@p5088CA89.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 03:27:45	-->	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-02 03:29:36	<--	valdis (~valdis@2001:468:c80:2103:40a:30ae:2c42:9c56) has quit (Ping timeout: 480 seconds)
+2015-07-02 03:36:41	-->	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-07-02 03:40:40	-->	N8Fear (~n8fear@p54A04AFD.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-02 03:44:42	<--	praveendath92 (~praveen@dslb-084-059-139-113.084.059.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 03:54:38	-->	tinti (~tinti@186.206.255.206) has joined #kernelnewbies
+2015-07-02 03:54:38	<--	cosmoecho (~cosmoecho@inet-hqmc04-o.oracle.com) has quit (Remote host closed the connection)
+2015-07-02 03:57:39	<--	ksenija (~ksenija@77-46-215-254.static.isp.telekom.rs) has quit (Quit: Leaving)
+2015-07-02 03:57:57	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 04:04:43	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 04:08:51	<--	twoface88 (~Thunderbi@195.34.196.131) has quit (Quit: twoface88)
+2015-07-02 04:10:14	-->	cosmoecho (~cosmoecho@inet-hqmc06-o.oracle.com) has joined #kernelnewbies
+2015-07-02 04:12:23	-->	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has joined #kernelnewbies
+2015-07-02 04:12:48	-->	xerpi (~xerpi@234.Red-83-40-146.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-07-02 04:12:52	-->	xerpi_ (~xerpi@234.Red-83-40-146.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-07-02 04:13:15	<--	xerpi_ (~xerpi@234.Red-83-40-146.dynamicIP.rima-tde.net) has quit
+2015-07-02 04:14:14	<--	totalduck (~ryans@5-179-102-29.glidedsl.com) has quit (Ping timeout: 480 seconds)
+2015-07-02 04:21:00	-->	jstein (~quassel@xdsl-213-196-225-241.netcologne.de) has joined #kernelnewbies
+2015-07-02 04:21:16	<--	dschatzberg (~dansch01@217.140.110.135) has quit (Quit: Leaving)
+2015-07-02 04:23:07	-->	praveendath92 (~praveen@dslb-084-059-139-113.084.059.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-02 04:30:34	-->	dansan (~daniel@76-215-41-237.lightspeed.ftwotx.sbcglobal.net) has joined #kernelnewbies
+2015-07-02 04:33:42	<--	eyck (~eyck@u28n61.nowanet.pl) has quit (Remote host closed the connection)
+2015-07-02 04:33:44	-->	eyck (~eyck@u28n61.nowanet.pl) has joined #kernelnewbies
+2015-07-02 04:39:07	-->	totalduck (~ryans@5-179-102-29.glidedsl.com) has joined #kernelnewbies
+2015-07-02 04:40:41	<--	Jackneill (~Jackneill@178-164-224-191.pool.digikabel.hu) has quit (Remote host closed the connection)
+2015-07-02 04:40:46	<--	ph4nt0mas (~Manolis@ppp-2-84-29-94.home.otenet.gr) has quit (Remote host closed the connection)
+2015-07-02 04:54:09	-->	isaky (~isaky@145.173.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-07-02 04:54:18	-->	Jesin (~Jesin@dhcp123-157.eecs.lehigh.edu) has joined #kernelnewbies
+2015-07-02 04:54:44	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 04:55:14	<--	vmlinuz (~vmlinuz@32.104.18.200) has quit (Quit: WeeChat 0.4.3)
+2015-07-02 04:56:05	<--	dvhart (~dvhart@134.134.139.70) has quit (Quit: Leaving)
+2015-07-02 04:57:03	-->	twoface88 (~Thunderbi@195.34.196.131) has joined #kernelnewbies
+2015-07-02 05:03:14	<--	cosmoecho (~cosmoecho@inet-hqmc06-o.oracle.com) has quit (Remote host closed the connection)
+2015-07-02 05:06:10	<--	seschwar (~seschwar@2a02:8109:b00:1e84::2) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:07:04	<--	Timmy_L (~Timmy_L@c83-254-141-189.bredband.comhem.se) has quit (Quit: leaving)
+2015-07-02 05:08:39	-->	SturmFlut (~sturmflut@x5f73ab49.dyn.telefonica.de) has joined #kernelnewbies
+2015-07-02 05:09:42	<--	dansan (~daniel@76-215-41-237.lightspeed.ftwotx.sbcglobal.net) has quit (Quit: Konversation terminated!)
+2015-07-02 05:11:19	<--	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:13:46	<--	quintela (~quintela@trasno.trasno.org) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:14:28	SturmFlut	I have a device with a MediaTek MT6582 SoC. The SoC has an internal Boot ROM that's hardwired to a physical address range, and I want to dump it, so I built a kernel with CONFIG_DEVMEM=y and CONFIG_STRICT_DEVMEM=n, but when trying to read the matching region from /dev/mem using dd, I get a "Bad address" error.
+2015-07-02 05:14:29	<--	LFSveteran (~LFSvetera@86.92.180.18) has quit (Quit: Leaving)
+2015-07-02 05:14:30	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-07-02 05:14:39	SturmFlut	Is the approach itself flawed?
+2015-07-02 05:19:10	<--	totalduck (~ryans@5-179-102-29.glidedsl.com) has quit (Quit: WeeChat 1.2)
+2015-07-02 05:20:33	-->	dansan (~daniel@76-215-41-237.lightspeed.ftwotx.sbcglobal.net) has joined #kernelnewbies
+2015-07-02 05:20:59	<--	baldrick (~duncan@212-123-27-210.iFiber.telenet-ops.be) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:22:26	-->	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has joined #kernelnewbies
+2015-07-02 05:25:00	nicst	SturmFlut: Maybe this one helps: http://stackoverflow.com/questions/22364076/why-dd-returns-bad-address-error-with-dev-mem
+2015-07-02 05:27:12	<--	isaky (~isaky@145.173.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-07-02 05:27:38	SturmFlut	nicst: Thanks, I checked that already. I've looked over the kernel source and /proc/iomem, and I think the problem might be that this specific address range is not included in /proc/iomem, so the kernel doesn't want to access it
+2015-07-02 05:30:03	nicst	SturmFlut: Is it listed in /proc/vmallocinfo?
+2015-07-02 05:31:00	SturmFlut	nicst: Doesn't look like it, no
+2015-07-02 05:32:58	SturmFlut	nicst: I would probably have to add this range manually somehow?
+2015-07-02 05:33:23	dmick	what is the overall purpose of the code in arch/x86/realmode
+2015-07-02 05:33:29	dmick	vs arch/x86/boot?
+2015-07-02 05:36:21	-->	nand1 (~user@c-24-130-233-231.hsd1.ca.comcast.net) has joined #kernelnewbies
+2015-07-02 05:38:49	<--	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has quit (Quit: Ex-Chat)
+2015-07-02 05:44:19	poulecaca	luisbg: thanks you for your help, I will try to ask netdev
+2015-07-02 05:44:32	nicst	SturmFlut: Maybe this might help, although I've got no clue how.
+2015-07-02 05:53:18	-->	mgorbach (~mgorbach@pool-100-0-124-175.bstnma.fios.verizon.net) has joined #kernelnewbies
+2015-07-02 05:53:31	-->	N8Fear_ (~n8fear@p54A04AFD.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-02 05:55:14	<--	jwhitmore (~jwhitmore@109.76.238.113) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:56:35	<--	N8Fear (~n8fear@p54A04AFD.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 05:57:57	<--	tinti (~tinti@186.206.255.206) has quit (Ping timeout: 480 seconds)
+2015-07-02 06:01:29	-->	seschwar (~seschwar@2a02:8109:b00:1e84::2) has joined #kernelnewbies
+2015-07-02 06:01:36	<--	tklauser (~noone@sym2.noone.org) has quit (Read error: Connection reset by peer)
+2015-07-02 06:02:33	-->	tklauser (~noone@sym2.noone.org) has joined #kernelnewbies
+2015-07-02 06:02:59	<--	jstein (~quassel@xdsl-213-196-225-241.netcologne.de) has quit (Remote host closed the connection)
+2015-07-02 06:05:33	nicst	SturmFlut: You could try ioremap.
+2015-07-02 06:09:15	<--	kdr2_ (~kdr2@124.166.244.39) has quit (Ping timeout: 480 seconds)
+2015-07-02 06:09:52	--	f8l is now known as Guest3633
+2015-07-02 06:09:59	<--	ricardobarbosams (~ricardoba@179.124.11.36) has quit (Ping timeout: 480 seconds)
+2015-07-02 06:10:27	-->	f8l (~f8l@dhcp95-108-67-92.eaw.com.pl) has joined #kernelnewbies
+2015-07-02 06:15:09	<--	Guest3633 (~f8l@dhcp95-108-67-92.eaw.com.pl) has quit (Ping timeout: 480 seconds)
+2015-07-02 06:17:44	-->	kdr2_ (~kdr2@124.166.244.39) has joined #kernelnewbies
+2015-07-02 06:19:43	<--	hevauq (~anuz@host86-161-253-224.range86-161.btcentralplus.com) has quit (Quit: Leaving.)
+2015-07-02 06:26:41	<--	shaggy (~shaggy@2602:306:39c5:bf40:1a3d:a2ff:fe08:cad8) has quit (Quit: Leaving)
+2015-07-02 06:27:15	<--	seschwar (~seschwar@2a02:8109:b00:1e84::2) has quit (Quit: :qa)
+2015-07-02 06:56:54	<--	rendar_ (~rendar@host115-139-dynamic.252-95-r.retail.telecomitalia.it) has quit (Quit: Leaving)
+2015-07-02 06:57:30	<--	praveendath92 (~praveen@dslb-084-059-139-113.084.059.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 07:02:03	<--	damentz (~damentz@cpe-66-68-180-163.austin.res.rr.com) has quit (Remote host closed the connection)
+2015-07-02 07:08:55	<--	SturmFlut (~sturmflut@x5f73ab49.dyn.telefonica.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 07:10:28	<--	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Remote host closed the connection)
+2015-07-02 07:13:18	<--	JackWinter (~jack@vodsl-9583.vo.lu) has quit (Remote host closed the connection)
+2015-07-02 07:14:01	-->	JackWinter (~jack@vodsl-9583.vo.lu) has joined #kernelnewbies
+2015-07-02 07:29:36	<--	hemant (~hemant@106.51.132.126) has left #kernelnewbies
+2015-07-02 07:34:30	-->	damentz (~damentz@cpe-66-68-180-163.austin.res.rr.com) has joined #kernelnewbies
+2015-07-02 07:38:16	<--	clopez (~tau@neutrino.es) has quit (Read error: Connection reset by peer)
+2015-07-02 07:39:43	-->	hemant (~hemant@106.51.132.126) has joined #kernelnewbies
+2015-07-02 07:46:30	-->	clopez (~tau@neutrino.es) has joined #kernelnewbies
+2015-07-02 07:59:22	<--	fstd (~fstd@xdsl-84-44-222-68.netcologne.de) has quit (Remote host closed the connection)
+2015-07-02 07:59:33	-->	fstd (~fstd@xdsl-87-78-81-2.netcologne.de) has joined #kernelnewbies
+2015-07-02 08:04:53	<--	imasheep (~rostedt@cpe-67-246-153-56.stny.res.rr.com) has quit (Quit: Getting off stoned server - dircproxy 1.0.5)
+2015-07-02 08:05:20	-->	imasheep (~rostedt@cpe-67-246-153-56.stny.res.rr.com) has joined #kernelnewbies
+2015-07-02 08:24:49	<--	nicst (~user@f054022123.adsl.alicedsl.de) has quit (Remote host closed the connection)
+2015-07-02 08:43:27	-->	Babamus (~Christian@0189400845.0.fullrate.dk) has joined #kernelnewbies
+2015-07-02 08:44:13	-->	jfoxdev (~jfoxdev@216.49.19.166.res-cmts.hzl2.ptd.net) has joined #kernelnewbies
+2015-07-02 08:45:02	<--	kzak (~kzak@109.54.broadband13.iol.cz) has quit (Ping timeout: 480 seconds)
+2015-07-02 08:46:28	--	irc: disconnected from server
+2015-07-02 21:29:14	-->	alhunt (~alhunt@124-148-210-96.dyn.iinet.net.au) has joined #kernelnewbies
+2015-07-02 21:29:14	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-07-02 21:29:14	--	Topic set by derRichard (~derRichar@pippin.sigma-star.at) on Fri, 16 Jan 2015 20:54:30
+2015-07-02 21:29:14	--	Channel #kernelnewbies: 298 nicks (0 ops, 0 voices, 298 normals)
+2015-07-02 21:29:14	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-07-02 21:29:17	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-07-02 21:31:10	-->	shaggy (~shaggy@2602:306:39c5:bf40:1a3d:a2ff:fe08:cad8) has joined #kernelnewbies
+2015-07-02 21:36:43	-->	Judge_Dredd (~jd@thpool4-244.jinr.ru) has joined #kernelnewbies
+2015-07-02 21:40:22	<--	MoritzSchrey (~mschrey@ip-22.ias.rwth-aachen.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 21:41:12	luisbg	shhhh people sleeping ;)
+2015-07-02 21:42:05	-->	montjoie (~montjoie@ANice-651-1-256-42.w86-205.abo.wanadoo.fr) has joined #kernelnewbies
+2015-07-02 21:42:58	montjoie	hello, do someone know what are the reasons why someone could be unscribed from one kernel.org mailinglist ?
+2015-07-02 21:44:02	derRichard	if your mail or mails on your domain bounce too often
+2015-07-02 21:45:44	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Ping timeout: 480 seconds)
+2015-07-02 21:46:13	montjoie	it is gmail
+2015-07-02 21:46:37	-->	yogeshrt (~yogesh@106.221.207.215) has joined #kernelnewbies
+2015-07-02 21:49:10	fxmulder	montjoie: I had that problem too
+2015-07-02 21:49:42	fxmulder	researching it looks like gmail will bounce spam messages if any are sent over the list
+2015-07-02 21:49:51	<--	field^Mop (~fallinu@dslb-092-074-237-228.092.074.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-02 21:49:55	montjoie	which list ? it was from linux-crypto for myself
+2015-07-02 21:49:57	fxmulder	which has been the cause of a lot of people being removed from mailing lists
+2015-07-02 21:50:19	montjoie	ok thanks
+2015-07-02 21:51:11	fxmulder	the mailing list software should be able to recognize that most messages aren't being bounced
+2015-07-02 21:51:26	-->	MoritzSchrey (~mschrey@ip-22.ias.rwth-aachen.de) has joined #kernelnewbies
+2015-07-02 21:55:16	<--	monstr (~monstr@nat-35.starnet.cz) has quit (Ping timeout: 480 seconds)
+2015-07-02 21:59:03	<--	towo^work (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-07-02 22:01:21	<--	nyc (~nyc@2601:187:4200:d698:55a8:3d6a:a823:d8f8) has quit (Ping timeout: 480 seconds)
+2015-07-02 22:11:00	<--	amc (~amc@78.250.45.184) has quit (Ping timeout: 480 seconds)
+2015-07-02 22:11:14	-->	m-ric (~evigier@2607:fad8:4:6:ad4f:6d9d:270a:b378) has joined #kernelnewbies
+2015-07-02 22:14:05	<--	fralle (~fralle@83.241.162.219) has quit (Quit: leaving)
+2015-07-02 22:14:17	-->	amc (~amc@78.250.45.184) has joined #kernelnewbies
+2015-07-02 22:15:50	-->	rvalles (~nobody@89.128.239.114) has joined #kernelnewbies
+2015-07-02 22:16:14	<--	shylesh__ (~shylesh@123.136.222.61) has quit (Ping timeout: 480 seconds)
+2015-07-02 22:26:07	<--	luisbg (~luisbg@2001:41d0:2:2741::) has quit (Remote host closed the connection)
+2015-07-02 22:26:24	<--	yogeshrt (~yogesh@106.221.207.215) has quit (Ping timeout: 480 seconds)
+2015-07-02 22:26:32	<--	zx2c4 (~zx2c4@monder.zx2c4.com) has left #kernelnewbies (ZX2C4 Chat)
+2015-07-02 22:27:13	-->	luisbg (~luisbg@2001:41d0:2:2741::) has joined #kernelnewbies
+2015-07-02 22:32:23	-->	N8Fear_ (~n8fear@p3EE3DE84.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-02 22:36:34	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-02 22:44:39	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-07-02 22:46:57	<--	chandan_ (~arch@122.167.31.250) has quit (Ping timeout: 480 seconds)
+2015-07-02 22:47:54	--	plutonux is now known as xiinotulp
+2015-07-02 22:49:59	<--	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-02 22:59:34	-->	v0n (~vivien@147.ip-167-114-97.net) has joined #kernelnewbies
+2015-07-02 22:59:51	-->	MrMonkey (~mkravetz@static-50-53-81-168.bvtn.or.frontiernet.net) has joined #kernelnewbies
+2015-07-02 23:00:49	-->	nicst (~user@f054022123.adsl.alicedsl.de) has joined #kernelnewbies
+2015-07-02 23:01:19	-->	rip_ (uid50252@id-50252.charlton.irccloud.com) has joined #kernelnewbies
+2015-07-02 23:04:04	<--	valdis (~valdis@c-73-171-123-11.hsd1.va.comcast.net) has quit (Remote host closed the connection)
+2015-07-02 23:04:49	<--	nikbor (~n.borisov@admins.1h.com) has quit (Quit: Leaving)
+2015-07-02 23:05:56	-->	valdis (~valdis@c-73-171-123-11.hsd1.va.comcast.net) has joined #kernelnewbies
+2015-07-02 23:06:29	-->	pjp (~pjp@122.161.181.202) has joined #kernelnewbies
+2015-07-02 23:06:44	<--	Judge_Dredd (~jd@thpool4-244.jinr.ru) has quit (Ping timeout: 480 seconds)
+2015-07-02 23:16:30	-->	raphaelsc (~raphaelsc@200-141-181-28.user.veloxzone.com.br) has joined #kernelnewbies
+2015-07-02 23:26:38	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-02 23:27:22	-->	yogeshrt (~yogesh@106.221.206.93) has joined #kernelnewbies
+2015-07-02 23:29:05	-->	seschwar (~seschwar@2a02:8109:b00:1e84:d267:e5ff:fe33:23d8) has joined #kernelnewbies
+2015-07-02 23:31:54	-->	gcl (~gcl@92.40.249.115.threembb.co.uk) has joined #kernelnewbies
+2015-07-02 23:32:57	<--	kamalesh (~kamalesh@123.136.222.87) has quit (Ping timeout: 480 seconds)
+2015-07-02 23:33:37	<--	bsingh (~bsingh@121.244.87.116) has quit (Quit: Lost terminal)
+2015-07-02 23:39:14	<--	joern (~joern@0001324b.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-07-02 23:39:34	<--	phant0mas (~quassel@ppp-2-84-29-94.home.otenet.gr) has quit (Remote host closed the connection)
+2015-07-02 23:40:08	-->	Judge_Dredd (~ragim@ip-95-221-208-124.bb.netbynet.ru) has joined #kernelnewbies
+2015-07-02 23:42:09	-->	quintela (~quintela@trasno.trasno.org) has joined #kernelnewbies
+2015-07-02 23:42:53	-->	phant0mas (~quassel@ppp-2-84-29-94.home.otenet.gr) has joined #kernelnewbies
+2015-07-02 23:44:34	-->	meow` (~meow@147.ip-167-114-97.net) has joined #kernelnewbies
+2015-07-02 23:48:22	<--	damentz (~damentz@cpe-66-68-180-163.austin.res.rr.com) has quit (Remote host closed the connection)
+2015-07-02 23:51:57	-->	damentz (~damentz@cpe-66-68-180-163.austin.res.rr.com) has joined #kernelnewbies
+2015-07-02 23:56:37	<--	reijnden (~reijnden@80.100.202.204) has quit (Quit: reijnden)
+2015-07-02 23:57:11	<--	hyperair (~hyperair@000165f0.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 00:08:59	-->	hyperair (~hyperair@000165f0.user.oftc.net) has joined #kernelnewbies
+2015-07-03 00:11:24	-->	joern (~joern@0001324b.user.oftc.net) has joined #kernelnewbies
+2015-07-03 00:15:59	-->	kdr2__ (~kdr2@221.11.109.251) has joined #kernelnewbies
+2015-07-03 00:16:49	<--	gcl (~gcl@92.40.249.115.threembb.co.uk) has quit (Ping timeout: 480 seconds)
+2015-07-03 00:18:05	-->	pthomas (~sohny@106.51.138.244) has joined #kernelnewbies
+2015-07-03 00:19:29	<--	kdr2_ (~kdr2@123.138.17.228) has quit (Ping timeout: 480 seconds)
+2015-07-03 00:34:03	<--	coldshell (~coldshell@96.213.22.93.rev.sfr.net) has quit (Quit: ZNC - http://znc.in)
+2015-07-03 00:44:22	-->	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has joined #kernelnewbies
+2015-07-03 00:46:04	-->	Timmy_L (~Timmy_L@c83-254-141-189.bredband.comhem.se) has joined #kernelnewbies
+2015-07-03 00:46:18	-->	ksenija (~ksenija@77-46-215-254.static.isp.telekom.rs) has joined #kernelnewbies
+2015-07-03 00:48:11	<--	doener (~doener@5.147.61.64) has quit (Quit: leaving)
+2015-07-03 00:50:22	<--	xerpi (~xerpi@2.Red-88-9-0.staticIP.rima-tde.net) has quit (Quit: Leaving)
+2015-07-03 00:51:13	<--	valdis (~valdis@c-73-171-123-11.hsd1.va.comcast.net) has quit (Quit: Leaving.)
+2015-07-03 01:00:20	<--	vbabka (~quassel@nat1.scz.suse.com) has quit (Remote host closed the connection)
+2015-07-03 01:00:32	-->	vbabka (~quassel@nat1.scz.suse.com) has joined #kernelnewbies
+2015-07-03 01:03:12	<--	DrNick (~DrNick4@0000fb15.user.oftc.net) has quit (Quit: .)
+2015-07-03 01:05:45	-->	tyreld_ (~tyreld@c-73-11-40-222.hsd1.or.comcast.net) has joined #kernelnewbies
+2015-07-03 01:07:19	<--	tyreld (~tyreld@c-73-11-40-222.hsd1.or.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 01:13:16	-->	totalduck (~ryans@5-179-102-29.glidedsl.com) has joined #kernelnewbies
+2015-07-03 01:14:49	<--	Guest3676 (~duncan@2a01:e35:2e83:a840:c9b7:ea43:5bb0:a96e) has quit (Ping timeout: 480 seconds)
+2015-07-03 01:17:22	<--	deniszh (~Adium@195.234.136.77) has quit (Quit: Leaving.)
+2015-07-03 01:17:45	-->	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:20:04	<--	tyreld_ (~tyreld@c-73-11-40-222.hsd1.or.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 01:30:53	-->	field^Mop (~fallinu@dslb-092-074-237-228.092.074.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:31:32	-->	tyreld_ (~tyreld@c-73-11-40-222.hsd1.or.comcast.net) has joined #kernelnewbies
+2015-07-03 01:33:06	<--	fmoreau (~fmoreau@gem13-1-78-228-1-221.fbx.proxad.net) has quit (Quit: Leaving)
+2015-07-03 01:33:46	-->	valdis (~valdis@2001:468:c80:2103:84ce:6709:892b:e5d0) has joined #kernelnewbies
+2015-07-03 01:36:15	<--	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit (Quit: leaving)
+2015-07-03 01:36:37	<--	abelvesa-mobile (~abelvesa-@82.137.14.198) has quit (Remote host closed the connection)
+2015-07-03 01:37:17	-->	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:39:13	--	tyreld_ is now known as tyreld
+2015-07-03 01:46:18	-->	Jackneill (~Jackneill@178-164-181-19.pool.digikabel.hu) has joined #kernelnewbies
+2015-07-03 01:49:28	-->	zown_ (~adam@c83-252-215-4.bredband.comhem.se) has joined #kernelnewbies
+2015-07-03 01:49:28	<--	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Read error: Connection reset by peer)
+2015-07-03 01:50:04	-->	_daniel_ (~daniel@109.96.190.235) has joined #kernelnewbies
+2015-07-03 01:51:13	<--	zown (~adam@c83-252-215-4.bredband.comhem.se) has quit (Ping timeout: 480 seconds)
+2015-07-03 01:52:24	<--	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit (Quit: leaving)
+2015-07-03 01:52:36	-->	feldmaus (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:53:32	-->	praveendath92 (~praveen@dslb-088-068-066-029.088.068.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:54:56	-->	praveendath921 (~praveen@dslb-088-068-066-029.088.068.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 01:54:56	<--	praveendath92 (~praveen@dslb-088-068-066-029.088.068.pools.vodafone-ip.de) has quit (Read error: Connection reset by peer)
+2015-07-03 02:01:08	<--	feldmaus (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit (Quit: leaving)
+2015-07-03 02:04:00	-->	jfoxdev (~jfoxdev@216.49.19.166.res-cmts.hzl2.ptd.net) has joined #kernelnewbies
+2015-07-03 02:04:34	<--	field^Mop (~fallinu@dslb-092-074-237-228.092.074.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-03 02:16:33	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-03 02:28:19	<--	totalduck (~ryans@5-179-102-29.glidedsl.com) has quit (Ping timeout: 480 seconds)
+2015-07-03 02:29:44	<--	rip_ (uid50252@id-50252.charlton.irccloud.com) has quit (Quit: Connection closed for inactivity)
+2015-07-03 02:34:19	<--	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 02:35:44	-->	monstr (~monstr@nat-35.starnet.cz) has joined #kernelnewbies
+2015-07-03 02:38:44	<--	Cromulent (~Cromulent@cpc1-reig5-2-0-cust251.6-3.cable.virginm.net) has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+2015-07-03 02:38:51	-->	xerpi (~xerpi@219.Red-83-44-0.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-07-03 02:40:21	-->	skv256 (~skv256@178.67.201.25) has joined #kernelnewbies
+2015-07-03 02:42:29	-->	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has joined #kernelnewbies
+2015-07-03 02:51:27	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-03 02:54:15	<--	hyperair (~hyperair@000165f0.user.oftc.net) has quit (Remote host closed the connection)
+2015-07-03 02:54:15	<--	pthomas (~sohny@106.51.138.244) has quit (Read error: Connection reset by peer)
+2015-07-03 02:54:29	-->	pthomas (~sohny@106.51.138.244) has joined #kernelnewbies
+2015-07-03 03:02:54	<--	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 03:03:33	-->	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has joined #kernelnewbies
+2015-07-03 03:05:30	<--	scientes (~Shawn@c-73-42-216-173.hsd1.wa.comcast.net) has quit
+2015-07-03 03:06:00	-->	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has joined #kernelnewbies
+2015-07-03 03:09:06	-->	Jesin (~Jesin@Dyn136250.cc.lehigh.edu) has joined #kernelnewbies
+2015-07-03 03:10:04	<--	monstr (~monstr@nat-35.starnet.cz) has quit (Ping timeout: 480 seconds)
+2015-07-03 03:19:29	-->	nur (~hussein@175.142.35.25) has joined #kernelnewbies
+2015-07-03 03:20:33	<--	pthomas (~sohny@106.51.138.244) has left #kernelnewbies
+2015-07-03 03:25:25	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-03 03:29:42	<--	amc (~amc@78.250.45.184) has quit (Ping timeout: 480 seconds)
+2015-07-03 03:32:34	<--	Judge_Dredd (~ragim@ip-95-221-208-124.bb.netbynet.ru) has quit (Remote host closed the connection)
+2015-07-03 03:34:28	<--	praveendath921 (~praveen@dslb-088-068-066-029.088.068.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-03 03:35:28	-->	hemant (~hemant@106.51.132.25) has joined #kernelnewbies
+2015-07-03 03:36:55	-->	ricardobarbosams (~ricardoba@179.124.11.36) has joined #kernelnewbies
+2015-07-03 03:39:05	-->	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-07-03 03:41:50	<--	hemant1 (~hemant@106.51.241.47) has quit (Ping timeout: 480 seconds)
+2015-07-03 03:43:15	-->	praveendath92 (~praveen@dslb-088-068-066-029.088.068.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 03:44:15	<--	nur (~hussein@175.142.35.25) has quit (Quit: Leaving)
+2015-07-03 03:48:34	-->	Babamus (~Christian@0189400845.0.fullrate.dk) has joined #kernelnewbies
+2015-07-03 03:51:14	<--	Newsome (~sorenson@198.0.247.146) has quit (Ping timeout: 480 seconds)
+2015-07-03 04:03:44	-->	Newsome (~sorenson@198.0.247.146) has joined #kernelnewbies
+2015-07-03 04:06:45	-->	pcacjr (~pcacjr@187-78-81-4.user.veloxzone.com.br) has joined #kernelnewbies
+2015-07-03 04:07:13	-->	mawiegand (~marcel@p20030056CB1FF801BAEE65FFFE228B8A.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-03 04:12:49	<--	Newsome (~sorenson@198.0.247.146) has quit (Ping timeout: 480 seconds)
+2015-07-03 04:14:12	-->	hyperair (~hyperair@000165f0.user.oftc.net) has joined #kernelnewbies
+2015-07-03 04:16:46	<--	FL1SK (~quassel@96-19-87-160.cpe.cableone.net) has quit (Remote host closed the connection)
+2015-07-03 04:17:59	-->	FL1SK (~quassel@96-19-87-160.cpe.cableone.net) has joined #kernelnewbies
+2015-07-03 04:22:08	-->	Newsome (~sorenson@198.0.247.146) has joined #kernelnewbies
+2015-07-03 04:32:20	<--	Jackneill (~Jackneill@178-164-181-19.pool.digikabel.hu) has quit (Quit: Leaving)
+2015-07-03 04:37:18	-->	Unknown116 (~Unknown11@77.127.160.144) has joined #kernelnewbies
+2015-07-03 04:43:53	<--	vmlinuz (~vmlinuz@32.104.18.200) has quit (Quit: WeeChat 0.4.3)
+2015-07-03 04:44:40	<--	_daniel_ (~daniel@109.96.190.235) has quit (Quit: Leaving.)
+2015-07-03 04:47:23	<--	superkuh (~superkuh@c-24-245-50-222.hsd1.wi.comcast.net) has quit (Quit: the neuronal action potential is an electrical manipulation of reversible abrupt phase changes in the lipid bilayer)
+2015-07-03 04:48:27	<--	vbabka (~quassel@nat1.scz.suse.com) has quit (Remote host closed the connection)
+2015-07-03 04:48:38	-->	vbabka (~quassel@nat1.scz.suse.com) has joined #kernelnewbies
+2015-07-03 04:53:56	<--	pjp (~pjp@122.161.181.202) has quit (Ping timeout: 480 seconds)
+2015-07-03 05:02:40	-->	feldmaus (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 05:02:41	<--	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has quit (Quit: Verlassend)
+2015-07-03 05:03:07	<--	skv256 (~skv256@178.67.201.25) has quit (Remote host closed the connection)
+2015-07-03 05:03:41	-->	utack (~utack@ip92346659.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-07-03 05:05:03	-->	totalduck (~ryans@5-179-102-29.glidedsl.com) has joined #kernelnewbies
+2015-07-03 05:05:31	derRichard	py1hon: do you have a whitepaper on bachefs? i know what bcache is. but why a filesystem? :D
+2015-07-03 05:09:00	<--	totalduck (~ryans@5-179-102-29.glidedsl.com) has quit
+2015-07-03 05:09:27	<--	Jesin (~Jesin@Dyn136250.cc.lehigh.edu) has quit (Quit: Leaving)
+2015-07-03 05:11:04	<--	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has quit (Quit: Ex-Chat)
+2015-07-03 05:12:15	<--	feldmaus (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit (Quit: leaving)
+2015-07-03 05:12:18	-->	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 05:14:29	<--	feldmaus_ (~markus@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit
+2015-07-03 05:18:15	-->	hjak18761hjd7182 (~hjak1876j@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 05:18:28	<--	ksenija (~ksenija@77-46-215-254.static.isp.telekom.rs) has quit (Quit: Leaving)
+2015-07-03 05:28:51	<--	Unknown116 (~Unknown11@77.127.160.144) has quit (Quit: Leaving)
+2015-07-03 05:32:05	<--	m-ric (~evigier@2607:fad8:4:6:ad4f:6d9d:270a:b378) has quit (Quit: Quitte)
+2015-07-03 05:32:56	<--	hjak18761hjd7182 (~hjak1876j@ipservice-092-210-003-120.092.210.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-03 05:34:25	-->	amc (~amc@78.250.41.150) has joined #kernelnewbies
+2015-07-03 05:41:33	<--	kdr2__ (~kdr2@221.11.109.251) has quit (Ping timeout: 480 seconds)
+2015-07-03 05:41:53	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-07-03 05:50:23	jfoxdev	Woo Hello world kernel module :D
+2015-07-03 05:50:58	-->	kdr2__ (~kdr2@123.138.35.1) has joined #kernelnewbies
+2015-07-03 05:58:45	<--	mawiegand (~marcel@p20030056CB1FF801BAEE65FFFE228B8A.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-03 05:58:54	-->	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-03 06:00:43	martink	jfoxdev: congrats, keep up the fun :)
+2015-07-03 06:01:14	-->	DrNick (~DrNick4@0000fb15.user.oftc.net) has joined #kernelnewbies
+2015-07-03 06:04:45	jfoxdev	Had to start somewhere :)
+2015-07-03 06:08:59	<--	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-03 06:09:10	-->	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-03 06:10:15	<--	martink (~martink@37.235.60.54) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:11:41	-->	slashnull (~oftc-webi@cpe-72-128-83-163.wi.res.rr.com) has joined #kernelnewbies
+2015-07-03 06:13:57	-->	martink (~martink@37.235.60.54) has joined #kernelnewbies
+2015-07-03 06:14:46	slashnull	Is it possible to have one kernel module write in a different kernel modules memory space?  Obviously this is not suggested, but I I have a unique case.
+2015-07-03 06:16:56	slashnull	I have written the code to do it, but there doesn't seem to be an effect, I was curious if there is some memory protecting going on when I use ioremap and iowrite32
+2015-07-03 06:18:38	-->	field^Mop (~fallinu@dslb-092-074-237-228.092.074.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-03 06:18:39	-->	Jesin (~Jesin@Dyn136250.cc.lehigh.edu) has joined #kernelnewbies
+2015-07-03 06:20:40	slashnull	Another way to ask, is there anything stopping my kernel module from writing in whatever memory space it wants?
+2015-07-03 06:21:14	-->	ph4n70m4s (~quassel@athedsl-4367770.home.otenet.gr) has joined #kernelnewbies
+2015-07-03 06:24:28	<--	phant0mas (~quassel@ppp-2-84-29-94.home.otenet.gr) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:27:45	<--	ricardobarbosams (~ricardoba@179.124.11.36) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:35:32	sarnold	slashnull: nothing at all. you can scribble anywhere you like, or don't like, and there's nothing to stop you! muahaha
+2015-07-03 06:37:08	sarnold	slashnull: perhaps interesting https://youtu.be/0pebP891V0c
+2015-07-03 06:37:44	slashnull	Yes, I just blasted a bunch of 0xFFFFFFFF to a pci device I was monitoring in /sys/bus/pci/devices/0000:01:00.0/resource0 and saw that some of the registers changed (and crashed the card of course).  So it looks like my code is working.  I'll just have to figure out why the register I am interested in is not responding.  Thanks for the confirmation!
+2015-07-03 06:38:15	<--	xelenonz (~xelenonz@me.rop.sh) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:40:24	slashnull	Thanks for the link as well.
+2015-07-03 06:40:45	jfoxdev	ooh brainfood link!
+2015-07-03 06:44:00	<--	tyreld (~tyreld@c-73-11-40-222.hsd1.or.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:44:07	<--	seschwar (~seschwar@2a02:8109:b00:1e84:d267:e5ff:fe33:23d8) has quit (Quit: :qa)
+2015-07-03 06:44:35	<--	rendar_ (~rendar@host91-17-dynamic.55-79-r.retail.telecomitalia.it) has quit (Quit: Leaving)
+2015-07-03 06:47:16	<--	Babamus (~Christian@0189400845.0.fullrate.dk) has quit (Read error: Connection reset by peer)
+2015-07-03 06:49:57	<--	walken (~walken@2620:0:1000:3002:6d36:506d:338:82bc) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:53:40	<--	mawiegand (~marcel@p4FDECCF0.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-07-03 06:57:56	-->	oclarocque (~oclarocqu@98.143.215.228) has joined #kernelnewbies
+2015-07-03 07:02:09	<--	pcacjr (~pcacjr@187-78-81-4.user.veloxzone.com.br) has quit (Remote host closed the connection)
+2015-07-03 07:02:23	-->	pcacjr (~pcacjr@187-78-81-4.user.veloxzone.com.br) has joined #kernelnewbies
+2015-07-07 19:59:10	-->	alhunt (~alhunt@124-148-210-96.dyn.iinet.net.au) has joined #kernelnewbies
+2015-07-07 19:59:10	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-07-07 19:59:10	--	Topic set by derRichard (~derRichar@pippin.sigma-star.at) on Fri, 16 Jan 2015 20:54:30
+2015-07-07 19:59:10	--	Channel #kernelnewbies: 303 nicks (0 ops, 0 voices, 303 normals)
+2015-07-07 19:59:10	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-07-07 19:59:12	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-07-07 19:59:18	<--	fstd (~fstd@xdsl-84-44-236-124.netcologne.de) has quit (Remote host closed the connection)
+2015-07-07 19:59:22	-->	yogeshrt (~yogesh@14.140.2.178) has joined #kernelnewbies
+2015-07-07 19:59:33	-->	fstd (~fstd@xdsl-87-78-17-80.netcologne.de) has joined #kernelnewbies
+2015-07-07 20:01:09	-->	vmlinuz (~vmlinuz@32.104.18.200) has joined #kernelnewbies
+2015-07-07 20:03:13	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-07-07 20:04:55	<--	nur (~hussein@140.101.159.254) has quit (Remote host closed the connection)
+2015-07-07 20:06:19	-->	bl4ckic3 (~Lucifer@zilver015143.mobiel.utwente.nl) has joined #kernelnewbies
+2015-07-07 20:06:29	bl4ckic3	Hi guys 
+2015-07-07 20:07:01	--	bl4ckic3 is now known as unknownidentifier
+2015-07-07 20:08:18	unknownidentifier	anybody knows how to read kernel page table without recompiling the kernel?
+2015-07-07 20:09:01	derRichard	inject funky code using /dev/mem ;)
+2015-07-07 20:09:08	derRichard	depends how far you want to go^^
+2015-07-07 20:09:15	-->	mawiegand (~marcel@83adbdbe.funky.uni-osnabrueck.de) has joined #kernelnewbies
+2015-07-07 20:09:20	derRichard	what problem are you trying to solve?
+2015-07-07 20:10:00	unknownidentifier	I am making a LKM to read the Page Table. I am trying to look at the drivers which mapped specific I/O physical memory
+2015-07-07 20:10:25	-->	MindlessDrone (~MindlessD@HSI-KBW-078-043-228-096.hsi4.kabel-badenwuerttemberg.de) has joined #kernelnewbies
+2015-07-07 20:10:29	unknownidentifier	application mode apps use mmap() but kernel drivers uses ioremap()
+2015-07-07 20:10:29	derRichard	we have already a page table walker in debugfs
+2015-07-07 20:10:41	unknownidentifier	yes, yes we do have it is already in the kernel source
+2015-07-07 20:10:58	unknownidentifier	however apparently I can not just use that without compiling the kernel
+2015-07-07 20:11:13	unknownidentifier	I am using an ARM linux 3.8.15 kernel. 
+2015-07-07 20:11:22	derRichard	so what?
+2015-07-07 20:11:25	derRichard	rebuild and reboot
+2015-07-07 20:11:34	unknownidentifier	Thats exactly what I want to avoid
+2015-07-07 20:11:39	derRichard	and why?
+2015-07-07 20:11:43	derRichard	this does not make sense
+2015-07-07 20:11:48	unknownidentifier	True. 
+2015-07-07 20:12:14	unknownidentifier	Because I am trying to make a malicious LKM driver for my university project. 
+2015-07-07 20:12:30	derRichard	you are on your own
+2015-07-07 20:12:32	unknownidentifier	If the malicious code have to recompile the kernel to check page table it does not make sense either!
+2015-07-07 20:13:00	unknownidentifier	Why?
+2015-07-07 20:13:12	derRichard	i don't support malware writers
+2015-07-07 20:13:35	LetoThe2nd	unknownidentifier: people on irc usually do not help on questions that are clearly targeting exploits or 
+2015-07-07 20:13:38	LetoThe2nd	malware.
+2015-07-07 20:13:56	LetoThe2nd	unknownidentifier: so if its really an university project, it makes way more sense to figure it out yourself.
+2015-07-07 20:14:01	unknownidentifier	Excuse me I am not a malware writer, I am developing a proof of concept code to show the weaknesses I already made it for user mode memory mapping of IO 
+2015-07-07 20:14:08	<--	drewtwelse (~androirc@200.113.230.6) has quit (Ping timeout: 480 seconds)
+2015-07-07 20:14:20	<--	jayaura (~jayaura@134.134.137.75) has quit (Remote host closed the connection)
+2015-07-07 20:14:28	<--	mawiegand (~marcel@83adbdbe.funky.uni-osnabrueck.de) has quit (Quit: Konversation terminated!)
+2015-07-07 20:14:36	unknownidentifier	True, But at least I could get a hint. 
+2015-07-07 20:14:44	LetoThe2nd	unknownidentifier: do you know the saying "on the internet, nobody can see you're a monkey?"
+2015-07-07 20:14:47	-->	drewtwelse (~androirc@200.113.230.5) has joined #kernelnewbies
+2015-07-07 20:16:00	unknownidentifier	Ok I see you think I intend to do something malicious, Anybody who know the answer and willing to help, I can prove that I am a university student and it is my research project not a monkey!
+2015-07-07 20:16:12	LetoThe2nd	*shrug*
+2015-07-07 20:16:33	LetoThe2nd	isn't "inject funky code through dev/mem" hint enough?
+2015-07-07 20:17:24	LetoThe2nd	plus, university addresses are cheap and students are not really known to be amongst the most trustworthy people to hand potentially malicious code
+2015-07-07 20:17:33	LetoThe2nd	(read: you're really not getting out of this)
+2015-07-07 20:17:56	unknownidentifier	@LetoThe2nd, I will try to figure out what you said. Thanks. 
+2015-07-07 20:18:14	damjan	ah the good times when malicous code was just for fun
+2015-07-07 20:18:25	luisbg	damjan: when was that? :P
+2015-07-07 20:18:29	damjan	now it's all business and surveilance
+2015-07-07 20:18:30	LetoThe2nd	damjan: back in the good olde days... *sigh*
+2015-07-07 20:18:38	unknownidentifier	Now it is for research :P
+2015-07-07 20:18:56	luisbg	damjan: the Hack Team fiasco was hilarious
+2015-07-07 20:19:06	luisbg	"research"
+2015-07-07 20:21:11	-->	Timmy_L (~Timmy_L@dynamic.1.1.e8edf3b34580.7444136de73.cust.bredband2.com) has joined #kernelnewbies
+2015-07-07 20:22:39	unknownidentifier	I guess you were referring to this: http://althing.cs.dartmouth.edu/local/vsc07.html I will look at it. Hopefully it can help me find the answer.
+2015-07-07 20:24:52	<--	psydroid (~androirc@217.114.169.252) has quit (Remote host closed the connection)
+2015-07-07 20:25:09	-->	psydroid (~androirc@217.114.169.252) has joined #kernelnewbies
+2015-07-07 20:27:56	<--	Timmy_L (~Timmy_L@dynamic.1.1.e8edf3b34580.7444136de73.cust.bredband2.com) has quit (Quit: leaving)
+2015-07-07 20:31:45	-->	Newsome (~sorenson@198.0.247.146) has joined #kernelnewbies
+2015-07-07 20:32:09	-->	baldrick1 (~duncan@37.148.180.153.static.hosted.by.combell.com) has joined #kernelnewbies
+2015-07-07 20:35:53	-->	Timmy_L (~Timmy_L@dynamic.1.1.e8edf3b34580.7444136de73.cust.bredband2.com) has joined #kernelnewbies
+2015-07-07 20:36:27	<--	cosmoecho (~cosmoecho@c-73-142-228-36.hsd1.ma.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-07-07 20:38:02	-->	phant0mas (~quassel@athedsl-80478.home.otenet.gr) has joined #kernelnewbies
+2015-07-07 20:39:44	-->	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-07 20:41:26	unknownidentifier	I can see that in X86 based Linux Kernel, it is possible to extract the virtual address of allocated physical memory using GDT, I was wondering if there is such thing for ARM Linux too?.
+2015-07-07 20:43:17	LetoThe2nd	why not just read the memory management hardware reference for the targetted ARM incarnation?
+2015-07-07 20:46:13	unknownidentifier	You are right, I am just acting like a lazy person, will and look for it :P
+2015-07-07 20:46:29	unknownidentifier	will go*
+2015-07-07 20:53:49	-->	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has joined #kernelnewbies
+2015-07-07 21:03:11	<--	praveendath92 (~praveen@dslb-178-004-016-100.178.004.pools.vodafone-ip.de) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:05:13	-->	nur (~hussein@140.101.159.254) has joined #kernelnewbies
+2015-07-07 21:05:28	<--	nur (~hussein@140.101.159.254) has quit (Remote host closed the connection)
+2015-07-07 21:06:19	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-07 21:08:51	-->	nicst (~user@f054022224.adsl.alicedsl.de) has joined #kernelnewbies
+2015-07-07 21:13:10	<--	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-07 21:13:20	-->	plutoniix (~plutoniix@node-l9i.pool-101-108.dynamic.totbb.net) has joined #kernelnewbies
+2015-07-07 21:14:45	--	plutoniix is now known as xiinotulp
+2015-07-07 21:16:23	-->	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-07 21:16:34	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-07 21:16:53	<--	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has quit
+2015-07-07 21:17:03	-->	ego (~ego@122.167.227.115) has joined #kernelnewbies
+2015-07-07 21:17:16	<--	zown_ (~adam@c83-252-215-4.bredband.comhem.se) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:17:20	<--	kempniu (~Thunderbi@ozzy.nask.waw.pl) has quit (Quit: kempniu)
+2015-07-07 21:17:51	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:21:13	<--	baldrick1 (~duncan@37.148.180.153.static.hosted.by.combell.com) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:23:23	<--	mkletzan (~mkletzan@nat-pool-brq-t.redhat.com) has quit (Quit: ERC (IRC client for Emacs 24.5.1))
+2015-07-07 21:23:44	-->	praveendath92 (~praveen@dslb-178-004-016-100.178.004.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-07 21:25:14	-->	ricardobarbosams (~ricardoba@179.124.11.36) has joined #kernelnewbies
+2015-07-07 21:27:21	-->	KastB (~Thunderbi@aftr-185-17-205-8.dynamic.mnet-online.de) has joined #kernelnewbies
+2015-07-07 21:28:44	<--	AnilV (~AnilV@121.244.87.116) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:29:59	<--	fixl (~fixl@14-201-215-206.tpgi.com.au) has quit (Remote host closed the connection)
+2015-07-07 21:30:35	-->	yogeshrt (~yogesh@14.140.2.178) has joined #kernelnewbies
+2015-07-07 21:31:25	-->	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-07 21:32:19	-->	chandan__ (~chandan@122.167.31.250) has joined #kernelnewbies
+2015-07-07 21:34:11	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-07 21:35:24	-->	pcacjr (~pcacjr@200.205.30.154) has joined #kernelnewbies
+2015-07-07 21:37:05	-->	sprabhu (~sprabhu@host81-152-63-237.range81-152.btcentralplus.com) has joined #kernelnewbies
+2015-07-07 21:39:42	<--	vmlinuz (~vmlinuz@32.104.18.200) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:41:10	-->	cosmoecho (~cosmoecho@inet-hqmc02-o.oracle.com) has joined #kernelnewbies
+2015-07-07 21:41:28	<--	cleger (~cleger@195.5.255.202) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:46:19	<--	Nik05 (~Nik05@0001a8cd.user.oftc.net) has quit (Remote host closed the connection)
+2015-07-07 21:47:36	-->	jayaura (~jayaura@jfdmzpr06-ext.jf.intel.com) has joined #kernelnewbies
+2015-07-07 21:47:42	<--	praveendath92 (~praveen@dslb-178-004-016-100.178.004.pools.vodafone-ip.de) has left #kernelnewbies
+2015-07-07 21:49:00	-->	Nik05 (~Nik05@0001a8cd.user.oftc.net) has joined #kernelnewbies
+2015-07-07 21:52:29	-->	vmlinuz (~vmlinuz@32.104.18.200) has joined #kernelnewbies
+2015-07-07 21:53:49	<--	MoritzSchrey (~mschrey@ip-22.ias.rwth-aachen.de) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:55:18	<--	drewtwelse (~androirc@200.113.230.5) has quit (Read error: Connection reset by peer)
+2015-07-07 21:55:36	-->	drewtwelse (~androirc@200.113.230.5) has joined #kernelnewbies
+2015-07-07 21:56:35	<--	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-07 21:57:18	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-07 21:57:50	<--	yogeshrt (~yogesh@14.140.2.178) has quit (Ping timeout: 480 seconds)
+2015-07-07 21:59:19	-->	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-07 22:00:12	<--	towo^work (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-07-07 22:02:30	-->	baldrick1 (~duncan@37.148.180.153.static.hosted.by.combell.com) has joined #kernelnewbies
+2015-07-07 22:08:02	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Quit: florisgroenendijk)
+2015-07-07 22:08:12	--	riel is now known as surriel
+2015-07-07 22:12:05	-->	fweisbec (~fweisbec@4be54-h03-87-88-245-150.dsl.sta.abo.bbox.fr) has joined #kernelnewbies
+2015-07-07 22:12:24	<--	fmoreau (~fmoreau@2620:113:80c0:5::2222) has quit (Ping timeout: 480 seconds)
+2015-07-07 22:13:58	<--	KastB (~Thunderbi@aftr-185-17-205-8.dynamic.mnet-online.de) has quit (Quit: KastB)
+2015-07-07 22:14:26	-->	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has joined #kernelnewbies
+2015-07-07 22:19:25	<--	jayaura (~jayaura@jfdmzpr06-ext.jf.intel.com) has quit (Remote host closed the connection)
+2015-07-07 22:23:38	-->	MoritzSchrey (~mschrey@ip-22.ias.rwth-aachen.de) has joined #kernelnewbies
+2015-07-07 22:24:08	-->	fmoreau (~fmoreau@2620:113:80c0:5::2222) has joined #kernelnewbies
+2015-07-07 22:29:28	<--	florisgroenendijk (~florisgro@bluebillywig.xs4all.nl) has quit (Ping timeout: 480 seconds)
+2015-07-07 22:30:09	-->	shaggy (~shaggy@2602:306:39c5:bf40:1a3d:a2ff:fe08:cad8) has joined #kernelnewbies
+2015-07-07 22:32:11	-->	N8Fear_ (~n8fear@p54A048FE.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-07-07 22:32:16	<--	pcacjr (~pcacjr@200.205.30.154) has quit (Quit: This computer has gone to sleep)
+2015-07-07 22:41:59	<--	fmoreau (~fmoreau@2620:113:80c0:5::2222) has quit (Quit: Leaving)
+2015-07-07 22:43:01	<--	LetoThe2nd (~jd@s15387740.onlinehome-server.info) has quit (Ping timeout: 480 seconds)
+2015-07-07 22:43:20	-->	valdis (~valdis@2601:5c0:c100:9243:30c3:cec2:a6e5:2994) has joined #kernelnewbies
+2015-07-07 22:48:43	<--	mawiegand (~marcel@pD95D246D.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-07-07 22:53:45	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-07-07 23:02:52	<--	kdr2__ (~kdr2@123.139.23.133) has quit (Ping timeout: 480 seconds)
+2015-07-07 23:06:36	<--	baldrick1 (~duncan@37.148.180.153.static.hosted.by.combell.com) has quit (Ping timeout: 480 seconds)
+2015-07-07 23:09:57	-->	praveendath92 (~praveen@dslb-178-004-016-100.178.004.pools.vodafone-ip.de) has joined #kernelnewbies
+2015-07-07 23:12:05	--	unriel is now known as riel
+2015-07-07 23:13:28	-->	cleger (~cleger@195.5.255.202) has joined #kernelnewbies
+2015-07-07 23:13:50	<--	praveendath92 (~praveen@dslb-178-004-016-100.178.004.pools.vodafone-ip.de) has left #kernelnewbies
+2015-07-07 23:15:55	<--	hemant (~hemant@106.51.235.216) has quit (Quit: Leaving.)
+2015-07-07 23:18:46	-->	baldrick1 (~duncan@37.148.180.153.static.hosted.by.combell.com) has joined #kernelnewbies
+2015-07-07 23:20:13	<--	shylesh__ (~shylesh@121.244.87.124) has quit (Remote host closed the connection)
+2015-07-07 23:21:57	<--	vmlinuz (~vmlinuz@32.104.18.200) has quit (Ping timeout: 480 seconds)
+2015-07-07 23:23:42	-->	ksenija (~ksenija@77-46-215-254.static.isp.telekom.rs) has joined #kernelnewbies
+2015-07-07 23:30:50	-->	AnilV (~AnilV@114.143.74.227) has joined #kernelnewbies
+2015-07-07 23:32:08	-->	vmlinuz (~vmlinuz@32.104.18.200) has joined #kernelnewbies
+2015-07-07 23:33:32	<--	sprabhu (~sprabhu@host81-152-63-237.range81-152.btcentralplus.com) has quit (Ping timeout: 480 seconds)
+2015-07-07 23:43:36	-->	sprabhu (~sprabhu@host81-152-63-224.range81-152.btcentralplus.com) has joined #kernelnewbies
+2015-07-07 23:44:27	<--	joern (~joern@0001324b.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-07-07 23:46:45	--	irc: disconnected from server

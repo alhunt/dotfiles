@@ -1,0 +1,37 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = returnzero2
+# Load the function that will decrypt the password
+pythonfile = ~/.offlineimappass.py
+# Controls how many accounts may be synced simultaneously
+maxsyncaccounts = 1
+
+[Account returnzero]
+localrepository = returnzero-local
+remoterepository = returnzero-remote
+status_backend = sqlite
+# Minutes between syncs
+autorefresh = 2
+# Number of quick-syncs between autorefreshes. 
+# Quick-syncs do not update if the only changes were to IMAP flags
+quick = 10
+
+[Repository returnzero-local]
+type = Maildir
+localfolders = ~/mail/returnzero/
+utime_from_header = yes
+
+[Repository returnzero-remote]
+type = IMAP
+remotehost = mail.messagingengine.com
+remoteport = 993
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl = yes
+remoteuser = alhunt@fastmail.com
+# Decrypt and read the encrypted password
+remotepasseval = get_pass()
+keepalive = 60
+holdconnectionopen = yes
+
