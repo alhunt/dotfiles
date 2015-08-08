@@ -2,7 +2,7 @@
 # get started fast.
 
 [general]
-accounts = returnzero2
+accounts = returnzero
 # Load the function that will decrypt the password
 pythonfile = ~/.offlineimappass.py
 # Controls how many accounts may be synced simultaneously
