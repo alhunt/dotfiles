@@ -1,3 +1,6 @@
 [user]
 	name = Al Hunt
 	email = al@returnzero.org
+	
+[sendemail]
+	smtpserver = /usr/bin/msmtp
