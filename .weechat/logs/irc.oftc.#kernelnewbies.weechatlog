@@ -727,3 +727,1259 @@
 2015-07-07 23:43:36	-->	sprabhu (~sprabhu@host81-152-63-224.range81-152.btcentralplus.com) has joined #kernelnewbies
 2015-07-07 23:44:27	<--	joern (~joern@0001324b.user.oftc.net) has quit (Ping timeout: 480 seconds)
 2015-07-07 23:46:45	--	irc: disconnected from server
+2015-12-12 23:28:17	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-12 23:28:17	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-12 23:28:17	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-12 23:28:17	--	Channel #kernelnewbies: 277 nicks (0 ops, 0 voices, 277 normals)
+2015-12-12 23:28:17	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-12 23:28:19	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-12 23:32:19	-->	inkscaper (~inkscaper@183.87.226.198) has joined #kernelnewbies
+2015-12-12 23:32:29	inkscaper	What is the best way to test my fs
+2015-12-12 23:32:31	inkscaper	?
+2015-12-12 23:35:15	<--	valdis (~valdis@2601:5c0:c100:992::140) has quit (Ping timeout: 480 seconds)
+2015-12-12 23:37:04	-->	nand1 (~user@c-24-130-233-231.hsd1.ca.comcast.net) has joined #kernelnewbies
+2015-12-12 23:39:56	<--	nand1 (~user@c-24-130-233-231.hsd1.ca.comcast.net) has quit (Remote host closed the connection)
+2015-12-12 23:43:39	-->	alabate (~alabate@ppp-seco21th2-46-193-163-21.wb.wifirst.net) has joined #kernelnewbies
+2015-12-12 23:43:47	-->	ChandanKr (~Chandan@122.172.206.74) has joined #kernelnewbies
+2015-12-12 23:48:54	-->	nur (~hussein@115.134.70.81) has joined #kernelnewbies
+2015-12-12 23:49:56	<--	abelvesa_ (~abel@79.114.41.112) has quit (Remote host closed the connection)
+2015-12-12 23:52:43	-->	AndChat|457281 (~AndChat45@201.247.43.182) has joined #kernelnewbies
+2015-12-12 23:55:09	<--	nevdull (~rick@50.38.85.16) has quit (Ping timeout: 480 seconds)
+2015-12-12 23:56:22	-->	valdis (~valdis@2601:5c0:c100:992::140) has joined #kernelnewbies
+2015-12-13 00:04:16	-->	nevdull (~rick@50.38.85.16) has joined #kernelnewbies
+2015-12-13 00:07:32	-->	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has joined #kernelnewbies
+2015-12-13 00:09:17	-->	Jesin (~Jesin@pool-108-48-131-2.washdc.east.verizon.net) has joined #kernelnewbies
+2015-12-13 00:12:11	<--	Nik05 (~Nik05@0001a8cd.user.oftc.net) has quit (Read error: Connection reset by peer)
+2015-12-13 00:12:44	-->	Nik05 (~Nik05@s559686af.adsl.online.nl) has joined #kernelnewbies
+2015-12-13 00:15:06	vbabka	inkscaper: xfstests
+2015-12-13 00:15:36	<--	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has quit (Ping timeout: 480 seconds)
+2015-12-13 00:17:18	<--	Shentino (~Shentino@96-41-208-3.dhcp.elbg.wa.charter.com) has quit (Read error: Connection reset by peer)
+2015-12-13 00:17:29	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-12-13 00:19:53	<--	krnlyng (~liar@178.112.244.242.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 00:22:38	-->	excelsior (~vijay@1.23.36.211) has joined #kernelnewbies
+2015-12-13 00:22:55	<--	snoonan (znc@104.152.107.133) has quit (Ping timeout: 480 seconds)
+2015-12-13 00:23:50	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-12-13 00:27:54	inkscaper	vbabka - could you please explain it more
+2015-12-13 00:28:26	-->	krnlyng (~liar@77.117.0.111.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 00:29:33	<--	xayto (~x@202-89-161-53.static.dsl.amnet.net.au) has quit (Ping timeout: 480 seconds)
+2015-12-13 00:30:25	-->	Shentino (~Shentino@96-41-208-3.dhcp.elbg.wa.charter.com) has joined #kernelnewbies
+2015-12-13 00:30:49	-->	xayto (~x@202-89-161-53.static.dsl.amnet.net.au) has joined #kernelnewbies
+2015-12-13 00:32:25	-->	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has joined #kernelnewbies
+2015-12-13 01:08:08	-->	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has joined #kernelnewbies
+2015-12-13 01:15:17	-->	snoonan (znc@104.152.107.133) has joined #kernelnewbies
+2015-12-13 01:16:12	<--	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has quit (Ping timeout: 480 seconds)
+2015-12-13 01:19:56	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-12-13 01:20:39	<--	ChandanKr (~Chandan@122.172.206.74) has quit (Ping timeout: 480 seconds)
+2015-12-13 01:24:29	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-12-13 01:30:12	-->	kristina (~kristina@0001ca2f.user.oftc.net) has joined #kernelnewbies
+2015-12-13 01:30:18	-->	rostedt (~rostedt@cpe-67-246-153-56.stny.res.rr.com) has joined #kernelnewbies
+2015-12-13 01:32:24	-->	ilyuha21st (~kvirc@239-206-55-37.pool.ukrtel.net) has joined #kernelnewbies
+2015-12-13 01:33:35	ilyuha21st	hello
+2015-12-13 02:01:51	ilyuha21st	anybody home?
+2015-12-13 02:06:06	valdis	ilyuha21st: No. :)
+2015-12-13 02:07:04	<--	krnlyng (~liar@77.117.0.111.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 02:07:47	ilyuha21st	Oh, ok now I feel not lonely
+2015-12-13 02:13:46	-->	ChandanKr (~Chandan@122.172.206.74) has joined #kernelnewbies
+2015-12-13 02:16:33	<--	nur (~hussein@115.134.70.81) has quit (Quit: Leaving)
+2015-12-13 02:18:21	<--	gcl (~gcl@host-92-29-164-98.as13285.net) has quit (Ping timeout: 480 seconds)
+2015-12-13 02:20:24	-->	arkhra (~arkhra@112.134.50.205) has joined #kernelnewbies
+2015-12-13 02:20:57	<--	chatsiri_ (~chatsiri_@119-46-191-20.static.asianet.co.th) has quit (Ping timeout: 480 seconds)
+2015-12-13 02:21:46	-->	ego (~ego@122.178.240.103) has joined #kernelnewbies
+2015-12-13 02:28:09	<--	kristina (~kristina@0001ca2f.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-12-13 02:29:16	-->	krnlyng (~liar@178.112.219.97.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 02:37:27	<--	ilyuha21st (~kvirc@239-206-55-37.pool.ukrtel.net) has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+2015-12-13 02:37:28	<--	xerpi (~xerpi@4.Red-88-9-3.dynamicIP.rima-tde.net) has quit (Read error: Connection reset by peer)
+2015-12-13 02:49:20	-->	glycoknob (~mt@p57920A88.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-13 02:50:43	glycoknob	hi, I'm encountering a nasty bug: BUG: Bad rss-counter state mm:ffff88081722bc00 idx:1 val:512
+2015-12-13 02:50:48	glycoknob	BUG: non-zero nr_ptes on freeing mm: 1
+2015-12-13 02:51:10	glycoknob	it's reproducible on load on current 4.2, 4.3.0 and IIRC 4.1.7 
+2015-12-13 02:51:26	glycoknob	applications crashes with SIGSEV and this appears in the logfile
+2015-12-13 02:51:49	glycoknob	dell poweredge 720 - 2x6core xeon e5 - numa, 64gb ram
+2015-12-13 02:52:05	glycoknob	what can I do to pinpoint the problem? 
+2015-12-13 02:52:15	valdis	https://lkml.org/lkml/2014/1/22/602 - appears to have been around for a while now?
+2015-12-13 02:53:20	valdis	Yow.  Found a reference to 3.4-rc hitting that..
+2015-12-13 02:53:28	glycoknob	valdis: I'm kind of a noob regarding the kernel, this commit looks related but it's in all kernel that trigger the bug
+2015-12-13 02:54:47	valdis	As I said, a quick search shows that it's been triggerable for several years.
+2015-12-13 02:54:55	glycoknob	@valdis: https://lkml.org/lkml/2015/11/6/733
+2015-12-13 02:55:22	glycoknob	I tried to disable transparent hugepages, however I've not rebooted the machines. Is this related? 
+2015-12-13 02:56:16	glycoknob	valdis: from my noobish understand the message indicates corruptions on memory structures, so it's likely that it appears in a lot of places? 
+2015-12-13 02:56:22	valdis	Hard to tell.  Probably multiple ways to trigger it.  If hugepages is a way, you'll probably want to boot with it disabled.
+2015-12-13 02:56:43	glycoknob	valdis: so directly on the kernel cmdline? is setting it on boot via sysfs too late? 
+2015-12-13 02:57:27	valdis	That commit landed in 4.3-rc7.  So if it broke on 4.1.7 and on 4.3.0, it isn'[t the cause or fix for it (as you have breakage with and without that commit in)
+2015-12-13 02:57:32	glycoknob	if you need data, it's a cluster that triggers the bug more or less reproducable on at least one machine if a job runs
+2015-12-13 02:58:10	glycoknob	valdis: yes. I've looked into all changelogs and the commit is already in place in all kernels that are triggering it
+2015-12-13 02:58:42	glycoknob	it's not soo nice if random jobs get killed :/ 
+2015-12-13 02:59:10	valdis	Oh, so gregkh did get it into 4.1.stable?
+2015-12-13 02:59:24	glycoknob	valdis: the commit is also in 4.1 stable
+2015-12-13 02:59:58	glycoknob	but the problem also appeared before the commit 
+2015-12-13 03:00:07	glycoknob	on 4.2.0 
+2015-12-13 03:00:07	valdis	Though looking at it, it *closes* one way the issue can happen.  So you're probably looking for another cause.
+2015-12-13 03:00:50	glycoknob	valdis: Can I turn on some knobs that help the developers to pinpoint it? e.g. backtraces or something like that? 
+2015-12-13 03:01:34	<--	Jesin (~Jesin@pool-108-48-131-2.washdc.east.verizon.net) has quit (Quit: Leaving)
+2015-12-13 03:02:04	valdis	Well, other than the backtrace the BUG produced, nothing obvious.  If you're able to build/boot your own kernel, I'd turn on everything in sight under 'Kernel Debugging' in make menuconfig and pray that a debugging check catches the issue closer to the root cause...
+2015-12-13 03:03:06	glycoknob	valdis: funnily enough.. there is no backtrace for this bug - however should adding debug to the kernel cmdline would help? 
+2015-12-13 03:04:32	valdis	Umm.. if your kernel BUG''ed and didn't produce a backtrace, something is wrong...
+2015-12-13 03:05:15	valdis	Might want to turn on netconsole to another box or something, see if the issue is that after the BUG, your syslog daemon becomes wedged.
+2015-12-13 03:05:20	-->	Delta0 (~AndChat45@201.247.92.14) has joined #kernelnewbies
+2015-12-13 03:05:45	glycoknob	valdis: I'm using the Ubuntu Wily 4.2 Kernel at the moment, before that the mainline builds from ubuntu kernel mainline.. backtraces for other stuff appear
+2015-12-13 03:06:12	glycoknob	valdis: the system is stable after the bug appears.. just some hadoop daemons crash randomly due to it
+2015-12-13 03:08:58	glycoknob	valdis: e.g. I can trigger stuff via sysreq and it appears fine
+2015-12-13 03:10:24	glycoknob	here is the source: https://github.com/torvalds/linux/blob/master/kernel/fork.c#L636
+2015-12-13 03:10:36	glycoknob	pr_alert doesn not trigger a backtrace or am I wrong? 
+2015-12-13 03:12:52	<--	AndChat|457281 (~AndChat45@201.247.43.182) has quit (Ping timeout: 480 seconds)
+2015-12-13 03:14:48	glycoknob	could btrfs cause such a behavoir? 
+2015-12-13 03:17:27	-->	nand1 (~user@c-24-130-233-231.hsd1.ca.comcast.net) has joined #kernelnewbies
+2015-12-13 03:18:31	<--	MindlessDrone (~MindlessD@0001f56c.user.oftc.net) has quit (Quit: .)
+2015-12-13 03:19:55	valdis	That's weird.  pr_alert() should make it out if lower-priority stuff is as well...
+2015-12-13 03:25:38	glycoknob	valdis: can you clarify? pr_alert() should trigger a backtrace? 
+2015-12-13 03:25:47	glycoknob	another funny thing: 
+2015-12-13 03:25:59	glycoknob	app crashes 5-10 minutes before the line appears in dmesg
+2015-12-13 03:26:26	glycoknob	but we have 135 servers (ecc memory) and it's always the same behavoir
+2015-12-13 03:26:51	glycoknob	so I can provide jvm crashlogs 
+2015-12-13 03:27:01	valdis	glycoknob: The 5-10 minutes isn't surprising.  App crashes, leaves crap in an inconsistent state - which then gets tripped over at a later time.
+2015-12-13 03:29:37	glycoknob	valdis: okay, so i try a clean reboot the thp disabled - is it okay to write this up and send a mail to the mm-mailing list? 
+2015-12-13 03:30:06	<--	arkhra (~arkhra@112.134.50.205) has quit (Quit: Leaving)
+2015-12-13 03:31:17	valdis	Sounds OK, not sure if they'll be able to identify the issue..
+2015-12-13 03:31:31	valdis	But it will be more productive than not wsending the mail :)
+2015-12-13 03:32:43	glycoknob	valdis: well I'm a student assistant at a university, we can reproduce the crash if someone want's to look into it, I guess we can arrange something. At the moment our hadoop cluster is unusable due to this bug. We need to run recent kernels due to btrfs (don't ask, was not my decision) 
+2015-12-13 03:33:42	glycoknob	I'm willing to give ssh access or provide any data if we can get rid of this stupid bug
+2015-12-13 03:34:30	valdis	More likely, you'll be asked to build a kernel with some debugging/instrumentation turned on.
+2015-12-13 03:35:18	glycoknob	valdis: can I use the ubuntu kernel with debug flags turned on? I guess it's not a problem, we pxe boot all machines however if the performance is like 100x worse it's a problem. 
+2015-12-13 03:37:45	<--	phant0mas (~quassel@147.95.122.252) has quit (Remote host closed the connection)
+2015-12-13 03:38:04	<--	ego (~ego@122.178.240.103) has quit (Ping timeout: 480 seconds)
+2015-12-13 03:38:38	glycoknob	valdis: thanks so far! do you have a link at hand what flags I need to turn on? I'll reboot the cluster with debug flags and try to debug the issue
+2015-12-13 03:41:44	valdis	'make menuconfig', look under 'kernel hacking' for stuff labeled 'debug' :)
+2015-12-13 03:44:02	TheJH	why does the deb-pkg target always clean and rebuild everything?
+2015-12-13 03:44:23	TheJH	when I use it to recompile the kernel when testing things, it is annoying and hides warnings from me
+2015-12-13 03:44:40	valdis	TheJH: then don't use deb-pkg for testing. :)
+2015-12-13 03:45:05	TheJH	valdis: ugh. but then I have to mess with the grub config, right?
+2015-12-13 03:47:26	valdis	TheJH: Well, depends.  If you have a 'installkernel' command, 'make install' will do all that for you.
+2015-12-13 03:48:07	valdis	rel=`make kernelrelease`
+2015-12-13 03:48:07	valdis	echo Installing kernel ${rel}
+2015-12-13 03:48:07	valdis	set -x
+2015-12-13 03:48:07	valdis	make modules_install
+2015-12-13 03:48:07	valdis	cp System.map /boot/System.map-${rel}
+2015-12-13 03:48:08	valdis	cp .config /boot/config-${rel}
+2015-12-13 03:48:08	valdis	/usr/bin/dracut --xz -f -H --no-kernel -o "busybox qemu btrfs resume kernel-modules dmraid multipath" /boot/initramfs-${rel}.img ${rel}
+2015-12-13 03:48:10	valdis	cp arch/x86/boot/bzImage /boot/vmlinuz-${rel}
+2015-12-13 03:48:10	valdis	grubby --add-kernel=/boot/vmlinuz-${rel} --initrd=/boot/initramfs-${rel}.img --title=${rel} --make-default --copy-default
+2015-12-13 03:48:11	TheJH	ah, in "debiantools"
+2015-12-13 03:48:13	valdis	That;s mine.
+2015-12-13 03:48:32	TheJH	seems like debian ships with one
+2015-12-13 03:48:33	valdis	And it can even be simpler.
+2015-12-13 03:48:51	TheJH	er, "debianutils"
+2015-12-13 03:49:54	valdis	If it does a 'make modules_install', copies the kernel, builds a new initrd, and updates grub/whatever, that's all that;'s needed.  Copying over System.map and .config are gravy.
+2015-12-13 03:50:54	TheJH	nice, it runs everything in /etc/kernel/postinst.d on the new kernel. with update-grub, initramfs-tools and a bunch of other things
+2015-12-13 03:51:52	TheJH	so, "make -j8 && sudo make install"? to avoid having root-owned generated files in the kernel tree?
+2015-12-13 04:03:25	TheJH	yup, that worked. thanks!
+2015-12-13 04:10:49	-->	damentz (~damentz@cpe-70-122-34-87.austin.res.rr.com) has joined #kernelnewbies
+2015-12-13 04:14:25	-->	xerpi (~xerpi@125.Red-88-0-30.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-12-13 04:23:44	<--	xerpi (~xerpi@125.Red-88-0-30.dynamicIP.rima-tde.net) has quit (Remote host closed the connection)
+2015-12-13 04:29:35	<--	alabate (~alabate@ppp-seco21th2-46-193-163-21.wb.wifirst.net) has quit (Remote host closed the connection)
+2015-12-13 04:32:19	inkscaper	Which is the easiest file system to understand the file system basics in linux kernel
+2015-12-13 04:32:22	inkscaper	?
+2015-12-13 04:32:39	<--	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has quit (Ping timeout: 480 seconds)
+2015-12-13 04:36:45	<--	krnlyng (~liar@178.112.219.97.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 04:38:48	inkscaper	why gparted missing most of the filesystem in linux
+2015-12-13 04:38:54	inkscaper	for eg minix.
+2015-12-13 04:41:39	-->	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has joined #kernelnewbies
+2015-12-13 04:43:37	-->	jstein (~quassel@xdsl-213-196-221-102.netcologne.de) has joined #kernelnewbies
+2015-12-13 04:46:52	-->	krnlyng (~liar@77.117.21.135.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 04:50:54	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-12-13 04:51:59	<--	typh00nz (~typh00nz@pc184-187.solaris.ds.polsl.pl) has quit (Read error: Connection reset by peer)
+2015-12-13 04:53:20	<--	inkscaper (~inkscaper@183.87.226.198) has quit (Ping timeout: 480 seconds)
+2015-12-13 04:59:20	DrNick	the partition id number isn't used for anything
+2015-12-13 05:08:41	-->	xerpi (~xerpi@125.Red-88-0-30.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-12-13 05:09:21	-->	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has joined #kernelnewbies
+2015-12-13 05:10:24	-->	mawiegand (~marcel@p5088C251.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-13 05:11:46	-->	abelvesa (~abel@79.114.41.112) has joined #kernelnewbies
+2015-12-13 05:15:38	-->	_daniel_1 (~daniel@5-12-221-74.residential.rdsnet.ro) has joined #kernelnewbies
+2015-12-13 05:17:22	<--	vedantk (~vedantk@2620:149:4:1c03:8053:7feb:1f69:8f48) has quit (Ping timeout: 480 seconds)
+2015-12-13 05:32:43	<--	_daniel_1 (~daniel@5-12-221-74.residential.rdsnet.ro) has quit (Quit: Leaving.)
+2015-12-13 05:33:23	-->	typh00nz (~typh00nz@pc184-187.solaris.ds.polsl.pl) has joined #kernelnewbies
+2015-12-13 05:33:43	-->	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-12-13 05:35:17	<--	Shentino (~Shentino@96-41-208-3.dhcp.elbg.wa.charter.com) has quit (Remote host closed the connection)
+2015-12-13 05:43:09	<--	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has quit (Quit: Leaving)
+2015-12-13 05:50:28	-->	gcl (~gcl@host109-155-122-236.range109-155.btcentralplus.com) has joined #kernelnewbies
+2015-12-13 06:04:08	-->	APTX (~APTX@aptx.org) has joined #kernelnewbies
+2015-12-13 06:06:29	--	aep is now known as Guest1123
+2015-12-13 06:09:16	<--	glycoknob (~mt@p57920A88.dip0.t-ipconnect.de) has quit (Quit: leaving)
+2015-12-13 06:17:20	<--	Jackneill (~Jackneill@185.3.135.138) has quit (Ping timeout: 480 seconds)
+2015-12-13 06:21:33	-->	Shentino (~Shentino@96-41-208-3.dhcp.elbg.wa.charter.com) has joined #kernelnewbies
+2015-12-13 06:26:26	<--	gcl (~gcl@host109-155-122-236.range109-155.btcentralplus.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 06:36:55	<--	krnlyng (~liar@77.117.21.135.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 06:45:56	-->	krnlyng (~liar@77.116.112.109.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 07:06:40	-->	MindlessDrone (~MindlessD@0001f56c.user.oftc.net) has joined #kernelnewbies
+2015-12-13 07:07:20	<--	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has quit (Quit: Ex-Chat)
+2015-12-13 07:11:20	<--	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-12-13 07:11:47	-->	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-12-13 07:14:55	<--	pgquiles (~pgquiles@89.29.174.205) has quit (Quit: Konversation terminated!)
+2015-12-13 07:17:34	<--	rendar (~rendar@host76-38-dynamic.60-82-r.retail.telecomitalia.it) has quit (Quit: Leaving)
+2015-12-13 07:18:01	<--	Nik05 (~Nik05@0001a8cd.user.oftc.net) has quit (Remote host closed the connection)
+2015-12-13 07:20:29	-->	Nik05 (~Nik05@0001a8cd.user.oftc.net) has joined #kernelnewbies
+2015-12-13 07:21:05	<--	abelvesa (~abel@79.114.41.112) has quit (Read error: No route to host)
+2015-12-13 07:25:36	-->	abelvesa (~abel@79.114.41.112) has joined #kernelnewbies
+2015-12-13 07:36:54	<--	abelvesa (~abel@79.114.41.112) has quit (Ping timeout: 480 seconds)
+2015-12-13 07:37:11	-->	DeadlyAssassin (~marcel@p5088C251.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-13 07:40:50	<--	mawiegand (~marcel@p5088C251.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-12-13 07:47:50	-->	alabate (~alabate@ppp-seco21th2-46-193-163-21.wb.wifirst.net) has joined #kernelnewbies
+2015-12-13 07:55:10	-->	abelvesa (~abel@79.118.15.3) has joined #kernelnewbies
+2015-12-13 07:57:38	<--	JackWinter2 (~jack@252.Red-88-22-243.staticIP.rima-tde.net) has quit (Quit: Konversation terminated!)
+2015-12-13 07:57:56	-->	JackWinter2 (~jack@252.Red-88-22-243.staticIP.rima-tde.net) has joined #kernelnewbies
+2015-12-13 08:01:34	<--	valdis (~valdis@2601:5c0:c100:992::140) has quit (Remote host closed the connection)
+2015-12-13 08:03:44	-->	abelvesa_ (~abel@79.118.15.3) has joined #kernelnewbies
+2015-12-13 08:04:21	<--	DeadlyAssassin (~marcel@p5088C251.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-12-13 08:05:29	<--	abelvesa (~abel@79.118.15.3) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:06:29	-->	mawiegand (~marcel@p5088C251.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-13 08:14:05	<--	abelvesa_ (~abel@79.118.15.3) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:17:21	-->	abelvesa (~abel@79.118.15.3) has joined #kernelnewbies
+2015-12-13 08:24:29	<--	ss_ (~ss@2602:306:8088:d1a0:8a9f:faff:fe6f:bece) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:27:22	<--	ChandanKr (~Chandan@122.172.206.74) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:27:39	<--	abelvesa (~abel@79.118.15.3) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:31:13	-->	abelvesa (~abel@79.113.79.215) has joined #kernelnewbies
+2015-12-13 08:32:51	-->	Jesin (~Jesin@pool-72-83-138-125.washdc.fios.verizon.net) has joined #kernelnewbies
+2015-12-13 08:33:01	<--	JackWinter2 (~jack@252.Red-88-22-243.staticIP.rima-tde.net) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:34:17	-->	ss_ (~ss@2602:306:8088:d1a0:66d0:961a:cf51:1be5) has joined #kernelnewbies
+2015-12-13 08:38:05	<--	krnlyng (~liar@77.116.112.109.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:38:37	-->	abelvesa_ (~abel@79.114.34.52) has joined #kernelnewbies
+2015-12-13 08:39:21	<--	abelvesa (~abel@79.113.79.215) has quit (Read error: Connection reset by peer)
+2015-12-13 08:45:37	<--	superkuh (~superkuh@c-50-188-29-225.hsd1.wi.comcast.net) has quit (Remote host closed the connection)
+2015-12-13 08:47:13	-->	superkuh (~superkuh@c-50-188-29-225.hsd1.wi.comcast.net) has joined #kernelnewbies
+2015-12-13 08:47:18	-->	krnlyng (~liar@77.117.64.4.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 08:50:12	-->	AndChat|457281 (~AndChat45@201.247.43.59) has joined #kernelnewbies
+2015-12-13 08:51:00	<--	abelvesa_ (~abel@79.114.34.52) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:54:11	<--	Delta0 (~AndChat45@201.247.92.14) has quit (Ping timeout: 480 seconds)
+2015-12-13 08:55:09	<--	utack (~utack@2a02:810a:913f:d088:d63d:7eff:fedb:b2eb) has quit (Remote host closed the connection)
+2015-12-13 08:59:07	<--	fstd (~fstd@xdsl-87-78-19-113.netcologne.de) has quit (Remote host closed the connection)
+2015-12-13 08:59:19	-->	fstd (~fstd@xdsl-84-44-221-27.netcologne.de) has joined #kernelnewbies
+2015-12-13 09:08:55	<--	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-12-13 09:11:13	-->	vedantk (~vedantk@2620:149:4:1c03:1010:d92:5039:a1b4) has joined #kernelnewbies
+2015-12-13 09:19:17	<--	vedantk (~vedantk@2620:149:4:1c03:1010:d92:5039:a1b4) has quit (Ping timeout: 480 seconds)
+2015-12-13 09:21:23	<--	seschwar (~seschwar@ip5f5acb44.dynamic.kabel-deutschland.de) has quit (Quit: :qa)
+2015-12-13 09:33:27	<--	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has quit (Quit: Leaving...)
+2015-12-13 09:34:17	-->	abelvesa (~abel@79.113.79.215) has joined #kernelnewbies
+2015-12-13 09:37:27	<--	AndChat|457281 (~AndChat45@201.247.43.59) has quit (Ping timeout: 480 seconds)
+2015-12-13 09:39:44	-->	wtf_fcntl (~wtf@6YRAABK9R.tor-irc.dnsbl.oftc.net) has joined #kernelnewbies
+2015-12-13 09:40:47	<--	xerpi (~xerpi@125.Red-88-0-30.dynamicIP.rima-tde.net) has quit (Remote host closed the connection)
+2015-12-13 09:43:31	-->	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has joined #kernelnewbies
+2015-12-13 09:46:20	-->	valdis (~valdis@2601:5c0:c100:992::140) has joined #kernelnewbies
+2015-12-13 09:57:08	<--	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has quit (Remote host closed the connection)
+2015-12-13 09:57:29	-->	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has joined #kernelnewbies
+2015-12-13 09:57:31	-->	Delta0 (~AndChat45@201.247.44.236) has joined #kernelnewbies
+2015-12-13 09:57:35	-->	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has joined #kernelnewbies
+2015-12-13 10:27:25	<--	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has quit (Read error: Connection reset by peer)
+2015-12-13 10:27:43	-->	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has joined #kernelnewbies
+2015-12-13 10:31:09	-->	chatsiri1 (~chatsiri_@119-46-191-20.static.asianet.co.th) has joined #kernelnewbies
+2015-12-13 10:38:45	<--	krnlyng (~liar@77.117.64.4.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-13 10:43:38	-->	kristina (~kristina@0001ca2f.user.oftc.net) has joined #kernelnewbies
+2015-12-13 10:48:18	-->	krnlyng (~liar@77.117.85.224.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-13 11:00:39	<--	kristina (~kristina@0001ca2f.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-12-13 11:01:31	<--	bayouben_ (~bayoubeng@71-15-105-17.dhcp.ftwo.tx.charter.com) has quit (Quit: Leaving...)
+2015-12-13 11:07:12	<--	shuah (~shuah@c-73-181-52-62.hsd1.co.comcast.net) has quit (Quit: Leaving)
+2015-12-13 11:08:06	--	irc: disconnected from server
+2015-12-13 21:12:33	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-13 21:12:33	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-13 21:12:33	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-13 21:12:33	--	Channel #kernelnewbies: 288 nicks (0 ops, 0 voices, 288 normals)
+2015-12-13 21:12:33	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-13 21:12:35	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-13 21:12:38	derRichard	diego: why do you think so? the statement is still valid
+2015-12-13 21:12:50	diego	ok
+2015-12-13 21:13:15	diego	can you think of anything else I should keep?
+2015-12-13 21:13:25	diego	derRichard: I don't want to take anything away
+2015-12-13 21:13:42	diego	derRichard: I just want to update the README so that it also mentions other bootloaders
+2015-12-13 21:13:52	diego	basically, I want to keep the README up to date
+2015-12-13 21:13:56	derRichard	as i wrote on lkml. don't jist remove stuff
+2015-12-13 21:14:02	derRichard	_add_ new intesting stuff
+2015-12-13 21:14:15	diego	ok
+2015-12-13 21:14:16	derRichard	you may not like lilo nor use it. other do
+2015-12-13 21:14:28	derRichard	and they (including me) will NAK your patch :)
+2015-12-13 21:14:31	diego	it's not that I don't like lilo
+2015-12-13 21:14:38	diego	it's just that I want to keep the README up to date
+2015-12-13 21:14:45	diego	:)
+2015-12-13 21:15:04	diego	ok
+2015-12-13 21:15:08	diego	let me try to do that
+2015-12-13 21:16:45	derRichard	also think of the target audience
+2015-12-13 21:17:01	derRichard	joy random user will just use the distro way of installing a new kernel
+2015-12-13 21:17:09	<--	bps28 (~chatzilla@188.71.232.30) has quit (Ping timeout: 480 seconds)
+2015-12-13 21:18:34	diego	yeah
+2015-12-13 21:19:25	diego	lol
+2015-12-13 21:20:56	derRichard	"Refer to your bootloader documentation for configuration details." is useless
+2015-12-13 21:21:03	derRichard	kernel hackers know that we have grub, lilo and friends
+2015-12-13 21:21:25	derRichard	you could provide some examples, how to use them. especially gummiboot is less known
+2015-12-13 21:21:32	derRichard	and don't focus only on x86
+2015-12-13 21:22:30	diego	derRichard: the problem is, I can mention GRUB, systemd-boot, syslinux, gummiboot, etc. but if I mention how to configure each, the README file will be huge
+2015-12-13 21:23:23	diego	so I can list the configuration for each, or I can be more vague
+2015-12-13 21:23:44	diego	or refer only to GRUB or lilo
+2015-12-13 21:23:53	diego	not sure what I can do here
+2015-12-13 21:24:33	diego	:(
+2015-12-13 21:25:12	diego	derRichard: I wanted to make it as agnostic as possible, but I see some people won't like that
+2015-12-13 21:26:11	diego	what do you suggest?
+2015-12-13 21:27:01	derRichard	you want to change/fix/improve/whatever the README
+2015-12-13 21:27:13	diego	yeah sure
+2015-12-13 21:27:30	<--	alabate (~alabate@ppp-seco21th2-46-193-163-21.wb.wifirst.net) has quit (Read error: Connection reset by peer)
+2015-12-13 21:27:33	-->	alabate (~alabate@ppp-seco21th2-46-193-163-21.wb.wifirst.net) has joined #kernelnewbies
+2015-12-13 21:28:57	<--	kristina (~kristina@0001ca2f.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-12-13 21:29:14	-->	kristina (~kristina@0001ca2f.user.oftc.net) has joined #kernelnewbies
+2015-12-13 21:29:23	diego	derRichard: we can list all possible bootloaders for x86 and ARM and provide a config for each, but the README will be huge, I don't think that's a problem but do we really want that?
+2015-12-13 21:30:09	-->	seschwar (~seschwar@ip5f5acb44.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2015-12-13 21:31:07	derRichard	diego: the main problem is that README does not need an update ;)
+2015-12-13 21:31:43	-->	dviola (~diego@186.0.190.179) has joined #kernelnewbies
+2015-12-13 21:32:19	diego	derRichard: what about this message? https://lkml.org/lkml/2015/12/10/602
+2015-12-13 21:33:41	diego	some of us disagree
+2015-12-13 21:34:06	<--	Jesin (~Jesin@pool-72-83-138-125.washdc.fios.verizon.net) has quit (Quit: Leaving)
+2015-12-13 21:35:02	derRichard	diego: well, send a patch which *improves* the README
+2015-12-13 21:35:16	derRichard	what you did so far is removing stuff...
+2015-12-13 21:35:45	diego	ok
+2015-12-13 21:37:25	-->	Overlap (~zero@1.22.167.88) has joined #kernelnewbies
+2015-12-13 21:37:55	 *	Overlap waves Hello
+2015-12-13 21:39:17	 *	Overlap says Hi
+2015-12-13 21:39:38	<--	Overlap (~zero@1.22.167.88) has left #kernelnewbies
+2015-12-13 21:42:41	-->	versex (~versex@cpe-69-132-231-225.carolina.res.rr.com) has joined #kernelnewbies
+2015-12-13 21:43:27	--	irc: disconnected from server
+2015-12-19 18:51:35	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-19 18:51:35	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-19 18:51:35	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-19 18:51:35	--	Channel #kernelnewbies: 283 nicks (0 ops, 0 voices, 283 normals)
+2015-12-19 18:51:35	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-19 18:51:37	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-19 18:55:32	-->	nicst` (~user@x55b167cd.dyn.telefonica.de) has joined #kernelnewbies
+2015-12-19 18:56:01	-->	ego (~ego@106.208.57.128) has joined #kernelnewbies
+2015-12-19 18:56:06	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-12-19 18:56:55	-->	jstein (~quassel@xdsl-213-196-241-74.netcologne.de) has joined #kernelnewbies
+2015-12-19 19:02:55	<--	nicst (~user@x55b1c3da.dyn.telefonica.de) has quit (Ping timeout: 480 seconds)
+2015-12-19 19:05:56	<--	eyck (~eyck@u28n61.nowanet.pl) has quit (Quit: leaving)
+2015-12-19 19:06:03	-->	eyck (~eyck@u28n61.nowanet.pl) has joined #kernelnewbies
+2015-12-19 19:08:43	<--	jstein (~quassel@xdsl-213-196-241-74.netcologne.de) has quit (Remote host closed the connection)
+2015-12-19 19:11:48	<--	kristina (~kristina@0001ca2f.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2015-12-19 19:12:21	<--	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has quit (Quit: Ex-Chat)
+2015-12-19 19:14:15	-->	kevind (~kevind@115.99.48.115) has joined #kernelnewbies
+2015-12-19 19:17:29	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-12-19 19:21:45	<--	w41 (~w41@37.204.1.155) has quit (Ping timeout: 480 seconds)
+2015-12-19 19:21:46	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-12-19 19:24:59	kevind	I forgot to plug my usb drive while using make localmodconfig, now i want my kernel support for usb drive how do i compile that module?
+2015-12-19 19:28:46	derRichard	enable it in your .config
+2015-12-19 19:28:50	derRichard	make menuconfig helps
+2015-12-19 19:35:27	kevind	Thanks @derRichard my question is how will I find the exact driver using menuconfig. I have westerndigital external harddrive
+2015-12-19 19:42:57	derRichard	well, the generic usb mass storage driver should manage ti
+2015-12-19 19:43:00	derRichard	*it
+2015-12-19 19:46:52	<--	mawiegand (~marcel@p20030056CB261CECC6346BFFFE286F63.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2015-12-19 19:51:34	-->	w41 (~w41@37.204.1.155) has joined #kernelnewbies
+2015-12-19 19:56:03	<--	krnlyng (~liar@77.116.98.221.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:00:35	-->	krnlyng (~liar@77.117.76.79.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-19 20:02:47	<--	w41 (~w41@37.204.1.155) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:04:50	<--	eyck (~eyck@u28n61.nowanet.pl) has quit (Quit: leaving)
+2015-12-19 20:04:57	-->	eyck (~eyck@u28n61.nowanet.pl) has joined #kernelnewbies
+2015-12-19 20:06:58	-->	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has joined #kernelnewbies
+2015-12-19 20:08:11	<--	ego (~ego@106.208.57.128) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:08:42	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-12-19 20:08:56	<--	eyck (~eyck@u28n61.nowanet.pl) has quit
+2015-12-19 20:09:04	-->	eyck (~eyck@u28n61.nowanet.pl) has joined #kernelnewbies
+2015-12-19 20:13:12	<--	_daniel_ (~daniel@86.121.174.128) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:14:41	-->	_daniel_ (~daniel@86.121.66.176) has joined #kernelnewbies
+2015-12-19 20:15:03	<--	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:17:32	-->	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has joined #kernelnewbies
+2015-12-19 20:19:14	-->	potrzebye (~pawlik@213-67-92-42-no160.tbcn.telia.com) has joined #kernelnewbies
+2015-12-19 20:25:35	<--	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:26:19	-->	saimen (~saimen@host200-2.natpool.mwn.de) has joined #kernelnewbies
+2015-12-19 20:28:40	<--	vedantk (~vedantk@2620:149:4:1c03:54fd:f2db:cc19:5404) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:30:09	-->	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has joined #kernelnewbies
+2015-12-19 20:30:09	<--	Lucifer (~Lucifer@wlan029231.mobiel.utwente.nl) has quit (Remote host closed the connection)
+2015-12-19 20:31:52	-->	w41 (~w41@37.204.1.155) has joined #kernelnewbies
+2015-12-19 20:32:27	<--	_daniel_ (~daniel@86.121.66.176) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:36:01	-->	sebras (~sebras@casper3.ghostscript.com) has joined #kernelnewbies
+2015-12-19 20:36:29	-->	_daniel_ (~daniel@188.25.161.127) has joined #kernelnewbies
+2015-12-19 20:37:47	-->	Ninjaboi (~quassel@142.147.120.51) has joined #kernelnewbies
+2015-12-19 20:38:05	<--	Ninjaboi (~quassel@142.147.120.51) has quit (Remote host closed the connection)
+2015-12-19 20:38:40	-->	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-12-19 20:44:16	<--	potrzebye (~pawlik@213-67-92-42-no160.tbcn.telia.com) has quit (Quit: potrzebye)
+2015-12-19 20:45:15	-->	R1SKY (~Risky@c-67-161-65-19.hsd1.ca.comcast.net) has joined #kernelnewbies
+2015-12-19 20:45:25	<--	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:53:25	<--	R1SKY (~Risky@c-67-161-65-19.hsd1.ca.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-12-19 20:58:09	-->	Lucifer_ (~Lucifer@stud171019.mobiel.utwente.nl) has joined #kernelnewbies
+2015-12-19 20:59:05	<--	fstd (~fstd@xdsl-87-78-10-170.netcologne.de) has quit (Remote host closed the connection)
+2015-12-19 20:59:16	-->	fstd (~fstd@xdsl-87-78-140-152.netcologne.de) has joined #kernelnewbies
+2015-12-19 21:09:15	<--	chandan__ (~chandan@122.172.144.248) has quit (Ping timeout: 480 seconds)
+2015-12-19 21:25:42	<--	Lucifer_ (~Lucifer@stud171019.mobiel.utwente.nl) has quit (Remote host closed the connection)
+2015-12-19 21:29:08	<--	krnlyng (~liar@77.117.76.79.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-19 21:31:19	-->	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has joined #kernelnewbies
+2015-12-19 21:33:22	<--	xerpi (~xerpi@208.Red-88-5-181.dynamicIP.rima-tde.net) has quit (Remote host closed the connection)
+2015-12-19 21:33:51	<--	kevind (~kevind@115.99.48.115) has quit (Ping timeout: 480 seconds)
+2015-12-19 21:34:31	-->	DownFreeze (~emersonmd@c-98-192-197-120.hsd1.de.comcast.net) has joined #kernelnewbies
+2015-12-19 21:42:40	<--	DownFreeze (~emersonmd@c-98-192-197-120.hsd1.de.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-12-19 21:46:15	<--	sfix (~sfix@00021410.user.oftc.net) has quit (Quit: ZNC 1.6.1 - http://znc.in)
+2015-12-19 21:47:00	-->	sfix (~sfix@104.247.192.34) has joined #kernelnewbies
+2015-12-19 21:52:26	<--	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has quit (Remote host closed the connection)
+2015-12-19 21:53:16	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-12-19 22:00:15	-->	vedantk (~vedantk@2620:149:4:1c03:54fd:f2db:cc19:5404) has joined #kernelnewbies
+2015-12-19 22:00:50	-->	krnlyng (~liar@77.117.76.79.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-19 22:07:40	-->	R1SKY (~Risky@c-67-161-65-19.hsd1.ca.comcast.net) has joined #kernelnewbies
+2015-12-19 22:15:45	<--	R1SKY (~Risky@c-67-161-65-19.hsd1.ca.comcast.net) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:17:12	-->	abelvesa (~abel@79.118.15.92) has joined #kernelnewbies
+2015-12-19 22:18:36	<--	ChandanKr (~Chandan@122.167.67.165) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:19:48	<--	skv (~developer@84.17.19.202) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:25:13	<--	Jackneill (~Jackneill@5.157.38.2) has quit (Quit: Leaving)
+2015-12-19 22:30:17	<--	_Ralf_ (~ralf@p54BAE949.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:32:14	-->	mawiegand (~marcel@p20030056CB261CECC6346BFFFE286F63.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-19 22:34:20	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-12-19 22:36:08	<--	nicst` (~user@x55b167cd.dyn.telefonica.de) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:36:25	-->	_Ralf_ (~ralf@p2003006A7F7DC800267703FFFE5007C4.dip0.t-ipconnect.de) has joined #kernelnewbies
+2015-12-19 22:40:10	-->	ChandanKr (~Chandan@122.167.67.165) has joined #kernelnewbies
+2015-12-19 22:40:22	<--	towo` (~towo@00012f0f.user.oftc.net) has quit (Quit: Leaving)
+2015-12-19 22:41:26	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2015-12-19 22:47:32	<--	_Ralf_ (~ralf@p2003006A7F7DC800267703FFFE5007C4.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2015-12-19 22:47:46	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-12-19 22:48:49	<--	doener (~doener@5.147.61.64) has quit (Quit: leaving)
+2015-12-19 22:50:22	-->	arkhra (~arkhra@112.134.48.146) has joined #kernelnewbies
+2015-12-19 22:50:37	-->	AndChat|457281 (~AndChat45@201.247.43.76) has joined #kernelnewbies
+2015-12-19 22:51:15	<--	arkhra (~arkhra@112.134.48.146) has left #kernelnewbies
+2015-12-19 22:51:26	-->	krypted (~krypted@112.134.48.146) has joined #kernelnewbies
+2015-12-19 22:54:45	<--	krypted (~krypted@112.134.48.146) has quit
+2015-12-19 22:55:45	<--	Delta0 (~AndChat45@201.247.92.52) has quit (Ping timeout: 480 seconds)
+2015-12-19 23:02:55	-->	violeta (~violeta@86.Red-83-39-0.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-12-19 23:02:56	-->	Jackneill (~Jackneill@5.153.234.66) has joined #kernelnewbies
+2015-12-19 23:09:12	-->	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-12-19 23:29:41	--	irc: disconnected from server
+2015-12-19 23:30:03	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-19 23:30:03	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-19 23:30:03	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-19 23:30:03	--	Channel #kernelnewbies: 279 nicks (0 ops, 0 voices, 279 normals)
+2015-12-19 23:30:03	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-19 23:30:04	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-19 23:32:48	<--	krnlyng (~liar@77.117.76.79.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-19 23:32:56	<--	pgquiles (~pgquiles@89.29.174.203) has quit (Quit: Konversation terminated!)
+2015-12-19 23:36:15	-->	kevind (~kevind@115.99.48.115) has joined #kernelnewbies
+2015-12-19 23:38:55	--	irc: disconnected from server
+2015-12-19 23:39:28	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-19 23:39:28	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-19 23:39:28	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-19 23:39:28	--	Channel #kernelnewbies: 278 nicks (0 ops, 0 voices, 278 normals)
+2015-12-19 23:39:28	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-19 23:39:29	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-19 23:39:58	--	irc: disconnected from server
+2015-12-20 13:51:23	-->	alhunt (~alhunt@58-7-174-79.dyn.iinet.net.au) has joined #kernelnewbies
+2015-12-20 13:51:23	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2015-12-20 13:51:23	--	Topic set by nmSyone (~nuno.mato@2001:8a0:6a01:1701:be85:56ff:feb0:69dd) on Fri, 09 Oct 2015 22:19:44
+2015-12-20 13:51:23	--	Channel #kernelnewbies: 266 nicks (0 ops, 0 voices, 266 normals)
+2015-12-20 13:51:23	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2015-12-20 13:51:24	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2015-12-20 14:00:09	<--	DownFreeze (~emersonmd@50.153.190.193) has quit (Remote host closed the connection)
+2015-12-20 14:00:22	-->	DownFreeze (~emersonmd@50.153.190.193) has joined #kernelnewbies
+2015-12-20 14:05:48	<--	chatsiri1 (~chatsiri_@203.131.216.244) has quit (Ping timeout: 480 seconds)
+2015-12-20 14:08:53	-->	chatsiri_ (~chatsiri_@203.131.216.244) has joined #kernelnewbies
+2015-12-20 14:09:49	<--	sebras (~sebras@casper3.ghostscript.com) has quit (Quit: Lost terminal)
+2015-12-20 14:13:54	<--	DownFreeze (~emersonmd@50.153.190.193) has quit (Remote host closed the connection)
+2015-12-20 14:14:07	-->	DownFreeze (~emersonmd@50.153.190.193) has joined #kernelnewbies
+2015-12-20 14:26:24	<--	chatsiri_ (~chatsiri_@203.131.216.244) has quit (Ping timeout: 480 seconds)
+2015-12-20 14:45:08	-->	chatsiri1 (~chatsiri_@203.131.216.244) has joined #kernelnewbies
+2015-12-20 14:48:29	<--	excelsior (~vijay@1.23.37.80) has quit (Quit: leaving)
+2015-12-20 14:48:47	-->	excelsior (~vijay@1.23.37.80) has joined #kernelnewbies
+2015-12-20 14:49:27	<--	excelsior (~vijay@1.23.37.80) has quit
+2015-12-20 14:51:28	-->	excelsior (~vijay@1.23.37.80) has joined #kernelnewbies
+2015-12-20 14:55:08	<--	DownFreeze (~emersonmd@50.153.190.193) has quit (Remote host closed the connection)
+2015-12-20 14:55:22	-->	DownFreeze (~emersonmd@50.153.190.193) has joined #kernelnewbies
+2015-12-20 15:01:37	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-12-20 15:27:33	-->	DownFree1e (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 15:28:43	-->	_0xAX (~alex@178.90.46.98) has joined #kernelnewbies
+2015-12-20 15:30:06	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Quit: reijnden)
+2015-12-20 15:30:28	<--	DownFreeze (~emersonmd@50.153.190.193) has quit (Ping timeout: 480 seconds)
+2015-12-20 15:34:12	alhunt	I understand that when submitting patches each patch should fix one thing. What do you do when your patch doesn't fix all checkpatch errors on a line you've modified? So checkpatch will throw a check for the patch your submitting.
+2015-12-20 15:35:20	<--	medfly (~notf@CPEc8d3a35c2cdd-CM0c473de9d680.cpe.net.cable.rogers.com) has left #kernelnewbies
+2015-12-20 15:36:30	<--	DownFree1e (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 15:36:43	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 15:38:13	<--	chatsiri1 (~chatsiri_@203.131.216.244) has quit (Ping timeout: 480 seconds)
+2015-12-20 15:40:17	vishal	alhunt: you could take the chance to fix the checkpatch error also, and make a note of it in the commit message
+2015-12-20 15:40:51	vishal	since you're already touching the line, additional changes aren't a big deal
+2015-12-20 15:42:37	alhunt	The problem is the patch is just a simple one to remove unnecessary parentheses but the checkpatch check is about camelcase
+2015-12-20 15:44:45	alhunt	changing the camelcase variable to lower would mean changing multiple other lines
+2015-12-20 15:44:46	<--	utack_ (~utack@x5d8740f5.dyn.telefonica.de) has quit (Ping timeout: 480 seconds)
+2015-12-20 15:45:18	-->	utack_ (~utack@x5d87bddd.dyn.telefonica.de) has joined #kernelnewbies
+2015-12-20 15:49:39	vbabka	alhunt: is the parentheses patch worth it anyway?
+2015-12-20 15:51:48	vbabka	they might be there to make the code clearer to humans, even though compiler doesn't care
+2015-12-20 15:52:16	alhunt	vbabka: I've never contributed before so this was more an exercise on understanding the submission process rather than a dying need to fix up checkpatch issues.
+2015-12-20 15:53:26	vbabka	ok, please keep avoiding such need :P
+2015-12-20 15:53:39	alhunt	Perhaps I'll take a step back and find something more straight forward.
+2015-12-20 15:55:20	alhunt	I'm also looking at cheap wifi nics that use rtl8188eu so I can try and make a more useful contribution.
+2015-12-20 15:55:25	<--	evilman_work (~evilman@87.244.6.228) has quit (Ping timeout: 480 seconds)
+2015-12-20 16:08:51	-->	evilman_work (~evilman@87.244.6.228) has joined #kernelnewbies
+2015-12-20 16:24:10	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2015-12-20 16:27:37	<--	_0xAX (~alex@178.90.46.98) has quit (Remote host closed the connection)
+2015-12-20 16:30:20	-->	saimen (~saimen@host200-2.natpool.mwn.de) has joined #kernelnewbies
+2015-12-20 16:39:53	-->	trem (~trem@bny93-7-88-161-33-221.fbx.proxad.net) has joined #kernelnewbies
+2015-12-20 16:43:29	-->	_daniel_ (~daniel@188.25.161.127) has joined #kernelnewbies
+2015-12-20 16:44:21	<--	creich (~unknown@ip92345395.dynamic.kabel-deutschland.de) has quit (Remote host closed the connection)
+2015-12-20 16:48:37	-->	pgquiles (~pgquiles@89.29.224.152) has joined #kernelnewbies
+2015-12-20 16:51:56	-->	hyperair (~hyperair@000165f0.user.oftc.net) has joined #kernelnewbies
+2015-12-20 16:57:51	-->	baldrick (~duncan@2a01:e35:2e83:a840:5995:e292:acd7:1ca) has joined #kernelnewbies
+2015-12-20 16:59:52	--	baldrick is now known as Guest1930
+2015-12-20 17:02:30	<--	Guest1930 (~duncan@2a01:e35:2e83:a840:5995:e292:acd7:1ca) has quit
+2015-12-20 17:02:41	-->	baldrick1 (~duncan@2a01:e35:2e83:a840:5995:e292:acd7:1ca) has joined #kernelnewbies
+2015-12-20 17:04:00	-->	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has joined #kernelnewbies
+2015-12-20 17:08:11	<--	DownFreeze (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 17:08:24	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 17:20:38	-->	hallor (~Mateusz_K@095160097038.warszawa.vectranet.pl) has joined #kernelnewbies
+2015-12-20 17:21:49	<--	baldrick1 (~duncan@2a01:e35:2e83:a840:5995:e292:acd7:1ca) has quit (Ping timeout: 480 seconds)
+2015-12-20 17:22:54	-->	baldrick (~duncan@2a01:e35:2e83:a840:9179:43ac:d7e2:817f) has joined #kernelnewbies
+2015-12-20 17:23:21	--	baldrick is now known as Guest1933
+2015-12-20 17:31:06	<--	DownFreeze (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 17:31:19	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 17:35:36	<--	hallor (~Mateusz_K@095160097038.warszawa.vectranet.pl) has quit (Quit: Leaving.)
+2015-12-20 17:37:07	-->	rasmikun (~rasmikun@0890663256.static.corbina.ru) has joined #kernelnewbies
+2015-12-20 17:39:22	-->	JackWinter (~jack@252.Red-88-22-243.staticIP.rima-tde.net) has joined #kernelnewbies
+2015-12-20 17:44:51	<--	DownFreeze (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 17:45:04	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 17:49:25	-->	Jackneill (~Jackneill@185.3.135.178) has joined #kernelnewbies
+2015-12-20 18:05:00	-->	xerpi (~xerpi@24.Red-88-9-7.dynamicIP.rima-tde.net) has joined #kernelnewbies
+2015-12-20 18:08:08	-->	w41 (~w41@37.204.1.155) has joined #kernelnewbies
+2015-12-20 18:10:11	<--	krnlyng (~liar@77.116.101.210.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2015-12-20 18:10:21	-->	krnlyng (~liar@77.116.101.210.wireless.dyn.drei.com) has joined #kernelnewbies
+2015-12-20 18:16:56	<--	DownFreeze (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 18:17:09	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 18:31:29	<--	kzak (~kzak@67.32.broadband7.iol.cz) has quit (Ping timeout: 480 seconds)
+2015-12-20 18:35:34	<--	isaky (~isaky@110.175.133.37.dynamic.jazztel.es) has quit (Quit: free(tryger);)
+2015-12-20 19:00:57	-->	ksenija (~ksenija@cable-24-135-212-198.dynamic.sbb.rs) has joined #kernelnewbies
+2015-12-20 19:07:24	<--	DownFreeze (~emersonmd@50.153.190.217) has quit (Remote host closed the connection)
+2015-12-20 19:07:37	-->	DownFreeze (~emersonmd@50.153.190.217) has joined #kernelnewbies
+2015-12-20 19:12:16	-->	hallor (~Mateusz_K@095160097038.warszawa.vectranet.pl) has joined #kernelnewbies
+2015-12-20 19:18:39	<--	einonm (~einonm@0001b256.user.oftc.net) has quit (Remote host closed the connection)
+2015-12-20 19:23:40	-->	einonm (~einonm@0001b256.user.oftc.net) has joined #kernelnewbies
+2015-12-20 19:26:24	<--	saimen (~saimen@host200-2.natpool.mwn.de) has quit (Ping timeout: 480 seconds)
+2015-12-20 19:30:19	--	irc: disconnected from server
+2016-11-24 20:23:49	-->	alhunt (~alhunt@124-168-247-3.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-24 20:23:49	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-24 20:23:49	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-24 20:23:49	--	Channel #kernelnewbies: 313 nicks (0 ops, 0 voices, 313 normals)
+2016-11-24 20:23:49	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-24 20:23:51	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-24 20:26:24	<--	palantir (~palantir@139.115.70.37.rev.sfr.net) has quit (Quit: My MacBook has gone to sleep. ZZZzzz…)
+2016-11-24 20:26:33	sandsmark	ok, rfkill ends up calling cfg80211_rfkill_set_block, which in turn calls the network dev_close(), which calls ieee80211_do_stop, which calls ieee80211_stop_device(), and I give up a bit
+2016-11-24 20:27:02	-->	palantir (~palantir@139.115.70.37.rev.sfr.net) has joined #kernelnewbies
+2016-11-24 20:27:02	<--	glassrose (~chandni@223.227.249.93) has quit (Read error: Connection reset by peer)
+2016-11-24 20:28:29	<--	palantir (~palantir@139.115.70.37.rev.sfr.net) has quit
+2016-11-24 20:30:01	-->	headless (~headless@31.173.81.23) has joined #kernelnewbies
+2016-11-24 20:31:57	<--	_sfiguser (~sfigguser@93-35-253-193.ip57.fastwebnet.it) has quit (Ping timeout: 480 seconds)
+2016-11-24 20:32:29	sandsmark	I wonder if there's a tool that can find the shortest path between two symbols
+2016-11-24 20:35:26	peterz	smatch could do that I think; at least it should have the information, not sure its easy to get otu
+2016-11-24 20:35:49	sandsmark	hmm
+2016-11-24 20:35:49	-->	theflyingwalrus (~theflying@host-78-144-67-203.as13285.net) has joined #kernelnewbies
+2016-11-24 20:37:01	sandsmark	ok, will have to look at it later, suddenly the board starts looping activating and deactivating USB when there's nothing plugged into the USB port...
+2016-11-24 20:38:42	liiwi	heh, seen that when plugging in ubikey
+2016-11-24 20:38:45	-->	shams (~shams@124.40.246.86) has joined #kernelnewbies
+2016-11-24 20:41:27	<--	kamalesh (~kamalesh@103.5.134.173) has quit (Ping timeout: 480 seconds)
+2016-11-24 20:42:00	-->	_sfiguser (~sfigguser@93-35-253-193.ip57.fastwebnet.it) has joined #kernelnewbies
+2016-11-24 20:44:37	-->	akshay_ (~akshay@106.51.235.168) has joined #kernelnewbies
+2016-11-24 20:47:15	<--	AnilV (~AnilV@125.16.97.127) has quit (Remote host closed the connection)
+2016-11-24 20:48:12	<--	aleixrocks (~aleix@clients-xsf-98.upc.es) has quit (Ping timeout: 480 seconds)
+2016-11-24 20:53:31	-->	bullgard4 (~bullgard4@dslb-094-223-175-110.094.223.pools.vodafone-ip.de) has joined #kernelnewbies
+2016-11-24 21:10:36	<--	headless (~headless@31.173.81.23) has quit (Quit: Konversation terminated!)
+2016-11-24 21:14:00	<--	ego (~ego@122.178.233.74) has quit (Quit: Leaving)
+2016-11-24 21:14:30	--	peterx is now known as peterx_away
+2016-11-24 21:16:29	<--	_sfiguser (~sfigguser@93-35-253-193.ip57.fastwebnet.it) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:23:37	<--	quintela (~quintela@trasno.trasno.org) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:27:19	<--	ZeekHuge (~ZeekHuge_@47.247.190.0) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:27:45	-->	_sfiguser (~sfigguser@93-35-242-188.ip57.fastwebnet.it) has joined #kernelnewbies
+2016-11-24 21:35:50	<--	ayjay_t (~ajp_@24-151-28-56.dhcp.nwtn.ct.charter.com) has quit (Remote host closed the connection)
+2016-11-24 21:36:14	<--	monstr (~monstr@nat-35.starnet.cz) has quit (Remote host closed the connection)
+2016-11-24 21:38:50	<--	mawiegand (~marcel@2001:638:508:b80:baee:65ff:fe22:8b8a) has quit (Quit: Konversation terminated!)
+2016-11-24 21:39:49	-->	chandan_ (~chandan@122.171.162.67) has joined #kernelnewbies
+2016-11-24 21:44:59	<--	cdown (~cdown@00019bfb.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:47:49	<--	pekkari (~pekkari@uk.sesame.canonical.com) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:51:00	-->	mkletzan (~mkletzan@nat-pool-brq-t.redhat.com) has joined #kernelnewbies
+2016-11-24 21:51:43	-->	palantir (~palantir@139.115.70.37.rev.sfr.net) has joined #kernelnewbies
+2016-11-24 21:53:23	-->	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has joined #kernelnewbies
+2016-11-24 21:53:52	<--	cleger (~cleger@92.103.151.218) has quit (Ping timeout: 480 seconds)
+2016-11-24 21:56:41	-->	pekkari (~pekkari@0BGAAAY0N.tor-irc.dnsbl.oftc.net) has joined #kernelnewbies
+2016-11-24 21:58:46	<--	pekkari (~pekkari@0BGAAAY0N.tor-irc.dnsbl.oftc.net) has quit
+2016-11-24 21:59:21	-->	pekkari (~pekkari@uk.sesame.canonical.com) has joined #kernelnewbies
+2016-11-24 21:59:21	-->	catwiesel (~catwiesel@ip-217-18-181-130.static.reverse.dsi.net) has joined #kernelnewbies
+2016-11-24 22:05:03	<--	palantir (~palantir@139.115.70.37.rev.sfr.net) has quit (Read error: Connection reset by peer)
+2016-11-24 22:10:17	-->	aleixrocks (~aleix@84.88.51.80) has joined #kernelnewbies
+2016-11-24 22:10:22	<--	annodomini (~lambda@000161aa.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2016-11-24 22:15:40	-->	mawiegand (~marcel@p20030056CB053700C6346BFFFE286F63.dip0.t-ipconnect.de) has joined #kernelnewbies
+2016-11-24 22:15:40	-->	aleixrocks_ (~aleix@84.88.51.80) has joined #kernelnewbies
+2016-11-24 22:15:45	<--	dhanesh95 (~Dhanesh@59.95.54.78) has quit (Quit: Time to leave. Sayonara!)
+2016-11-24 22:18:45	<--	aleixrocks_ (~aleix@84.88.51.80) has quit (Quit: Leaving)
+2016-11-24 22:21:55	<--	pekkari (~pekkari@uk.sesame.canonical.com) has quit (Ping timeout: 480 seconds)
+2016-11-24 22:21:55	-->	pekkari (~pekkari@uk.sesame.canonical.com) has joined #kernelnewbies
+2016-11-24 22:40:04	-->	maudat (~maudat@2607:fad8:4:6:f2de:f1ff:feb1:d7c5) has joined #kernelnewbies
+2016-11-24 22:50:12	-->	ZeekHuge (~ZeekHuge_@47.247.96.12) has joined #kernelnewbies
+2016-11-24 22:51:11	--	irc: disconnected from server
+2016-11-26 08:20:15	-->	alhunt (~alhunt@220-253-148-215.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-26 08:20:15	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-26 08:20:15	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-26 08:20:15	--	Channel #kernelnewbies: 298 nicks (0 ops, 0 voices, 298 normals)
+2016-11-26 08:20:15	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-26 08:20:18	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-26 08:32:33	-->	bird_brian (~bird_bria@128.135.100.113) has joined #kernelnewbies
+2016-11-26 08:35:00	-->	damentz (~damentz@cpe-70-122-17-194.austin.res.rr.com) has joined #kernelnewbies
+2016-11-26 08:40:23	<--	catwiesel (~catwiesel@p5DDA817E.dip0.t-ipconnect.de) has quit (Quit: Verlassend)
+2016-11-26 09:23:01	<--	keoz (~keikoz@pha75-1-81-57-54-15.fbx.proxad.net) has quit (Ping timeout: 480 seconds)
+2016-11-26 09:28:38	<--	krnlyng (~liar@178.114.76.179.wireless.dyn.drei.com) has quit (Ping timeout: 480 seconds)
+2016-11-26 09:31:12	<--	shams (~shams@124.40.246.86) has quit (Remote host closed the connection)
+2016-11-26 09:38:15	-->	krnlyng (~liar@77.116.9.216.wireless.dyn.drei.com) has joined #kernelnewbies
+2016-11-26 09:57:37	<--	FloodServ (services@services.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jgeboski (~jgeboski@00018c70.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	loganaden (~logan@208.95.3.4) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	dansan (~daniel@2602:304:cd72:9ed0::49) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	ryanlelek (sid116603@id-116603.brockwell.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	dtor (sid141506@id-141506.tooting.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	snkcld (sid54536@id-54536.highgate.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	gamingrobot (sid10990@id-10990.highgate.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jstultz (sid51929@id-51929.highgate.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	twodayslate (sid13012@id-13012.highgate.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	ggherdov__ (sid11402@id-11402.ealing.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	huaicheng (~coperd@lingua.cs.uchicago.edu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	qguv (~qguv@0002242e.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	trac3r (~sm00th@trac3r.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	tier2villain (~Max@ec2-54-200-14-229.us-west-2.compute.amazonaws.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	mje (~mje@mild.embarrassm.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	nlsun (~nlsun@162.243.157.145) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	chutz (~chutz@rygel.linuxfreak.ca) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	eam (~eam@nitre.bayhost.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	adarshaj (~adarshaj@adarshaj.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	perfinion (~perfinion@2001:470:f895::2:80) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	imMute (~immute@2600:3c00::f03c:91ff:febb:d59a) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	csmart_ (~quassel@45.55.219.131) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	radii (foobar@eden.hexapodia.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	pcreech (~pcreech@nat-pool-rdu-t.redhat.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	snoonan (znc@104.156.104.15) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	chunyan (uid61415@richmond.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	trigg (~trigg@32.97.110.57) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	pranith (~pranith@c-73-207-178-95.hsd1.ga.comcast.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	fiddlerwoaroof (~fiddlerwo@96-39-230-53.dhcp.mtpk.ca.charter.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	hoarycripple (~hoarycrip@100.17.22.74) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	wagle (~wagle@irc.wagle.io) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	ron (~ron@ppp118-210-25-204.bras1.adl2.internode.on.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	bfoster (~bfoster@nat-pool-bos-t.redhat.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	pranith_ (~pranith@senna.cc.gt.atl.ga.us) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	Feren^IRCCloud (sid180023@id-180023.charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	mparisi (~elusive@00017772.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	adema (~adema@ks397649.ip-192-95-26.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	demarchi (~lucasdema@politreco.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	machinaut (sid39679@id-39679.highgate.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	kofdog (~kofdog@li1076-130.members.linode.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	auviga (sid4731@id-4731.charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	ctag (~ctag@user-24-214-210-2.knology.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jpm (~jpm@2600:3c03::f03c:91ff:fe37:1e01) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	FluffyFoxeh (~Frogging@kitsune.fastquake.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	stotch (ACBxKfzmAj@perrin.stotch.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	fullstop (~fullstop@107.170.53.155) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	julia_c (~juliac@neo.teric.us) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	evanz (sid96905@00021588.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	py1hon (~kent@evilpiepirate.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	CoreDuo (~CoreDuo@216.8.161.80) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	harrison (~quassel@li89-226.members.linode.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	noahm (~frodo@noahm.sponsor.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	zrts (~zrts@00022954.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	gregkh (sid42031@id-42031.charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	arnd (sid21101@id-21101.tooting.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jedix (~jedix@000103f6.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	catern (~catern@catern.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	damentz (~damentz@cpe-70-122-17-194.austin.res.rr.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	nwmcsween (~nwmcsween@206.217.141.146) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	rogeliodh (~rogeliodh@ec2-52-90-241-120.compute-1.amazonaws.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jmichels (~jmichels@pool-96-227-101-203.phlapa.fios.verizon.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	uajain (~uajain@139.59.14.145) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	valdis (~valdis@c-71-63-94-37.hsd1.va.comcast.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	bwn (~bwn@c-73-2-40-52.hsd1.ca.comcast.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	Newsome (~sorenson@198-0-247-150-static.hfc.comcastbusiness.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	philipp64|macmini (~chatzilla@66-232-81-197.ctcweb.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	FL1SK (~quassel@96-18-175-161.cpe.cableone.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	albanc (sid51904@charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	kierank (sid5955@charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	sarnold (~sarnold@sarnold.noc.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	dtwlin (sid149820@charlton.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	unriel (~riel@nat-pool-bos-t.redhat.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	czchen (sid12445@ealing.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	genkimarshall (~genkimars@genki.is) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	haro (~haro@96-3-123-194-dynamic.midco.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	lag (lag__@ec2-54-225-101-41.compute-1.amazonaws.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	mgorbach (~mgorbach@pool-96-237-153-152.bstnma.ftas.verizon.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	mer (mer@00019ae0.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	meow` (~meow@147.ip-167-114-97.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jean (~jean@104.131.39.229) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	balrog (~balrog@000183c6.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	zwane (~zwane@d173-180-79-25.bchsia.telus.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	_1amzave (~zev@173.229.9.144) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	Sargun (~sargun@80.60.198.104.bc.googleusercontent.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	joraj (~ubuntu@cable-192.222.218.157.electronicbox.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jbermudes (~quassel@76.74.178.212) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	Azelphur (~Azelphur@znc.azelphur.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	sa7mfo (~marcus@192.241.216.73) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	trisk (~trisk@108-92-223-130.lightspeed.tpkaks.sbcglobal.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	Mercury (~warp@c-24-56-193-55.customer.broadstripe.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	trevnorris (~trevnorri@162.243.211.225) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	blunaxela (~alex@c-67-162-147-93.hsd1.co.comcast.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:37	<--	jtf (~jtf@c-24-9-69-206.hsd1.co.comcast.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	tlonim (~tlonim@0001ac68.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	vdl (~vivien@147.ip-167-114-97.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	p1c0 (~p1c0@li602-8.members.linode.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	rostedt (~rostedt@cpe-67-246-153-56.stny.res.rr.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	enoch247 (~josh@98.29.226.52) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Merlin (merlin@evendata.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	peterx_away (~zhexu@nat-pool-bos-t.redhat.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	chrstphrchvz (~sid104796@richmond.irccloud.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	timtam (~tim@voodoo.cms.waikato.ac.nz) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jwhite (~jwhite@75-146-153-89-minnesota.hfc.comcastbusiness.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	mikegrb (~mikegrb@mikegrb.netop.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ddstreet (~quassel@45-27-90-188.lightspeed.rlghnc.sbcglobal.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jgroves (~jmg@server.johngroves.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	paradigm (~paradigm@206.253.165.144) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	xelenonz (~xelenonz@me.rop.sh) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	mbtamuli12 (~mbtamuli@67.205.144.61) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	bodie (~bodie@162.243.100.83) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	tajnyman (tajnyman@0001f34d.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	CaptainKraft (~CaptainKr@104.131.135.189) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	dkc (~dan@00016f0b.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ben- (~ben@crypt.ly) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	cota (~cota@flamenco.cs.columbia.edu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	damjan (~damjan@znc.ie.mk) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	APic (apic@apic.name) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	xsdg (~xsdg@sipb-vm-99.mit.edu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	dustinm` (~dustinm`@68.ip-149-56-14.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	koike (~koike@50.57.74.102) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hackman (~hackman@82.118.240.253) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	N8Fear (~n8fear@p5DC5CDFA.dip0.t-ipconnect.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	sprabhu (~sprabhu@122.170.27.77) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	filt3r (~filter@2a03:b0c0:2:d0::7d:7001) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	cleger (~cleger@92.103.151.218) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	mkuu (~testing43@46.166.190.139) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	DonRichie (~DonRichie@ricl.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	excelsior (~vijay@1.23.36.36) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hadret (~hadret@deb.ianod.es) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	zown_ (~adam@c83-252-191-17.bredband.comhem.se) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	arturas (~arturas@lapinskas.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Turl (~Turl@yotta.elopez.com.ar) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Dr-Shadow (~quassel@2001:41d0:a:2872::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	worfox (~worfox@2001:41d0:a:23c1::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	anoopcs (firrre@2400:6180:0:d0::66:100f) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hirofumi (hirofumi@server.parknet.ne.jp) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	antispace (~antispace@00022c69.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	eyck (~eyck@st14cl28.host-nowanet.pl) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	nhlfr (~nhlfr@178.62.211.20) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	richi235 (~quassel@ipbcc1812b.dynamic.kabel-deutschland.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hypera1r (~hyperair@49.128.61.242) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	andrey_utkin (~andrey_ut@decent.im) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	taub (taub@95-170-95-129.colo.transip.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	tklauser (~noone@sym2.noone.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	nicst (~nicst@nicst.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	reynaldo (~rverdejo@tesla.opendot.cl) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	p_rossak (~quassel@p54A071F8.dip0.t-ipconnect.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	DLange (~DLange@dlange.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	kaikas (~kaikas@v22015113119829311.yourvserver.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	er4z0r (~er4z0r@00020db2.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	DragonEmbers (~DragonEmb@server2.game-embers.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	StM (~StM@2001:41d0:a:243e::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	schischi (~schischi@schischi.me) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Kasreyn (~i@h5ef52166.selulun.dyn.perspektivbredband.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	miwa (~miwa@90-228-207-77-no92.tbcn.telia.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	al (d@niel.cx) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	APTX (~APTX@aptx.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	luisbg (~luisbg@2001:41d0:2:2741::) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	brabo (~brabo@81-7-19-118.anon.vpn.kommunikationsliebe.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	deadbyte (~deadbyte@zeroday.biz) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	_arthur_ (~Kristof@pluto.codepro.be) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	vishal (~vishal@0001c243.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	clopez (~tau@neutrino.es) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	andres (~andres@crystalspace3d.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Nik05 (~Nik05@0001a8cd.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	quintela (~quintela@trasno.trasno.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	indy (~indy@0001c91b.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	fweisbec (~fweisbec@4be54-h03-87-88-245-150.dsl.sta.abo.bbox.fr) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	MWelchUK (~martyn@host86-168-227-195.range86-168.btcentralplus.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Babamus (~Babamus@185.118.251.252) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	sandsmark (~sandsmark@2001:67c:29f4::64) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	funnel (~funnel@81.4.123.134) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	flav (~flav@220.33.204.77.rev.sfr.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	henrix (~henrix@00014290.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hypfer (~hypfer@ip4d146df6.dynamic.kabel-deutschland.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	kolktuimek (~sup@ip5f5af230.dynamic.kabel-deutschland.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	lorddoskias (~nborisov@93.152.140.96) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	derRichard (~derRichar@pippin.sigma-star.at) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ARandomOWL (~adrian@79-76-104-70.dynamic.dsl.as9105.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Gandalf (~gandalf@h12n8-vbg-a12.ias.bredband.telia.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	roxell (~roxell@c-c82171d5.07-21-73746f28.cust.bredbandsbolaget.se) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	plonky (~plonky@shell.netmonk.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	peterz (~peterz@j217100.upc-j.chello.nl) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	poulecaca (~poulecaca@mon75-1-81-57-43-44.fbx.proxad.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	rical_ (~s@h-254-34-134.a238.priv.bahnhof.se) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Mali (~elen@2001:41d0:a:5d0::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	maitesin1 (~maitesin@2001:41d0:a:1759::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	zwetschge (29796@ircbox.informatik.uni-erlangen.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	juril (~juril@fw-tnat.cambridge.arm.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	cazzacarna (~andi@smida.it) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	aleew (~aleew@noodi.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ccscanf (~ccscanf@alemayhu.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	kwork (~quassel@bnc.ee) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Hunger (~hunger@prodevops.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	saimen (~saimen@host135-2.natpool.mwn.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	nur (~hussein@32.94.50.60.cbj05-home.tm.net.my) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	fstd (~fstd@x5ce4b5a2.dyn.telefonica.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Aliverix (~Aliverix@net-37-116-100-203.cust.vodafonedsl.it) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	impulze (~impulze@2001:41d0:8:c5b1::2) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	abelvesa (~abel@217.156.156.69) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	evilman_work (~evilman@87.244.6.228) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	MoritzSchrey (~mschrey@ip-16.ias.rwth-aachen.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	xayto (~xayto@cpc69387-oxfd28-2-0-cust517.4-3.cable.virginm.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	henr_k (~hnrk@0001519d.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	thithib (~thithib@157.159.45.213) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	eegiks (~quassel@5.51.222.165) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jaeckel (~jaeckel@sleipnir.jaeckel.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	MindlessDrone (~MindlessD@0001f56c.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	kynzie (~kynzie@ip-231.net-82-216-90.rev.numericable.fr) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	utack (~utack@2a02:810a:8380:8e50:e961:84b3:6d82:7a10) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Adr1 (~adr1@2001:41d0:8:da8c::1) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	silviof (~silviof@0001bcf0.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	zahari (~zahari@ipbcc048d0.dynamic.kabel-deutschland.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	bc547 (~bc547@134.58.253.57) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	djichthys (~dejice@000228ed.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hexjelly (hexjelly@2a00:d880:6:5bf::e7d2) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	fLiPr3VeRsE (yKl64YIsNX@indus.uberspace.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jelly (jelly@00012145.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	lubko (~lkundrak@shell.v3.sk) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	thalos_ (~thalos@tolvan.nu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	clippix (~clippix@2a01:4f8:191:6134::2) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Naked (~naked@ec2-52-50-123-1.eu-west-1.compute.amazonaws.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Joseki (~shaman@ns353173.ip-91-121-91.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	zu (~zu@ks387228.kimsufi.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	LetoThe2nd (~jd@s15387740.onlinehome-server.info) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	halfr (~halfr@2a01:4f8:190:126a:1896:26ff:fe8a:dac6) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	alip (~alip@00013e78.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	sneep (~stron@qiqitori.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	RoboTux (~RoboTux@largo.lm7.fr) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	aep (~Arvid@zero.exys.org) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	fralle (~fralle@ec2-52-28-205-119.eu-central-1.compute.amazonaws.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	krnlyng (~liar@77.116.9.216.wireless.dyn.drei.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	shorne_ (~shorne@z107.124-45-178.ppp.wakwak.ne.jp) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	tmh1999 (~tmh1999@14.177.215.227) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jn (~nope@ip-176-198-213-238.hsi05.unitymediagroup.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	violeta (~violeta@82-70-136-246.dsl.in-addr.zen.co.uk) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	martink (~martink@37.235.60.54) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ThomasKeller (~Thomas@vmx.ethz.ch) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	sea-gull (~sea-gull@5.57.20.48) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	gregg (~greg@nest-1.gnumpf.tk) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	devil (~quassel@00012f05.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	phree (~phr33@46.165.224.12) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	kempniu (~kempniu@00020a93.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	iokill (~dave@pippin.sigma-star.at) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	burso_ (~burso@46.101.207.87) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	ukleinek (~ukl@00016f5c.user.oftc.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	burgerLife (~rebel@14.63.105.156) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	f8l (~f8l@dhcp95-108-67-92.eaw.com.pl) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	JStoker (jstoker@claire.jcs.me.uk) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jus (~jus@hades.bitgrid.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	janisg (~troll@178.62.203.45) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hugsy (~hugsy@blah.cat) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	architekt (archi@i.love.coding4.coffee) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	mcan (~m@178.62.169.8) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	afiskon_ (~afiskon@46.101.213.42) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jann (jann@irc.jann.io) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	jelly1 (~jelly12ge@195-154-103-189.rev.poneytelecom.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	padawin (~padawin@mail.kayvlim.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	voker57 (f00b47@bitcheese.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	quite (quite@gyro.lublin.se) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	frobnic (fb@b2b-130-180-11-14.unitymedia.biz) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	hexa- (~hexa-@glitch.linuxlounge.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	chapui_s (~chapui_s@219.ip-51-255-51.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	Amoz (~Amoz@h-73-178.a192.priv.bahnhof.se) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	scosu (~quassel@2a01:4f8:161:5372:5054:ff:fec6:737f) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	IooNag (~ioonag@iphiclides.iosenag.net) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	xnox (~xnox@2a01:4020:1:5::9bc6:fefc) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	uau (~uau@dsl-hkibrasgw1-58c08f-126.dhcp.inet.fi) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	CustosLimen (~CustosLim@ns343343.ip-91-121-210.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	liiwi (liiwi@idle.fi) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	musca (musca@tyrael.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	chiluk (~quassel@172.34.213.162.lcy-01.canonistack.canonical.com) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	gruetzkopf (gruetzkopf@captured-elf.dont-follow-me.eu) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 09:57:38	<--	mcp (~mcp@wolk-project.de) has quit (charm.oftc.net synthon.oftc.net)
+2016-11-26 10:02:07	-->	paradigm (~paradigm@206.253.165.144) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ben- (~ben@crypt.ly) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	damjan (~damjan@znc.ie.mk) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	koike (~koike@50.57.74.102) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	cota (~cota@flamenco.cs.columbia.edu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	xelenonz (~xelenonz@me.rop.sh) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	tajnyman (tajnyman@0001f34d.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	xsdg (~xsdg@sipb-vm-99.mit.edu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	CaptainKraft (~CaptainKr@104.131.135.189) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	dkc (~dan@00016f0b.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	dustinm` (~dustinm`@68.ip-149-56-14.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mbtamuli12 (~mbtamuli@67.205.144.61) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	APic (apic@apic.name) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	bodie (~bodie@162.243.100.83) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jgroves (~jmg@server.johngroves.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ddstreet (~quassel@45-27-90-188.lightspeed.rlghnc.sbcglobal.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mikegrb (~mikegrb@mikegrb.netop.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jwhite (~jwhite@75-146-153-89-minnesota.hfc.comcastbusiness.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	timtam (~tim@voodoo.cms.waikato.ac.nz) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	chrstphrchvz (~sid104796@richmond.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	peterx_away (~zhexu@nat-pool-bos-t.redhat.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Merlin (merlin@evendata.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	enoch247 (~josh@98.29.226.52) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	rostedt (~rostedt@cpe-67-246-153-56.stny.res.rr.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	p1c0 (~p1c0@li602-8.members.linode.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	vdl (~vivien@147.ip-167-114-97.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	tlonim (~tlonim@0001ac68.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jtf (~jtf@c-24-9-69-206.hsd1.co.comcast.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	blunaxela (~alex@c-67-162-147-93.hsd1.co.comcast.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	trevnorris (~trevnorri@162.243.211.225) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Mercury (~warp@c-24-56-193-55.customer.broadstripe.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	trisk (~trisk@108-92-223-130.lightspeed.tpkaks.sbcglobal.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sa7mfo (~marcus@192.241.216.73) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Azelphur (~Azelphur@znc.azelphur.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jbermudes (~quassel@76.74.178.212) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Sargun (~sargun@80.60.198.104.bc.googleusercontent.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	_1amzave (~zev@173.229.9.144) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	joraj (~ubuntu@cable-192.222.218.157.electronicbox.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	zwane (~zwane@d173-180-79-25.bchsia.telus.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	balrog (~balrog@000183c6.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jean (~jean@104.131.39.229) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	meow` (~meow@147.ip-167-114-97.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mer (mer@00019ae0.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mgorbach (~mgorbach@pool-96-237-153-152.bstnma.ftas.verizon.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	lag (lag__@ec2-54-225-101-41.compute-1.amazonaws.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	haro (~haro@96-3-123-194-dynamic.midco.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	genkimarshall (~genkimars@genki.is) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	czchen (sid12445@ealing.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	unriel (~riel@nat-pool-bos-t.redhat.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	dtwlin (sid149820@charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sarnold (~sarnold@sarnold.noc.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kierank (sid5955@charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	albanc (sid51904@charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	FL1SK (~quassel@96-18-175-161.cpe.cableone.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	philipp64|macmini (~chatzilla@66-232-81-197.ctcweb.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Newsome (~sorenson@198-0-247-150-static.hfc.comcastbusiness.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	bwn (~bwn@c-73-2-40-52.hsd1.ca.comcast.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	valdis (~valdis@c-71-63-94-37.hsd1.va.comcast.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	uajain (~uajain@139.59.14.145) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jmichels (~jmichels@pool-96-227-101-203.phlapa.fios.verizon.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	rogeliodh (~rogeliodh@ec2-52-90-241-120.compute-1.amazonaws.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	nwmcsween (~nwmcsween@206.217.141.146) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	damentz (~damentz@cpe-70-122-17-194.austin.res.rr.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	krnlyng (~liar@77.116.9.216.wireless.dyn.drei.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hackman (~hackman@82.118.240.253) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	saimen (~saimen@host135-2.natpool.mwn.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	nur (~hussein@32.94.50.60.cbj05-home.tm.net.my) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	shorne_ (~shorne@z107.124-45-178.ppp.wakwak.ne.jp) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Nik05 (~Nik05@0001a8cd.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	tmh1999 (~tmh1999@14.177.215.227) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	quintela (~quintela@trasno.trasno.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	N8Fear (~n8fear@p5DC5CDFA.dip0.t-ipconnect.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	fstd (~fstd@x5ce4b5a2.dyn.telefonica.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sprabhu (~sprabhu@122.170.27.77) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jn (~nope@ip-176-198-213-238.hsi05.unitymediagroup.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	violeta (~violeta@82-70-136-246.dsl.in-addr.zen.co.uk) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	filt3r (~filter@2a03:b0c0:2:d0::7d:7001) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	indy (~indy@0001c91b.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	fweisbec (~fweisbec@4be54-h03-87-88-245-150.dsl.sta.abo.bbox.fr) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	MWelchUK (~martyn@host86-168-227-195.range86-168.btcentralplus.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	cleger (~cleger@92.103.151.218) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Babamus (~Babamus@185.118.251.252) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mkuu (~testing43@46.166.190.139) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	DonRichie (~DonRichie@ricl.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	excelsior (~vijay@1.23.36.36) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Aliverix (~Aliverix@net-37-116-100-203.cust.vodafonedsl.it) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hadret (~hadret@deb.ianod.es) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	zown_ (~adam@c83-252-191-17.bredband.comhem.se) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	arturas (~arturas@lapinskas.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Turl (~Turl@yotta.elopez.com.ar) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sandsmark (~sandsmark@2001:67c:29f4::64) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	impulze (~impulze@2001:41d0:8:c5b1::2) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Dr-Shadow (~quassel@2001:41d0:a:2872::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	worfox (~worfox@2001:41d0:a:23c1::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	anoopcs (firrre@2400:6180:0:d0::66:100f) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	martink (~martink@37.235.60.54) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	abelvesa (~abel@217.156.156.69) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	evilman_work (~evilman@87.244.6.228) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hirofumi (hirofumi@server.parknet.ne.jp) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ThomasKeller (~Thomas@vmx.ethz.ch) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	funnel (~funnel@81.4.123.134) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sea-gull (~sea-gull@5.57.20.48) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	MoritzSchrey (~mschrey@ip-16.ias.rwth-aachen.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	antispace (~antispace@00022c69.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	xayto (~xayto@cpc69387-oxfd28-2-0-cust517.4-3.cable.virginm.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	henr_k (~hnrk@0001519d.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	flav (~flav@220.33.204.77.rev.sfr.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	gregg (~greg@nest-1.gnumpf.tk) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	henrix (~henrix@00014290.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	thithib (~thithib@157.159.45.213) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	eyck (~eyck@st14cl28.host-nowanet.pl) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	nhlfr (~nhlfr@178.62.211.20) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	eegiks (~quassel@5.51.222.165) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hypfer (~hypfer@ip4d146df6.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	devil (~quassel@00012f05.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jaeckel (~jaeckel@sleipnir.jaeckel.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	richi235 (~quassel@ipbcc1812b.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	MindlessDrone (~MindlessD@0001f56c.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	phree (~phr33@46.165.224.12) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kynzie (~kynzie@ip-231.net-82-216-90.rev.numericable.fr) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	scosu (~quassel@2a01:4f8:161:5372:5054:ff:fec6:737f) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	janisg (~troll@178.62.203.45) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hugsy (~hugsy@blah.cat) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	padawin (~padawin@mail.kayvlim.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	architekt (archi@i.love.coding4.coffee) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	musca (musca@tyrael.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hexa- (~hexa-@glitch.linuxlounge.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mcp (~mcp@wolk-project.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	mcan (~m@178.62.169.8) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	chiluk (~quassel@172.34.213.162.lcy-01.canonistack.canonical.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	CustosLimen (~CustosLim@ns343343.ip-91-121-210.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	IooNag (~ioonag@iphiclides.iosenag.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	chapui_s (~chapui_s@219.ip-51-255-51.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	liiwi (liiwi@idle.fi) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	frobnic (fb@b2b-130-180-11-14.unitymedia.biz) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	voker57 (f00b47@bitcheese.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	afiskon_ (~afiskon@46.101.213.42) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jann (jann@irc.jann.io) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	gruetzkopf (gruetzkopf@captured-elf.dont-follow-me.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Amoz (~Amoz@h-73-178.a192.priv.bahnhof.se) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	quite (quite@gyro.lublin.se) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	uau (~uau@dsl-hkibrasgw1-58c08f-126.dhcp.inet.fi) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	LetoThe2nd (~jd@s15387740.onlinehome-server.info) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jelly1 (~jelly12ge@195-154-103-189.rev.poneytelecom.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	juril (~juril@fw-tnat.cambridge.arm.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	alip (~alip@00013e78.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	thalos_ (~thalos@tolvan.nu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	cazzacarna (~andi@smida.it) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	aep (~Arvid@zero.exys.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Mali (~elen@2001:41d0:a:5d0::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	halfr (~halfr@2a01:4f8:190:126a:1896:26ff:fe8a:dac6) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	clippix (~clippix@2a01:4f8:191:6134::2) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	maitesin1 (~maitesin@2001:41d0:a:1759::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	fralle (~fralle@ec2-52-28-205-119.eu-central-1.compute.amazonaws.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	zwetschge (29796@ircbox.informatik.uni-erlangen.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	aleew (~aleew@noodi.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Naked (~naked@ec2-52-50-123-1.eu-west-1.compute.amazonaws.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	sneep (~stron@qiqitori.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	zu (~zu@ks387228.kimsufi.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	RoboTux (~RoboTux@largo.lm7.fr) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ccscanf (~ccscanf@alemayhu.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Hunger (~hunger@prodevops.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Joseki (~shaman@ns353173.ip-91-121-91.eu) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	rical_ (~s@h-254-34-134.a238.priv.bahnhof.se) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	lubko (~lkundrak@shell.v3.sk) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	poulecaca (~poulecaca@mon75-1-81-57-43-44.fbx.proxad.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kwork (~quassel@bnc.ee) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	xnox (~xnox@2a01:4020:1:5::9bc6:fefc) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	APTX (~APTX@aptx.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	deadbyte (~deadbyte@zeroday.biz) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	miwa (~miwa@90-228-207-77-no92.tbcn.telia.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	andres (~andres@crystalspace3d.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	brabo (~brabo@81-7-19-118.anon.vpn.kommunikationsliebe.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	vishal (~vishal@0001c243.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Kasreyn (~i@h5ef52166.selulun.dyn.perspektivbredband.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	schischi (~schischi@schischi.me) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	luisbg (~luisbg@2001:41d0:2:2741::) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	al (d@niel.cx) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	StM (~StM@2001:41d0:a:243e::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	_arthur_ (~Kristof@pluto.codepro.be) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	DragonEmbers (~DragonEmb@server2.game-embers.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	clopez (~tau@neutrino.es) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	er4z0r (~er4z0r@00020db2.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kaikas (~kaikas@v22015113119829311.yourvserver.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	DLange (~DLange@dlange.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jelly (jelly@00012145.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	fLiPr3VeRsE (yKl64YIsNX@indus.uberspace.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	jus (~jus@hades.bitgrid.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hexjelly (hexjelly@2a00:d880:6:5bf::e7d2) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	JStoker (jstoker@claire.jcs.me.uk) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	bc547 (~bc547@134.58.253.57) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	zahari (~zahari@ipbcc048d0.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	silviof (~silviof@0001bcf0.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	peterz (~peterz@j217100.upc-j.chello.nl) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	plonky (~plonky@shell.netmonk.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Adr1 (~adr1@2001:41d0:8:da8c::1) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	f8l (~f8l@dhcp95-108-67-92.eaw.com.pl) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	roxell (~roxell@c-c82171d5.07-21-73746f28.cust.bredbandsbolaget.se) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	p_rossak (~quassel@p54A071F8.dip0.t-ipconnect.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	Gandalf (~gandalf@h12n8-vbg-a12.ias.bredband.telia.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ARandomOWL (~adrian@79-76-104-70.dynamic.dsl.as9105.com) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	burgerLife (~rebel@14.63.105.156) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	ukleinek (~ukl@00016f5c.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	burso_ (~burso@46.101.207.87) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	derRichard (~derRichar@pippin.sigma-star.at) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	reynaldo (~rverdejo@tesla.opendot.cl) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	iokill (~dave@pippin.sigma-star.at) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	nicst (~nicst@nicst.de) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	tklauser (~noone@sym2.noone.org) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	taub (taub@95-170-95-129.colo.transip.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	andrey_utkin (~andrey_ut@decent.im) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	utack (~utack@2a02:810a:8380:8e50:e961:84b3:6d82:7a10) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	djichthys (~dejice@000228ed.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kempniu (~kempniu@00020a93.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	lorddoskias (~nborisov@93.152.140.96) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	hypera1r (~hyperair@49.128.61.242) has joined #kernelnewbies
+2016-11-26 10:02:07	-->	kolktuimek (~sup@ip5f5af230.dynamic.kabel-deutschland.de) has joined #kernelnewbies
+2016-11-26 10:02:28	-->	noahm (~frodo@minas.morgul.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	jgeboski (~jgeboski@00018c70.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	loganaden (~logan@208.95.3.4) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	dansan (~daniel@2602:304:cd72:9ed0::49) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	dtor (sid141506@id-141506.tooting.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	ryanlelek (sid116603@id-116603.brockwell.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	snkcld (sid54536@id-54536.highgate.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	ggherdov__ (sid11402@id-11402.ealing.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	gamingrobot (sid10990@id-10990.highgate.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	jstultz (sid51929@id-51929.highgate.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	twodayslate (sid13012@id-13012.highgate.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	huaicheng (~coperd@lingua.cs.uchicago.edu) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	qguv (~qguv@0002242e.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	trac3r (~sm00th@trac3r.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	nlsun (~nlsun@162.243.157.145) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	chutz (~chutz@rygel.linuxfreak.ca) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	mje (~mje@mild.embarrassm.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	tier2villain (~Max@ec2-54-200-14-229.us-west-2.compute.amazonaws.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	adarshaj (~adarshaj@adarshaj.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	eam (~eam@nitre.bayhost.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	perfinion (~perfinion@2001:470:f895::2:80) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	imMute (~immute@2600:3c00::f03c:91ff:febb:d59a) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	csmart_ (~quassel@45.55.219.131) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	radii (foobar@eden.hexapodia.org) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	pcreech (~pcreech@nat-pool-rdu-t.redhat.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	snoonan (znc@104.156.104.15) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	chunyan (uid61415@richmond.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	trigg (~trigg@32.97.110.57) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	pranith (~pranith@c-73-207-178-95.hsd1.ga.comcast.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	fiddlerwoaroof (~fiddlerwo@96-39-230-53.dhcp.mtpk.ca.charter.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	hoarycripple (~hoarycrip@100.17.22.74) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	wagle (~wagle@irc.wagle.io) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	ron (~ron@ppp118-210-25-204.bras1.adl2.internode.on.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	bfoster (~bfoster@nat-pool-bos-t.redhat.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	pranith_ (~pranith@senna.cc.gt.atl.ga.us) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	Feren^IRCCloud (sid180023@id-180023.charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	mparisi (~elusive@00017772.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	adema (~adema@ks397649.ip-192-95-26.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	julia_c (~juliac@neo.teric.us) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	evanz (sid96905@00021588.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	py1hon (~kent@evilpiepirate.org) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	zrts (~zrts@00022954.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	fullstop (~fullstop@107.170.53.155) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	jpm (~jpm@2600:3c03::f03c:91ff:fe37:1e01) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	arnd (sid21101@id-21101.tooting.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	ctag (~ctag@user-24-214-210-2.knology.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	jedix (~jedix@000103f6.user.oftc.net) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	auviga (sid4731@id-4731.charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	gregkh (sid42031@id-42031.charlton.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	catern (~catern@catern.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	kofdog (~kofdog@li1076-130.members.linode.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	CoreDuo (~CoreDuo@216.8.161.80) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	FluffyFoxeh (~Frogging@kitsune.fastquake.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	machinaut (sid39679@id-39679.highgate.irccloud.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	demarchi (~lucasdema@politreco.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	harrison (~quassel@li89-226.members.linode.com) has joined #kernelnewbies
+2016-11-26 10:03:56	-->	stotch (ACBxKfzmAj@perrin.stotch.com) has joined #kernelnewbies
+2016-11-26 10:06:20	-->	FloodServ (services@services.oftc.net) has joined #kernelnewbies
+2016-11-26 10:20:08	--	irc: disconnected from server
+2016-11-26 10:20:23	-->	alhunt (~alhunt@220-253-148-215.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-26 10:20:23	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-26 10:20:23	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-26 10:20:23	--	Channel #kernelnewbies: 297 nicks (0 ops, 0 voices, 297 normals)
+2016-11-26 10:20:23	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-26 10:20:25	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-26 10:23:45	-->	IridiumScaffold (~IridiumSc@14-200-69-67.static.tpgi.com.au) has joined #kernelnewbies
+2016-11-26 10:51:13	<--	saimen (~saimen@host135-2.natpool.mwn.de) has quit (Ping timeout: 480 seconds)
+2016-11-26 11:22:46	<--	IridiumScaffold (~IridiumSc@14-200-69-67.static.tpgi.com.au) has quit (Ping timeout: 480 seconds)
+2016-11-26 11:43:13	<--	benatto (~benatto@201.37.163.191) has quit (Quit: leaving)
+2016-11-26 12:22:39	-->	chandan_ (~chandan@122.171.155.38) has joined #kernelnewbies
+2016-11-26 12:24:21	-->	ryonaloli (~guro@0001c291.user.oftc.net) has joined #kernelnewbies
+2016-11-26 12:40:09	<--	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has quit (Quit: Leaving)
+2016-11-26 12:41:33	-->	psachin (~psachin@125.16.97.125) has joined #kernelnewbies
+2016-11-26 12:49:19	-->	fstd_ (~fstd@x4db55b10.dyn.telefonica.de) has joined #kernelnewbies
+2016-11-26 12:52:29	<--	fstd (~fstd@x5ce4b5a2.dyn.telefonica.de) has quit (Ping timeout: 480 seconds)
+2016-11-26 12:52:29	--	fstd_ is now known as fstd
+2016-11-26 12:53:28	-->	glassrose (~chandni@106.51.139.122) has joined #kernelnewbies
+2016-11-26 12:55:32	<--	bird_brian (~bird_bria@128.135.100.113) has quit (Quit: bird_brian)
+2016-11-26 13:09:17	-->	pfactum (~post-fact@vulcan.natalenko.name) has joined #kernelnewbies
+2016-11-26 13:10:12	<--	post-factum (~post-fact@vulcan.natalenko.name) has quit (Read error: Connection reset by peer)
+2016-11-26 13:12:49	-->	ping_ (~ping@240b:11:9260:400:d63d:7eff:fe9a:78aa) has joined #kernelnewbies
+2016-11-26 13:24:22	<--	glassrose (~chandni@106.51.139.122) has quit (Quit: Leaving)
+2016-11-26 14:05:24	--	irc: disconnected from server
+2016-11-26 14:07:00	-->	alhunt (~alhunt@220-253-148-215.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-26 14:07:00	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-26 14:07:00	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-26 14:07:00	--	Channel #kernelnewbies: 296 nicks (0 ops, 0 voices, 296 normals)
+2016-11-26 14:07:00	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-26 14:07:01	-->	IridiumScaffold (~IridiumSc@14-200-69-67.static.tpgi.com.au) has joined #kernelnewbies
+2016-11-26 14:07:02	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-26 14:12:32	-->	bird_brian (~bird_bria@c-73-36-172-205.hsd1.il.comcast.net) has joined #kernelnewbies
+2016-11-26 14:13:57	-->	N8Fear_ (~n8fear@p3EE3DF89.dip0.t-ipconnect.de) has joined #kernelnewbies
+2016-11-26 14:20:42	<--	N8Fear (~n8fear@p5DC5CDFA.dip0.t-ipconnect.de) has quit (Ping timeout: 480 seconds)
+2016-11-26 14:29:41	<--	bird_brian (~bird_bria@c-73-36-172-205.hsd1.il.comcast.net) has quit (Quit: bird_brian)
+2016-11-26 14:38:33	-->	rasmikun (~rasmikun@0890663256.static.corbina.ru) has joined #kernelnewbies
+2016-11-26 14:43:16	--	irc: disconnected from server
+2016-11-26 16:33:53	-->	alhunt (~alhunt@220-253-148-215.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-26 16:33:53	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-26 16:33:53	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-26 16:33:53	--	Channel #kernelnewbies: 300 nicks (0 ops, 0 voices, 300 normals)
+2016-11-26 16:33:53	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-26 16:33:55	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-26 16:48:25	<--	abelvesa (~abel@217.156.156.69) has quit (Ping timeout: 480 seconds)
+2016-11-26 17:20:08	<--	hackman (~hackman@82.118.240.253) has quit (Ping timeout: 480 seconds)
+2016-11-26 17:31:36	-->	keoz (~keikoz@pha75-1-81-57-54-15.fbx.proxad.net) has joined #kernelnewbies
+2016-11-26 17:32:54	-->	cdown (~cdown@148.93.14.37.dynamic.jazztel.es) has joined #kernelnewbies
+2016-11-26 17:35:16	-->	akshay_ (~akshay@106.51.235.168) has joined #kernelnewbies
+2016-11-26 17:36:01	-->	Crazylemon (~Crazylemo@207.62.170.215) has joined #kernelnewbies
+2016-11-26 18:13:33	<--	cdown (~cdown@00019bfb.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2016-11-26 18:15:38	-->	totalduck (~ryans@host86-160-23-24.range86-160.btcentralplus.com) has joined #kernelnewbies
+2016-11-26 18:32:13	-->	cdown (~cdown@148.93.14.37.dynamic.jazztel.es) has joined #kernelnewbies
+2016-11-26 18:43:23	<--	cdown (~cdown@00019bfb.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2016-11-26 18:48:14	-->	ZeekHuge (~ZeekHuge_@47.247.136.197) has joined #kernelnewbies
+2016-11-26 18:48:45	<--	saimen (~saimen@host135-2.natpool.mwn.de) has quit (Ping timeout: 480 seconds)
+2016-11-26 18:50:53	<--	bwn (~bwn@c-73-2-40-52.hsd1.ca.comcast.net) has quit (Ping timeout: 480 seconds)
+2016-11-26 18:54:34	-->	bwn (~bwn@c-73-2-40-52.hsd1.ca.comcast.net) has joined #kernelnewbies
+2016-11-26 19:07:41	-->	reijnden_ (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2016-11-26 19:12:18	<--	Amoz (~Amoz@h-73-178.a192.priv.bahnhof.se) has quit (Quit: ZNC - http://znc.in)
+2016-11-26 19:12:21	<--	ZeekHuge (~ZeekHuge_@47.247.136.197) has quit (Read error: No route to host)
+2016-11-26 19:12:55	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Ping timeout: 480 seconds)
+2016-11-26 19:12:55	--	reijnden_ is now known as reijnden
+2016-11-26 19:25:14	-->	hackman (~hackman@82.118.240.253) has joined #kernelnewbies
+2016-11-26 19:26:48	-->	theflyingwalrus (~theflying@host-78-144-67-203.as13285.net) has joined #kernelnewbies
+2016-11-26 19:28:24	-->	Jackneill (~Jackneill@78-131-52-47.pool.digikabel.hu) has joined #kernelnewbies
+2016-11-26 19:29:09	<--	hackman (~hackman@82.118.240.253) has quit
+2016-11-26 19:33:10	-->	ZeekHuge (~ZeekHuge_@117.222.30.231) has joined #kernelnewbies
+2016-11-26 19:46:44	-->	towo` (~towo@00012f0f.user.oftc.net) has joined #kernelnewbies
+2016-11-26 19:50:05	<--	JackWinter (~jack@vodsl-5055.vo.lu) has quit (Quit: Konversation terminated!)
+2016-11-26 19:53:16	-->	JackWinter (~jack@vodsl-5055.vo.lu) has joined #kernelnewbies
+2016-11-26 20:12:13	<--	ccscanf (~ccscanf@alemayhu.com) has quit (Remote host closed the connection)
+2016-11-26 20:12:47	-->	ccscanf (~ccscanf@alemayhu.com) has joined #kernelnewbies
+2016-11-26 20:14:30	-->	jstein (~quassel@xdsl-81-173-156-5.netcologne.de) has joined #kernelnewbies
+2016-11-26 20:26:40	-->	headless (~headless@31.173.81.32) has joined #kernelnewbies
+2016-11-26 20:27:48	<--	excelsior (~vijay@1.23.36.36) has quit (Ping timeout: 480 seconds)
+2016-11-26 20:36:30	-->	kraiskil (~kraiskil@a91-156-135-20.elisa-laajakaista.fi) has joined #kernelnewbies
+2016-11-26 20:37:43	<--	totalduck (~ryans@host86-160-23-24.range86-160.btcentralplus.com) has quit (Ping timeout: 480 seconds)
+2016-11-26 20:43:21	<--	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has quit (Read error: Connection reset by peer)
+2016-11-26 20:43:39	-->	reijnden (~reijnden@524880B3.cm-4-1c.dynamic.ziggo.nl) has joined #kernelnewbies
+2016-11-26 20:44:22	<--	headless (~headless@31.173.81.32) has quit (Quit: Konversation terminated!)
+2016-11-26 20:49:15	-->	abelvesa (~abel@217.156.156.69) has joined #kernelnewbies
+2016-11-26 20:58:54	-->	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has joined #kernelnewbies
+2016-11-26 21:11:40	<--	ayjay_t (~ajp_@24-151-28-56.dhcp.nwtn.ct.charter.com) has quit (Remote host closed the connection)
+2016-11-26 21:21:17	-->	Amoz (~Amoz@h-73-178.a192.priv.bahnhof.se) has joined #kernelnewbies
+2016-11-26 21:33:33	-->	njumdl2014_ (~njumdl201@c-98-235-164-224.hsd1.pa.comcast.net) has joined #kernelnewbies
+2016-11-26 21:42:00	--	ryonaloli is now known as Guest35
+2016-11-26 21:42:48	-->	ryonaloli (~guro@0001c291.user.oftc.net) has joined #kernelnewbies
+2016-11-26 21:43:48	<--	Guest35 (~guro@0001c291.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2016-11-26 21:44:47	-->	catwiesel (~catwiesel@xd9332e12.dyn.telefonica.de) has joined #kernelnewbies
+2016-11-26 22:02:30	<--	abelvesa (~abel@217.156.156.69) has quit (Ping timeout: 480 seconds)
+2016-11-26 22:03:50	<--	zahari (~zahari@ipbcc048d0.dynamic.kabel-deutschland.de) has quit (Ping timeout: 480 seconds)
+2016-11-26 22:12:35	-->	abelvesa (~abel@217.156.156.69) has joined #kernelnewbies
+2016-11-26 22:15:32	-->	ayjay_t (~ajp_@24-151-28-56.dhcp.nwtn.ct.charter.com) has joined #kernelnewbies
+2016-11-26 22:20:45	<--	abelvesa (~abel@217.156.156.69) has quit (Ping timeout: 480 seconds)
+2016-11-26 22:24:19	-->	abelvesa (~abel@217.156.156.69) has joined #kernelnewbies
+2016-11-26 22:40:38	<--	abelvesa (~abel@217.156.156.69) has quit (Ping timeout: 480 seconds)
+2016-11-26 22:44:21	<--	qeed (~qeed@2602:30a:2cb0:4590:4637:e6ff:fe1e:fffe) has quit (Quit: Leaving)
+2016-11-26 22:52:28	<--	devil (~quassel@00012f05.user.oftc.net) has quit (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+2016-11-26 22:54:51	-->	abelvesa (~abel@217.156.156.69) has joined #kernelnewbies
+2016-11-26 22:58:37	-->	joll-ng (~mikhail@91.144.177.135) has joined #kernelnewbies
+2016-11-26 22:59:20	-->	jubnzv (~jubnzv@185.48.39.47) has joined #kernelnewbies
+2016-11-27 09:30:32	--	irc: disconnected from server
+2016-11-27 09:30:55	-->	alhunt (~alhunt@220-253-148-215.dyn.iinet.net.au) has joined #kernelnewbies
+2016-11-27 09:30:55	--	Topic for #kernelnewbies is "New here? READ http://goo.gl/wzsul http://goo.gl/zi5V | BOOKS lwn.net/Kernel/LDD3 | BROWSER lxr.linux.no/source | PASTEBIN codepad.org"
+2016-11-27 09:30:55	--	Topic set by ChanServ (services@services.oftc.net) on Thu, 25 Aug 2016 01:44:45
+2016-11-27 09:30:55	--	Channel #kernelnewbies: 294 nicks (0 ops, 0 voices, 294 normals)
+2016-11-27 09:30:55	--	PvNotice(ChanServ): welcome to the kernelnewbies channel
+2016-11-27 09:30:57	--	Channel created on Tue, 16 Sep 2008 10:59:50
+2016-11-27 09:38:12	<--	mawiegand (~marcel@pD95D3A42.dip0.t-ipconnect.de) has quit (Quit: Konversation terminated!)
+2016-11-27 09:38:17	-->	krnlyng (~liar@77.116.38.218.wireless.dyn.drei.com) has joined #kernelnewbies
+2016-11-27 09:39:54	<--	sea-gull_ (~sea-gull@f194175.upc-f.chello.nl) has quit (Ping timeout: 480 seconds)
+2016-11-27 09:54:37	-->	ping_ (~ping@240b:11:9260:400:d63d:7eff:fe9a:78aa) has joined #kernelnewbies
+2016-11-27 10:30:45	--	irc: disconnected from server

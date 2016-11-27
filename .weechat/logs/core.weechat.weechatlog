@@ -319,3 +319,574 @@
 2015-07-07 23:46:46		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
 2015-07-07 23:46:51	=!=	Too few arguments for command "/query" (help on command: /help query)
 2015-07-07 23:46:55		fifo: pipe closed
+2015-12-11 19:03:15	=!=	Warning: /home/al/.weechat/script.conf, line 46: unknown option for section "scripts": dir = "%h/script"
+2015-12-11 19:03:15		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-11 19:08:18		[core]
+2015-12-11 19:08:18		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2015-12-11 19:08:18		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2015-12-11 19:08:18		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2015-12-11 19:08:18		[charset]
+2015-12-11 19:08:18		  charset
+2015-12-11 19:08:18		[logger]
+2015-12-11 19:08:18		  logger
+2015-12-11 19:08:18		[ruby]
+2015-12-11 19:08:18		  ruby
+2015-12-11 19:08:18		[relay]
+2015-12-11 19:08:18		  relay
+2015-12-11 19:08:18		[lua]
+2015-12-11 19:08:18		  lua
+2015-12-11 19:08:18		[guile]
+2015-12-11 19:08:18		  guile
+2015-12-11 19:08:18		[irc]
+2015-12-11 19:08:18		  admin       cycle       halfop      kickban     mode        op          quote       sanick      squit       unquiet     who       
+2015-12-11 19:08:18		  allchan     dcc         ignore      kill        motd        oper        reconnect   sapart      stats       userhost    whois     
+2015-12-11 19:08:18		  allpv       dehalfop    info        links       msg         part        rehash      saquit      summon      users       whowas    
+2015-12-11 19:08:18		  allserv     deop        invite      list        names       ping        remove      server      time        version   
+2015-12-11 19:08:18		  ban         devoice     ison        lusers      nick        pong        restart     service     topic       voice     
+2015-12-11 19:08:18		  connect     die         join        map         notice      query       sajoin      servlist    trace       wallchops 
+2015-12-11 19:08:18		  ctcp        disconnect  kick        me          notify      quiet       samode      squery      unban       wallops   
+2015-12-11 19:08:18		[exec]
+2015-12-11 19:08:18		  exec
+2015-12-11 19:08:18		[script]
+2015-12-11 19:08:18		  script
+2015-12-11 19:08:18		[perl]
+2015-12-11 19:08:18		  perl
+2015-12-11 19:08:18		[xfer]
+2015-12-11 19:08:18		  me  xfer
+2015-12-11 19:08:18		[python]
+2015-12-11 19:08:18		  python
+2015-12-11 19:08:18		[alias]
+2015-12-11 19:08:18		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    WC       WW     
+2015-12-11 19:08:18		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        V        WI     
+2015-12-11 19:08:18		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       W        WII    
+2015-12-11 19:08:18		[trigger]
+2015-12-11 19:08:18		  trigger
+2015-12-11 19:09:14		Buffers list:
+2015-12-11 19:09:14		  [1] core.weechat (notify: all)
+2015-12-11 19:09:14		  [1] irc.server.freenode (notify: all)
+2015-12-11 19:09:14		  [2] irc.freenode.#archlinux (notify: all)
+2015-12-11 19:09:14		  [3] irc.freenode.#archlinux-offtopic (notify: all)
+2015-12-11 22:40:50		fifo: pipe closed
+2015-12-12 23:25:17		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-12 23:25:24		All servers:
+2015-12-12 23:25:24		   freenode
+2015-12-12 23:25:24		   oftc
+2015-12-12 23:25:30	=!=	irc: command "list" must be executed on irc buffer (server or channel)
+2015-12-12 23:27:50	=!=	irc: server "oftc" already exists, can't add it!
+2015-12-12 23:27:56		All servers:
+2015-12-12 23:27:56		 * freenode [connected], 2 channels, 0 pv
+2015-12-12 23:27:56		   oftc
+2015-12-12 23:30:08		[server] (irc.conf)
+2015-12-12 23:30:08		  irc.server.oftc.autojoin = "#kernelnewbies"  (default: (undefined))
+2015-12-12 23:30:08		1 option (matching with "irc.server.oftc.autojoin")
+2015-12-13 11:08:05		fifo: pipe closed
+2015-12-13 21:06:54		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-13 21:07:40		All servers:
+2015-12-13 21:07:40		 * freenode [connected], 2 channels, 0 pv
+2015-12-13 21:07:40		   oftc
+2015-12-13 21:08:00		[core]
+2015-12-13 21:08:00		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2015-12-13 21:08:00		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2015-12-13 21:08:00		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2015-12-13 21:08:00		[charset]
+2015-12-13 21:08:00		  charset
+2015-12-13 21:08:00		[logger]
+2015-12-13 21:08:00		  logger
+2015-12-13 21:08:00		[ruby]
+2015-12-13 21:08:00		  ruby
+2015-12-13 21:08:00		[relay]
+2015-12-13 21:08:00		  relay
+2015-12-13 21:08:00		[lua]
+2015-12-13 21:08:00		  lua
+2015-12-13 21:08:00		[guile]
+2015-12-13 21:08:00		  guile
+2015-12-13 21:08:00		[irc]
+2015-12-13 21:08:00		  admin       cycle       halfop      kickban     mode        op          quote       sanick      squit       unquiet     who       
+2015-12-13 21:08:00		  allchan     dcc         ignore      kill        motd        oper        reconnect   sapart      stats       userhost    whois     
+2015-12-13 21:08:00		  allpv       dehalfop    info        links       msg         part        rehash      saquit      summon      users       whowas    
+2015-12-13 21:08:00		  allserv     deop        invite      list        names       ping        remove      server      time        version   
+2015-12-13 21:08:00		  ban         devoice     ison        lusers      nick        pong        restart     service     topic       voice     
+2015-12-13 21:08:00		  connect     die         join        map         notice      query       sajoin      servlist    trace       wallchops 
+2015-12-13 21:08:00		  ctcp        disconnect  kick        me          notify      quiet       samode      squery      unban       wallops   
+2015-12-13 21:08:00		[exec]
+2015-12-13 21:08:00		  exec
+2015-12-13 21:08:00		[script]
+2015-12-13 21:08:00		  script
+2015-12-13 21:08:00		[perl]
+2015-12-13 21:08:00		  perl
+2015-12-13 21:08:00		[xfer]
+2015-12-13 21:08:00		  me  xfer
+2015-12-13 21:08:00		[python]
+2015-12-13 21:08:00		  python
+2015-12-13 21:08:00		[alias]
+2015-12-13 21:08:00		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    WC       WW     
+2015-12-13 21:08:00		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        V        WI     
+2015-12-13 21:08:00		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       W        WII    
+2015-12-13 21:08:00		[trigger]
+2015-12-13 21:08:00		  trigger
+2015-12-13 21:08:06		[irc]  /server  list|listfull [<server>]
+2015-12-13 21:08:06		                add <server> <hostname>[/<port>] [-temp] [-<option>[=<value>]] [-no<option>]
+2015-12-13 21:08:06		                copy|rename <server> <new_name>
+2015-12-13 21:08:06		                reorder <server> [<server>...]
+2015-12-13 21:08:06		                del|keep <server>
+2015-12-13 21:08:06		                deloutq|jump|raw
+2015-12-13 21:08:06		list, add or remove IRC servers
+2015-12-13 21:08:06		    list: list servers (without argument, this list is displayed)
+2015-12-13 21:08:06		listfull: list servers with detailed info for each server
+2015-12-13 21:08:06		     add: add a new server
+2015-12-13 21:08:06		  server: server name, for internal and display use
+2015-12-13 21:08:06		hostname: name or IP address of server, with optional port (default: 6667), many addresses can be separated by a comma
+2015-12-13 21:08:06		    temp: add a temporary server (not saved)
+2015-12-13 21:08:06		  option: set option for server (for boolean option, value can be omitted)
+2015-12-13 21:08:06		nooption: set boolean option to 'off' (for example: -nossl)
+2015-12-13 21:08:06		    copy: duplicate a server
+2015-12-13 21:08:06		  rename: rename a server
+2015-12-13 21:08:06		 reorder: reorder list of servers
+2015-12-13 21:08:06		    keep: keep server in config file (for temporary servers only)
+2015-12-13 21:08:06		     del: delete a server
+2015-12-13 21:08:06		 deloutq: delete messages out queue for all servers (all messages WeeChat is currently sending)
+2015-12-13 21:08:06		    jump: jump to server buffer
+2015-12-13 21:08:06		     raw: open buffer with raw IRC data
+2015-12-13 21:08:06		Examples:
+2015-12-13 21:08:06		  /server listfull
+2015-12-13 21:08:06		  /server add freenode chat.freenode.net
+2015-12-13 21:08:06		  /server add freenode chat.freenode.net/6697 -ssl -autoconnect
+2015-12-13 21:08:06		  /server add chatspike irc.chatspike.net/6667,irc.duckspike.net/6667
+2015-12-13 21:08:06		  /server copy freenode freenode-test
+2015-12-13 21:08:06		  /server rename freenode-test freenode2
+2015-12-13 21:08:06		  /server reorder freenode2 freenode
+2015-12-13 21:08:06		  /server del freenode
+2015-12-13 21:08:06		  /server deloutq
+2015-12-13 21:09:26		[core]  /set  [<option> [<value>]]
+2015-12-13 21:09:26		              diff [<option> [<option>...]]
+2015-12-13 21:09:26		              env [<variable> [<value>]]
+2015-12-13 21:09:26		set config options and environment variables
+2015-12-13 21:09:26		option: name of an option (wildcard "*" is allowed)
+2015-12-13 21:09:26		 value: new value for option, according to type:
+2015-12-13 21:09:26		          boolean: on, off or toggle
+2015-12-13 21:09:26		          integer: number, ++number or --number
+2015-12-13 21:09:26		           string: any string ("" for empty string)
+2015-12-13 21:09:26		            color: color name, ++number or --number
+2015-12-13 21:09:26		        Note: for all types, you can use null to remove option value (undefined value). This works only for some special plugin variables.
+2015-12-13 21:09:26		  diff: display only changed options
+2015-12-13 21:09:26		   env: display or set an environment variable (use value "" to unset a variable)
+2015-12-13 21:09:26		Examples:
+2015-12-13 21:09:26		  display options about highlight:
+2015-12-13 21:09:26		    /set *highlight*
+2015-12-13 21:09:26		  add a word to highlight:
+2015-12-13 21:09:26		    /set weechat.look.highlight "word"
+2015-12-13 21:09:26		  display changed options:
+2015-12-13 21:09:26		    /set diff
+2015-12-13 21:09:26		  display changed options in irc plugin:
+2015-12-13 21:09:26		    /set diff irc.*
+2015-12-13 21:09:26		  display value of environment variable LANG:
+2015-12-13 21:09:26		    /set env LANG
+2015-12-13 21:09:26		  set environment variable LANG and use it:
+2015-12-13 21:09:26		    /set env LANG fr_FR.UTF-8
+2015-12-13 21:09:26		    /upgrade
+2015-12-13 21:09:26		  unset environment variable ABC:
+2015-12-13 21:09:26		    /set env ABC ""
+2015-12-13 21:11:03		Option changed: irc.server.oftc.autoconnect = on  (default: (undefined))
+2015-12-13 21:11:25		All servers:
+2015-12-13 21:11:25		 * freenode [connected], 2 channels, 0 pv
+2015-12-13 21:11:25		   oftc
+2015-12-13 21:11:59		[server] (irc.conf)
+2015-12-13 21:11:59		  irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default: (undefined))
+2015-12-13 21:11:59		1 option (matching with "irc.server.freenode.autojoin")
+2015-12-13 21:12:08		[server] (irc.conf)
+2015-12-13 21:12:08		  irc.server.oftc.autojoin = "#kernelnewbies"  (default: (undefined))
+2015-12-13 21:12:08		1 option (matching with "irc.server.oftc.autojoin")
+2015-12-13 21:43:27		fifo: pipe closed
+2015-12-19 18:51:23		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-19 23:38:54		fifo: pipe closed
+2015-12-19 23:39:14		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-19 23:39:58		fifo: pipe closed
+2015-12-20 13:43:34		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-20 13:43:34		fifo: pipe closed
+2015-12-20 13:51:11		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2015-12-20 19:30:19		fifo: pipe closed
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 30: unknown option for section "look": item_away_message = on
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 39: unknown option for section "look": nick_color_force = ""
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 40: unknown option for section "look": nick_color_hash = sum
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 41: unknown option for section "look": nick_color_stop_chars = "_|["
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 68: unknown option for section "color": item_away = yellow
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 84: unknown option for section "network": alternate_nick = on
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 123: unknown option for section "server_default": default_msg_kick = ""
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 124: unknown option for section "server_default": default_msg_part = "WeeChat %v"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 125: unknown option for section "server_default": default_msg_quit = "WeeChat %v"
+2016-11-24 20:23:37	=!=	irc: error creating server option "freenode.default_msg_kick"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 182: invalid value for option: freenode.default_msg_kick
+2016-11-24 20:23:37	=!=	irc: error creating server option "freenode.default_msg_part"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 183: invalid value for option: freenode.default_msg_part
+2016-11-24 20:23:37	=!=	irc: error creating server option "freenode.default_msg_quit"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 184: invalid value for option: freenode.default_msg_quit
+2016-11-24 20:23:37	=!=	irc: error creating server option "oftc.default_msg_kick"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 220: invalid value for option: oftc.default_msg_kick
+2016-11-24 20:23:37	=!=	irc: error creating server option "oftc.default_msg_part"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 221: invalid value for option: oftc.default_msg_part
+2016-11-24 20:23:37	=!=	irc: error creating server option "oftc.default_msg_quit"
+2016-11-24 20:23:37	=!=	Warning: /home/al/.weechat/irc.conf, line 222: invalid value for option: oftc.default_msg_quit
+2016-11-24 20:23:37		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2016-11-24 21:18:48	=!=	No help available, "scroll" is not a command or an option
+2016-11-24 21:18:55		[core]
+2016-11-24 21:18:55		  away     color    debug    help     key      mute     proxy    repeat   set      uptime   window 
+2016-11-24 21:18:55		  bar      command  eval     history  layout   plugin   quit     save     unset    version
+2016-11-24 21:18:55		  buffer   cursor   filter   input    mouse    print    reload   secure   upgrade  wait   
+2016-11-24 21:18:55		[charset]
+2016-11-24 21:18:55		  charset
+2016-11-24 21:18:55		[logger]
+2016-11-24 21:18:55		  logger
+2016-11-24 21:18:55		[ruby]
+2016-11-24 21:18:55		  ruby
+2016-11-24 21:18:55		[relay]
+2016-11-24 21:18:55		  relay
+2016-11-24 21:18:55		[lua]
+2016-11-24 21:18:55		  lua
+2016-11-24 21:18:55		[guile]
+2016-11-24 21:18:55		  guile
+2016-11-24 21:18:55		[irc]
+2016-11-24 21:18:55		  admin       dcc         invite      map         op          rehash      service     unban       whois     
+2016-11-24 21:18:55		  allchan     dehalfop    ison        me          oper        remove      servlist    unquiet     whowas    
+2016-11-24 21:18:55		  allpv       deop        join        mode        part        restart     squery      userhost  
+2016-11-24 21:18:55		  allserv     devoice     kick        motd        ping        sajoin      squit       users     
+2016-11-24 21:18:55		  ban         die         kickban     msg         pong        samode      stats       version   
+2016-11-24 21:18:55		  cap         disconnect  kill        names       query       sanick      summon      voice     
+2016-11-24 21:18:55		  connect     halfop      links       nick        quiet       sapart      time        wallchops 
+2016-11-24 21:18:55		  ctcp        ignore      list        notice      quote       saquit      topic       wallops   
+2016-11-24 21:18:55		  cycle       info        lusers      notify      reconnect   server      trace       who       
+2016-11-24 21:18:55		[exec]
+2016-11-24 21:18:55		  exec
+2016-11-24 21:18:55		[script]
+2016-11-24 21:18:55		  script
+2016-11-24 21:18:55		[perl]
+2016-11-24 21:18:55		  perl
+2016-11-24 21:18:55		[xfer]
+2016-11-24 21:18:55		  me  xfer
+2016-11-24 21:18:55		[fifo]
+2016-11-24 21:18:55		  fifo
+2016-11-24 21:18:55		[python]
+2016-11-24 21:18:55		  python
+2016-11-24 21:18:55		[alias]
+2016-11-24 21:18:55		  AAWAY    AMSG     BYE      CL       IG       KB       MSGBUF   Q        SIGNOFF  UMODE    WC       WW     
+2016-11-24 21:18:55		  alias    ANICK    C        CLOSE    J        LEAVE    MUB      REDRAW   T        V        WI     
+2016-11-24 21:18:55		  AME      BEEP     CHAT     EXIT     K        M        N        SAY      UB       W        WII    
+2016-11-24 21:18:55		[trigger]
+2016-11-24 21:18:55		  trigger
+2016-11-24 21:19:18	=!=	No help available, "keys" is not a command or an option
+2016-11-24 21:19:35		[alias]  /alias  list [<alias>]
+2016-11-24 21:19:35		                 add <alias> [<command>[;<command>...]]
+2016-11-24 21:19:35		                 addcompletion <completion> <alias> [<command>[;<command>...]]
+2016-11-24 21:19:35		                 del <alias> [<alias>...]
+2016-11-24 21:19:35		list, add or remove command aliases
+2016-11-24 21:19:35		         list: list aliases (without argument, this list is displayed)
+2016-11-24 21:19:35		          add: add an alias
+2016-11-24 21:19:35		addcompletion: add an alias with a custom completion
+2016-11-24 21:19:35		          del: delete an alias
+2016-11-24 21:19:35		   completion: completion for alias: by default completion is done with target command
+2016-11-24 21:19:35		               note: you can use %%command to use completion of an existing command
+2016-11-24 21:19:35		        alias: name of alias
+2016-11-24 21:19:35		      command: command name with arguments (many commands can be separated by semicolons)
+2016-11-24 21:19:35		Note: in command, special variables are replaced:
+2016-11-24 21:19:35		        $n: argument 'n' (between 1 and 9)
+2016-11-24 21:19:35		       $-m: arguments from 1 to 'm'
+2016-11-24 21:19:35		       $n-: arguments from 'n' to last
+2016-11-24 21:19:35		      $n-m: arguments from 'n' to 'm'
+2016-11-24 21:19:35		        $*: all arguments
+2016-11-24 21:19:35		        $~: last argument
+2016-11-24 21:19:35		      $var: where "var" is a local variable of buffer (see /buffer localvar)
+2016-11-24 21:19:35		            examples: $nick, $channel, $server, $plugin, $name
+2016-11-24 21:19:35		Examples:
+2016-11-24 21:19:35		  alias /split to split window horizontally:
+2016-11-24 21:19:35		    /alias add split /window splith
+2016-11-24 21:19:35		  alias /hello to say "hello" on all channels but not on #weechat:
+2016-11-24 21:19:35		    /alias add hello /allchan -exclude=#weechat msg * hello
+2016-11-24 21:19:35		  alias /forcejoin to send IRC command "forcejoin" with completion of /sajoin:
+2016-11-24 21:19:35		    /alias addcompletion %%sajoin forcejoin /quote forcejoin
+2016-11-24 21:19:47		All aliases:
+2016-11-24 21:19:47		  AAWAY => allserv /away
+2016-11-24 21:19:47		  AME => allchan /me
+2016-11-24 21:19:47		  AMSG => allchan /msg *
+2016-11-24 21:19:47		  ANICK => allserv /nick
+2016-11-24 21:19:47		  BEEP => print -beep
+2016-11-24 21:19:47		  BYE => quit
+2016-11-24 21:19:47		  C => buffer clear
+2016-11-24 21:19:47		  CHAT => dcc chat
+2016-11-24 21:19:47		  CL => buffer clear
+2016-11-24 21:19:47		  CLOSE => buffer close
+2016-11-24 21:19:47		  EXIT => quit
+2016-11-24 21:19:47		  IG => ignore
+2016-11-24 21:19:47		  J => join
+2016-11-24 21:19:47		  K => kick
+2016-11-24 21:19:47		  KB => kickban
+2016-11-24 21:19:47		  LEAVE => part
+2016-11-24 21:19:47		  M => msg
+2016-11-24 21:19:47		  MSGBUF => command -buffer $1 * /input send $2-  (completion: %(buffers_plugins_names))
+2016-11-24 21:19:47		  MUB => unban *
+2016-11-24 21:19:47		  N => names
+2016-11-24 21:19:47		  Q => query
+2016-11-24 21:19:47		  REDRAW => window refresh
+2016-11-24 21:19:47		  SAY => msg *
+2016-11-24 21:19:47		  SIGNOFF => quit
+2016-11-24 21:19:47		  T => topic
+2016-11-24 21:19:47		  UB => unban
+2016-11-24 21:19:47		  UMODE => mode $nick
+2016-11-24 21:19:47		  V => command core version
+2016-11-24 21:19:47		  W => who
+2016-11-24 21:19:47		  WC => window merge
+2016-11-24 21:19:47		  WI => whois
+2016-11-24 21:19:47		  WII => whois $1 $1
+2016-11-24 21:19:47		  WW => whowas
+2016-11-24 22:51:05	=!=	Too few arguments for command "/query" (help on command: /help query)
+2016-11-24 22:51:10		fifo: pipe closed
+2016-11-26 08:20:03		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2016-11-26 10:11:49	=!=	Option "irc.server" not found (tip: you can use wildcard "*" in option to see a sublist)
+2016-11-26 10:11:53		[server] (irc.conf)
+2016-11-26 10:11:53		  irc.server.freenode.addresses = "chat.freenode.net/6667"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.freenode.anti_flood_prio_high = null -> 2
+2016-11-26 10:11:53		  irc.server.freenode.anti_flood_prio_low = null -> 2
+2016-11-26 10:11:53		  irc.server.freenode.autoconnect = on  (default if null: off)
+2016-11-26 10:11:53		  irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.freenode.autoreconnect = null -> on
+2016-11-26 10:11:53		  irc.server.freenode.autoreconnect_delay = null -> 10
+2016-11-26 10:11:53		  irc.server.freenode.autorejoin = null -> off
+2016-11-26 10:11:53		  irc.server.freenode.autorejoin_delay = null -> 30
+2016-11-26 10:11:53		  irc.server.freenode.away_check = null -> 0
+2016-11-26 10:11:53		  irc.server.freenode.away_check_max_nicks = null -> 25
+2016-11-26 10:11:53		  irc.server.freenode.capabilities = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.command = ""  (default if null: "")
+2016-11-26 10:11:53		  irc.server.freenode.command_delay = null -> 0
+2016-11-26 10:11:53		  irc.server.freenode.connection_timeout = null -> 60
+2016-11-26 10:11:53		  irc.server.freenode.ipv6 = null -> on
+2016-11-26 10:11:53		  irc.server.freenode.local_hostname = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.msg_kick = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 10:11:53		  irc.server.freenode.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 10:11:53		  irc.server.freenode.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 10:11:53		  irc.server.freenode.nicks_alternate = null -> on
+2016-11-26 10:11:53		  irc.server.freenode.notify = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.password = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.proxy = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.realname = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.sasl_fail = null -> continue
+2016-11-26 10:11:53		  irc.server.freenode.sasl_key = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.sasl_mechanism = null -> plain
+2016-11-26 10:11:53		  irc.server.freenode.sasl_password = "idkfa9"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.freenode.sasl_timeout = null -> 15
+2016-11-26 10:11:53		  irc.server.freenode.sasl_username = "alhunt"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.freenode.ssl = null -> off
+2016-11-26 10:11:53		  irc.server.freenode.ssl_cert = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.ssl_dhkey_size = null -> 2048
+2016-11-26 10:11:53		  irc.server.freenode.ssl_fingerprint = null -> ""
+2016-11-26 10:11:53		  irc.server.freenode.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 10:11:53		  irc.server.freenode.ssl_verify = null -> on
+2016-11-26 10:11:53		  irc.server.freenode.username = null -> "al"
+2016-11-26 10:11:53		  irc.server.oftc.addresses = "irc.oftc.net"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.oftc.anti_flood_prio_high = null -> 2
+2016-11-26 10:11:53		  irc.server.oftc.anti_flood_prio_low = null -> 2
+2016-11-26 10:11:53		  irc.server.oftc.autoconnect = on  (default if null: off)
+2016-11-26 10:11:53		  irc.server.oftc.autojoin = "#kernelnewbies"  (default if null: "")
+2016-11-26 10:11:53		  irc.server.oftc.autoreconnect = null -> on
+2016-11-26 10:11:53		  irc.server.oftc.autoreconnect_delay = null -> 10
+2016-11-26 10:11:53		  irc.server.oftc.autorejoin = null -> off
+2016-11-26 10:11:53		  irc.server.oftc.autorejoin_delay = null -> 30
+2016-11-26 10:11:53		  irc.server.oftc.away_check = null -> 0
+2016-11-26 10:11:53		  irc.server.oftc.away_check_max_nicks = null -> 25
+2016-11-26 10:11:53		  irc.server.oftc.capabilities = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.command = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.command_delay = null -> 0
+2016-11-26 10:11:53		  irc.server.oftc.connection_timeout = null -> 60
+2016-11-26 10:11:53		  irc.server.oftc.ipv6 = null -> on
+2016-11-26 10:11:53		  irc.server.oftc.local_hostname = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.msg_kick = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 10:11:53		  irc.server.oftc.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 10:11:53		  irc.server.oftc.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 10:11:53		  irc.server.oftc.nicks_alternate = null -> on
+2016-11-26 10:11:53		  irc.server.oftc.notify = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.password = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.proxy = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.realname = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.sasl_fail = null -> continue
+2016-11-26 10:11:53		  irc.server.oftc.sasl_key = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.sasl_mechanism = null -> plain
+2016-11-26 10:11:53		  irc.server.oftc.sasl_password = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.sasl_timeout = null -> 15
+2016-11-26 10:11:53		  irc.server.oftc.sasl_username = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.ssl = null -> off
+2016-11-26 10:11:53		  irc.server.oftc.ssl_cert = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.ssl_dhkey_size = null -> 2048
+2016-11-26 10:11:53		  irc.server.oftc.ssl_fingerprint = null -> ""
+2016-11-26 10:11:53		  irc.server.oftc.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 10:11:53		  irc.server.oftc.ssl_verify = null -> on
+2016-11-26 10:11:53		  irc.server.oftc.username = "alhunt"  (default if null: "al")
+2016-11-26 10:11:53		78 options (matching with "irc.server.*")
+2016-11-26 10:12:11		[server] (irc.conf)
+2016-11-26 10:12:11		  irc.server.oftc.addresses = "irc.oftc.net"  (default if null: "")
+2016-11-26 10:12:11		  irc.server.oftc.anti_flood_prio_high = null -> 2
+2016-11-26 10:12:11		  irc.server.oftc.anti_flood_prio_low = null -> 2
+2016-11-26 10:12:11		  irc.server.oftc.autoconnect = on  (default if null: off)
+2016-11-26 10:12:11		  irc.server.oftc.autojoin = "#kernelnewbies"  (default if null: "")
+2016-11-26 10:12:11		  irc.server.oftc.autoreconnect = null -> on
+2016-11-26 10:12:11		  irc.server.oftc.autoreconnect_delay = null -> 10
+2016-11-26 10:12:11		  irc.server.oftc.autorejoin = null -> off
+2016-11-26 10:12:11		  irc.server.oftc.autorejoin_delay = null -> 30
+2016-11-26 10:12:11		  irc.server.oftc.away_check = null -> 0
+2016-11-26 10:12:11		  irc.server.oftc.away_check_max_nicks = null -> 25
+2016-11-26 10:12:11		  irc.server.oftc.capabilities = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.command = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.command_delay = null -> 0
+2016-11-26 10:12:11		  irc.server.oftc.connection_timeout = null -> 60
+2016-11-26 10:12:11		  irc.server.oftc.ipv6 = null -> on
+2016-11-26 10:12:11		  irc.server.oftc.local_hostname = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.msg_kick = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 10:12:11		  irc.server.oftc.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 10:12:11		  irc.server.oftc.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 10:12:11		  irc.server.oftc.nicks_alternate = null -> on
+2016-11-26 10:12:11		  irc.server.oftc.notify = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.password = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.proxy = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.realname = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.sasl_fail = null -> continue
+2016-11-26 10:12:11		  irc.server.oftc.sasl_key = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.sasl_mechanism = null -> plain
+2016-11-26 10:12:11		  irc.server.oftc.sasl_password = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.sasl_timeout = null -> 15
+2016-11-26 10:12:11		  irc.server.oftc.sasl_username = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.ssl = null -> off
+2016-11-26 10:12:11		  irc.server.oftc.ssl_cert = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.ssl_dhkey_size = null -> 2048
+2016-11-26 10:12:11		  irc.server.oftc.ssl_fingerprint = null -> ""
+2016-11-26 10:12:11		  irc.server.oftc.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 10:12:11		  irc.server.oftc.ssl_verify = null -> on
+2016-11-26 10:12:11		  irc.server.oftc.username = "alhunt"  (default if null: "al")
+2016-11-26 10:12:11		39 options (matching with "irc.server.oftc.*")
+2016-11-26 10:12:51		[server] (irc.conf)
+2016-11-26 10:12:51		  irc.server.freenode.addresses = "chat.freenode.net/6667"  (default if null: "")
+2016-11-26 10:12:51		  irc.server.freenode.anti_flood_prio_high = null -> 2
+2016-11-26 10:12:51		  irc.server.freenode.anti_flood_prio_low = null -> 2
+2016-11-26 10:12:51		  irc.server.freenode.autoconnect = on  (default if null: off)
+2016-11-26 10:12:51		  irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default if null: "")
+2016-11-26 10:12:51		  irc.server.freenode.autoreconnect = null -> on
+2016-11-26 10:12:51		  irc.server.freenode.autoreconnect_delay = null -> 10
+2016-11-26 10:12:51		  irc.server.freenode.autorejoin = null -> off
+2016-11-26 10:12:51		  irc.server.freenode.autorejoin_delay = null -> 30
+2016-11-26 10:12:51		  irc.server.freenode.away_check = null -> 0
+2016-11-26 10:12:51		  irc.server.freenode.away_check_max_nicks = null -> 25
+2016-11-26 10:12:51		  irc.server.freenode.capabilities = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.command = ""  (default if null: "")
+2016-11-26 10:12:51		  irc.server.freenode.command_delay = null -> 0
+2016-11-26 10:12:51		  irc.server.freenode.connection_timeout = null -> 60
+2016-11-26 10:12:51		  irc.server.freenode.ipv6 = null -> on
+2016-11-26 10:12:51		  irc.server.freenode.local_hostname = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.msg_kick = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 10:12:51		  irc.server.freenode.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 10:12:51		  irc.server.freenode.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 10:12:51		  irc.server.freenode.nicks_alternate = null -> on
+2016-11-26 10:12:51		  irc.server.freenode.notify = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.password = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.proxy = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.realname = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.sasl_fail = null -> continue
+2016-11-26 10:12:51		  irc.server.freenode.sasl_key = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.sasl_mechanism = null -> plain
+2016-11-26 10:12:51		  irc.server.freenode.sasl_password = "idkfa9"  (default if null: "")
+2016-11-26 10:12:51		  irc.server.freenode.sasl_timeout = null -> 15
+2016-11-26 10:12:51		  irc.server.freenode.sasl_username = "alhunt"  (default if null: "")
+2016-11-26 10:12:51		  irc.server.freenode.ssl = null -> off
+2016-11-26 10:12:51		  irc.server.freenode.ssl_cert = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.ssl_dhkey_size = null -> 2048
+2016-11-26 10:12:51		  irc.server.freenode.ssl_fingerprint = null -> ""
+2016-11-26 10:12:51		  irc.server.freenode.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 10:12:51		  irc.server.freenode.ssl_verify = null -> on
+2016-11-26 10:12:51		  irc.server.freenode.username = null -> "al"
+2016-11-26 10:12:51		39 options (matching with "irc.server.freenode.*")
+2016-11-26 10:20:08		fifo: pipe closed
+2016-11-26 10:20:11		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2016-11-26 10:21:19		[server] (irc.conf)
+2016-11-26 10:21:19		  irc.server.oftc.addresses = "irc.oftc.net"  (default if null: "")
+2016-11-26 10:21:19		  irc.server.oftc.anti_flood_prio_high = null -> 2
+2016-11-26 10:21:19		  irc.server.oftc.anti_flood_prio_low = null -> 2
+2016-11-26 10:21:19		  irc.server.oftc.autoconnect = on  (default if null: off)
+2016-11-26 10:21:19		  irc.server.oftc.autojoin = "#kernelnewbies"  (default if null: "")
+2016-11-26 10:21:19		  irc.server.oftc.autoreconnect = null -> on
+2016-11-26 10:21:19		  irc.server.oftc.autoreconnect_delay = null -> 10
+2016-11-26 10:21:19		  irc.server.oftc.autorejoin = null -> off
+2016-11-26 10:21:19		  irc.server.oftc.autorejoin_delay = null -> 30
+2016-11-26 10:21:19		  irc.server.oftc.away_check = null -> 0
+2016-11-26 10:21:19		  irc.server.oftc.away_check_max_nicks = null -> 25
+2016-11-26 10:21:19		  irc.server.oftc.capabilities = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.command = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.command_delay = null -> 0
+2016-11-26 10:21:19		  irc.server.oftc.connection_timeout = null -> 60
+2016-11-26 10:21:19		  irc.server.oftc.ipv6 = null -> on
+2016-11-26 10:21:19		  irc.server.oftc.local_hostname = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.msg_kick = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 10:21:19		  irc.server.oftc.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 10:21:19		  irc.server.oftc.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 10:21:19		  irc.server.oftc.nicks_alternate = null -> on
+2016-11-26 10:21:19		  irc.server.oftc.notify = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.password = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.proxy = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.realname = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.sasl_fail = null -> continue
+2016-11-26 10:21:19		  irc.server.oftc.sasl_key = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.sasl_mechanism = null -> plain
+2016-11-26 10:21:19		  irc.server.oftc.sasl_password = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.sasl_timeout = null -> 15
+2016-11-26 10:21:19		  irc.server.oftc.sasl_username = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.ssl = null -> off
+2016-11-26 10:21:19		  irc.server.oftc.ssl_cert = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.ssl_dhkey_size = null -> 2048
+2016-11-26 10:21:19		  irc.server.oftc.ssl_fingerprint = null -> ""
+2016-11-26 10:21:19		  irc.server.oftc.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 10:21:19		  irc.server.oftc.ssl_verify = null -> on
+2016-11-26 10:21:19		  irc.server.oftc.username = "alhunt"  (default if null: "al")
+2016-11-26 10:21:19		39 options (matching with "irc.server.oftc.*")
+2016-11-26 10:24:55		Option changed: irc.server.oftc.command = "/msg nickserv identify idkfa9"  (default if null: "")
+2016-11-26 14:43:16		fifo: pipe closed
+2016-11-26 16:33:39		Plugins loaded: alias, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, trigger, xfer
+2016-11-26 18:04:01		[server] (irc.conf)
+2016-11-26 18:04:01		  irc.server.freenode.addresses = "chat.freenode.net/6667"  (default if null: "")
+2016-11-26 18:04:01		  irc.server.freenode.anti_flood_prio_high = null -> 2
+2016-11-26 18:04:01		  irc.server.freenode.anti_flood_prio_low = null -> 2
+2016-11-26 18:04:01		  irc.server.freenode.autoconnect = on  (default if null: off)
+2016-11-26 18:04:01		  irc.server.freenode.autojoin = "#archlinux,#archlinux-offtopic"  (default if null: "")
+2016-11-26 18:04:01		  irc.server.freenode.autoreconnect = null -> on
+2016-11-26 18:04:01		  irc.server.freenode.autoreconnect_delay = null -> 10
+2016-11-26 18:04:01		  irc.server.freenode.autorejoin = null -> off
+2016-11-26 18:04:01		  irc.server.freenode.autorejoin_delay = null -> 30
+2016-11-26 18:04:01		  irc.server.freenode.away_check = null -> 0
+2016-11-26 18:04:01		  irc.server.freenode.away_check_max_nicks = null -> 25
+2016-11-26 18:04:01		  irc.server.freenode.capabilities = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.command = ""  (default if null: "")
+2016-11-26 18:04:01		  irc.server.freenode.command_delay = null -> 0
+2016-11-26 18:04:01		  irc.server.freenode.connection_timeout = null -> 60
+2016-11-26 18:04:01		  irc.server.freenode.ipv6 = null -> on
+2016-11-26 18:04:01		  irc.server.freenode.local_hostname = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.msg_kick = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.msg_part = null -> "WeeChat ${info:version}"
+2016-11-26 18:04:01		  irc.server.freenode.msg_quit = null -> "WeeChat ${info:version}"
+2016-11-26 18:04:01		  irc.server.freenode.nicks = "alhunt"  (default if null: "al,al1,al2,al3,al4")
+2016-11-26 18:04:01		  irc.server.freenode.nicks_alternate = null -> on
+2016-11-26 18:04:01		  irc.server.freenode.notify = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.password = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.proxy = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.realname = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.sasl_fail = null -> continue
+2016-11-26 18:04:01		  irc.server.freenode.sasl_key = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.sasl_mechanism = null -> plain
+2016-11-26 18:04:01		  irc.server.freenode.sasl_password = "idkfa9"  (default if null: "")
+2016-11-26 18:04:01		  irc.server.freenode.sasl_timeout = null -> 15
+2016-11-26 18:04:01		  irc.server.freenode.sasl_username = "alhunt"  (default if null: "")
+2016-11-26 18:04:01		  irc.server.freenode.ssl = null -> off
+2016-11-26 18:04:01		  irc.server.freenode.ssl_cert = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.ssl_dhkey_size = null -> 2048
+2016-11-26 18:04:01		  irc.server.freenode.ssl_fingerprint = null -> ""
+2016-11-26 18:04:01		  irc.server.freenode.ssl_priorities = null -> "NORMAL:-VERS-SSL3.0"
+2016-11-26 18:04:01		  irc.server.freenode.ssl_verify = null -> on
+2016-11-26 18:04:01		  irc.server.freenode.username = null -> "al"
+2016-11-26 18:04:01		39 options (matching with "irc.server.freenode.*")
+2016-11-27 10:30:45		fifo: pipe closed
