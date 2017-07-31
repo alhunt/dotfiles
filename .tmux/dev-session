@@ -1,0 +1,5 @@
+# Default dev session
+new -s dev
+neww -n mail mutt
+splitw -v -p 15
+neww -n dev -d
