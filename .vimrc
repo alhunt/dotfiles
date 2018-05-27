@@ -1,6 +1,12 @@
 " vimrc - VIM Configuration
 " Al Hunt
 
+" Use the-silver-searcher instead of grep
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 " relativenumber shows line numbers relative to the current line
 set relativenumber
 
@@ -31,6 +37,7 @@ let g:notes_directories= ['~/notes/']
 " Vim Plug-ins
 call plug#begin('~/.vim/plugged')
   Plug 'bling/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'tpope/vim-fugitive'
   Plug 'xolox/vim-misc'
