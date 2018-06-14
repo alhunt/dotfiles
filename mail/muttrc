@@ -3,14 +3,25 @@ set folder=~/mail/returnzero/
 set spoolfile="+INBOX"
 set header_cache=~/.cache/mutt
 set sendmail = "/usr/bin/msmtp -a returnzero"
-set record =+INBOX.Sent
+set record =+Sent
 
 set realname = "Al Hunt"
 set from = "al@returnzero.org"
 
+set alias_file=~/.mutt/aliases
+set sort_alias=alias
+set reverse_alias=yes
+source $alias_file
+
 set sort="threads"
 set sort_aux="reverse-last-date-received"
 set sort_browser=alpha
+
+set mailcap_path 	= ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+bind attach <return>    view-mailcap
 
 set date_format="%F"
 set index_format="[%Z] %D %-15.15L %s"
