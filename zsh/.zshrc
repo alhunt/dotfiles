@@ -101,7 +101,8 @@ plugins=(git)
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pacss="pacman -Ss"
-alias pacsyu="sudo pacman -Syu"
+alias pacsyu="archnews -b && sudo pacman -Syu"
+alias restartwifi="sudo systemctl stop connman.service; sleep 7; sudo ip link set wlp2s0b1 down; sleep 7; sudo systemctl start connman.service"
 
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
