@@ -21,12 +21,10 @@ quick = 10
 type = Maildir
 localfolders = ~/mail/returnzero/
 utime_from_header = yes
-# Prepend "INBOX." to folders except for root INBOX
-nametrans = lambda folder: folder if (folder == 'INBOX') else 'INBOX.' + folder
 
 [Repository returnzero-remote]
 type = IMAP
-remotehost = mail.messagingengine.com
+remotehost = imap.fastmail.com
 remoteport = 993
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl = yes
@@ -35,5 +33,3 @@ remoteuser = alhunt@fastmail.com
 remotepasseval = get_pass()
 keepalive = 60
 holdconnectionopen = yes
-# Strip the "INBOX." prefix
-nametrans = lambda f: re.sub('^INBOX\.','',f)
